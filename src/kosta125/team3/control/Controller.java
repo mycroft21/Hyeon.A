@@ -1,6 +1,7 @@
 package kosta125.team3.control;
 
 import java.io.IOException;
+import java.util.Properties;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -19,6 +20,7 @@ public class Controller extends HttpServlet{
 	public void init(ServletConfig config) throws ServletException {
 		
 		String proper = config.getInitParameter("propertyConfig");
+		Properties pr = new Properties();
 		
 	}
 	

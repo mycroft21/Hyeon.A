@@ -8,6 +8,7 @@ grant create session to hyeona;
 
 
 
+drop table parkdb
 
 
 

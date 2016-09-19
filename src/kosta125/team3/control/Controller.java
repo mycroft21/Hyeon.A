@@ -1,5 +1,5 @@
 package kosta125.team3.control;
 
 public class Controller {
-//ÀÏÇØ¶ó!
+//ê¹¨ì§€ë„¤ ë§í–‡ë„¤
 }

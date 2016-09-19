@@ -1,4 +1,4 @@
-package kkosta125.team3.park;
+package kosta125.team3.park;
 
 import java.sql.Timestamp;
 

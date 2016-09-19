@@ -17,6 +17,9 @@ public class Controller extends HttpServlet{
 	}
 
 	public void init(ServletConfig config) throws ServletException {
+		
+		String proper = config.getInitParameter("propertyConfig");
+		
 	}
 	
 	

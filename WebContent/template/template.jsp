@@ -54,9 +54,9 @@
 				<!-- 메뉴바 -->
 				<div class="col-md-3">
 				<table class="table2" border="1">
-				<tr>
-					<td>내역</td>
-				</tr>
+					<tr>
+						<td><jsp:include page="../module/menuboard.jsp"/></td>
+					</tr>
 				</table>
 				</div>
 				<!-- 메뉴바div end -->

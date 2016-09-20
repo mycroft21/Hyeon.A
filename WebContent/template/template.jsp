@@ -39,10 +39,10 @@
                      
                      <!-- 상황판 div -->
                      <div class="row">
-						<div class="col-md-6" style="background-image: url('../images/상황판배경.jpg')">
+						<div class="col-md-6" style="background-image: url('../images/bg_img1.jpg'); border-style: ridge; height: 100;">
 							<jsp:include page="../module/bottom_1.jsp"></jsp:include>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6" style="background-image: url('../images/bg_img1.jpg'); border-style: ridge; height: 100;">
 							<jsp:include page="../module/bottom_2.jsp"></jsp:include>
 						</div>
                      </div>

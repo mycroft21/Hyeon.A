@@ -30,20 +30,25 @@ public class Controller extends HttpServlet{
 	}
 	
 	/*init() method : 서버를 처음 시작할 때 필요한 설정을 합니다.*/
-	/*서브 컨트롤러를 생성해서 맵에 담아두고 꺼내서 process() method를*/
-	/*사용할 준비를 합니다.*/
+	/*서브 컨트롤러를 생성해서 맵에 담아두고 꺼내서*/
+	/*process(request, response) method를 사용할 준비를 합니다.*/
 	public void init(ServletConfig config) throws ServletException {
 		
 		String proper = config.getInitParameter("propertyConfig");
 		/*config.getInitParameter() - web.xml의 init-param을 통해 설정한 값을 받아오는 명령어입니다.*/
 		/*proper에 담기는 String 값은 E:/HyeonA/hyeonA/WebContent/WEB-INF/command.properties입니다.*/
 		Properties pr = new Properties();
+		/*Properties는 Map을 상속 받은 클래스입니다.*/
+		/*하지만 HashMap은 파일을 읽어올 수 없고, Properties는*/
+		/*파일을 읽어서 내용을 담아낼 수 있습니다.*/
 		FileInputStream fis = null;
 		
 		try {
 			
 			fis = new FileInputStream(proper);
+			/*FileInputStream을 이용해 command.properties 파일을 불러냅니다.*/
 			pr.load(fis);
+			/*그 파일의 내용을 Properties 객체에 담습니다.*/ 
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -51,12 +56,14 @@ public class Controller extends HttpServlet{
 			if(fis!=null)
 				try {
 					fis.close();
+					/*사용이 끝난 fis 객체를 닫습니다.*/
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		
 		Iterator proIter = pr.keySet().iterator();
+		/*이터레이터를 이용해 Properties의 내용을 빼낼 준비를 합니다.*/
 		
 		while(proIter.hasNext()){
 			String command = (String) proIter.next();

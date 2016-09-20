@@ -26,7 +26,7 @@
                      <!-- 주차공간 div -->
                      <div class="row park_wrap">
                         <div class="col-md-12 park_div">
-							<jsp:include page="${ CONTENT }"/>
+							<jsp:include page="../module/parking.jsp"/>
                         </div>
                      </div>
                      <!-- 주차공간 div end -->

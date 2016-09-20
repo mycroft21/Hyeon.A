@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -254,7 +255,61 @@ public class ParkDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
-		String sql = "SELECT * FROM PARKDB ";
+	      SimpleDateFormat  sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+				
+		String sql = "SELECT * FROM CAlDB where outtime between ? and ?";
+		
+		Timestamp today = new Timestamp(System.currentTimeMillis());
+
+		
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, sdf.format(today));
+			pstmt.setString(2, sdf.format(today));
+
+			
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				list = new ArrayList();
+
+				do {
+					CalVO vo = new CalVO();
+
+					vo.setParkNum(rs.getString("parknum"));
+					vo.setCarNum(rs.getString("carnum"));
+					vo.setInTime(rs.getTimestamp("intime"));
+					vo.setOutTime(rs.getTimestamp("outtime"));
+					vo.setPay(rs.getInt("pay"));
+
+					list.add(vo);
+
+				} while (rs.next());
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return list;
+
+	}//당일 정산 읽어오기
+	
+	public List<CalVO> calc(int date) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List list = null;
+		String sql = "select * from caldb where outtime between ? and ? ";
 
 		try {
 			conn = getConnection();

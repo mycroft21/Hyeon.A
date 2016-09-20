@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- 우리의 css -->
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/style.css"/>
+
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
@@ -39,10 +42,10 @@
                      
                      <!-- 상황판 div -->
                      <div class="row">
-						<div class="col-md-6" style="background-image: url('../images/bg_img1.jpg'); border-style: ridge; height: 100;">
+						<div class="col-md-6">
 							<jsp:include page="../module/bottom_1.jsp"></jsp:include>
 						</div>
-						<div class="col-md-6" style="background-image: url('../images/bg_img1.jpg'); border-style: ridge; height: 100;">
+						<div class="col-md-6">
 							<jsp:include page="../module/bottom_2.jsp"></jsp:include>
 						</div>
                      </div>

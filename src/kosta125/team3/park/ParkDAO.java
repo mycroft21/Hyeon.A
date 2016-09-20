@@ -11,6 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+
 import kosta125.team3.park.*;
 
 public class ParkDAO {
@@ -102,7 +103,40 @@ public class ParkDAO {
 
 	}
 
-	public void insertCalDB() {
+	public void insertCalDB(ParkVO vo) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		StringBuffer sb = new StringBuffer();
+		
+	 String parkNum =vo.getParkNum(), carNum = vo.getCarNum() ;
+	 Timestamp inTime = vo.getInTime(), outTime = vo.getOutTime();
+	 int pay=0;
+		
+	 //pay값을 계산하자!
+	 
+	 
+	try {
+		String sql = "insert into calDB(parkNum, carNum, inTime, outTime, pay) "
+				+ "values(?,?,?,?,?)";
+		
+		pstmt = conn.prepareStatement(sql);
+		
+		pstmt.setString(1, parkNum);
+		pstmt.setString(2, carNum);
+		pstmt.setTimestamp(3, inTime);
+		pstmt.setTimestamp(4, outTime);
+		pstmt.setInt(5, pay);
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		close(rs);
+		close(pstmt);
+		close(conn);
+	}
+		
+
 
 	}
 

@@ -13,6 +13,7 @@
 <title>메인페이지</title>
 </head>
 <body>
+<center>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -24,7 +25,7 @@
 						<div class="col-md-12">
 						<table class="table" border="1" cellspacing="0">
 							<tr>
-							<td><jsp:include page="../module/parking.jsp"/></td>
+							<td>gg</td>
 							</tr>
 						</table>
 						</div>
@@ -43,7 +44,6 @@
 								</div>
 								<div class="col-md-6">
 									구역별 주차 가능 대수
-									<jsp:
 								</div>
 							</div>
 						</center>
@@ -69,6 +69,6 @@
 	</div>
 
 </div>
-
+</center>
 </body>
 </html>

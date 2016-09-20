@@ -19,6 +19,13 @@ import kosta125.team3.park.*;
 
 public class ParkDAO {
 
+	private static ParkDAO instance = new ParkDAO();
+	public static ParkDAO getInstance() {
+		return instance;
+	}
+	public ParkDAO() {	}  
+	
+	
 	// get connection()
 
 	public Connection getConnection() throws Exception {
@@ -30,7 +37,7 @@ public class ParkDAO {
 		return ds.getConnection();
 	}
 
-	// close utill
+	// close util
 
 	public static void close(Connection conn) {
 		if (conn != null) {
@@ -75,18 +82,22 @@ public class ParkDAO {
 
 	// DAO ¸Þ¼Òµå
 
-	public List<ParkVO> list() {
+	public List<ParkVO> list(String floor, int ro) {
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
-		String sql = "SELECT * FROM PARKDB ";
-
+		String sql = "select * from (select * from parkdb where parknum like ?) where parknum like ?";
+		floor = floor.toUpperCase()+"%";
+		String row = "%-"+String.valueOf(ro);
+		System.out.println(floor+"  "+row);
 		try {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, row);
+			pstmt.setString(2, floor);
 
 			rs = pstmt.executeQuery();
 
@@ -95,10 +106,9 @@ public class ParkDAO {
 
 				do {
 					ParkVO vo = new ParkVO();
-
-					vo.setParkNum(rs.getString("parknum"));
-					vo.setCarNum(rs.getString("carnum"));
-					vo.setInTime(rs.getTimestamp("intime"));
+					vo.setParkNum(rs.getString(1));
+					vo.setCarNum(rs.getString(2));
+					vo.setInTime(rs.getTimestamp(3));
 
 					list.add(vo);
 

@@ -7,6 +7,8 @@
 <title>주차장 형태</title>
 </head>
 <body>
+	<p><font size="5" style="맑은고딕">W 주차 타워 주차 현황</font></p>
+
 	<table border="1" cellspacing="0">
 		<tr height="75px">
 			<td width="120px">A-1</td>

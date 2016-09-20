@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class ParkVO {
 
 	private String parkNum , carNum ;
-	private Timestamp inTime, outTime;
+	private Timestamp inTime;
 	
 	
 	
@@ -26,12 +26,6 @@ public class ParkVO {
 	}
 	public void setInTime(Timestamp inTime) {
 		this.inTime = inTime;
-	}
-	public Timestamp getOutTime() {
-		return outTime;
-	}
-	public void setOutTime(Timestamp outTime) {
-		this.outTime = outTime;
 	}
 	
 	

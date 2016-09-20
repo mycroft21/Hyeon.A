@@ -1,5 +1,5 @@
-create table parkDB(parkNum varchar2(10) not null primary key, carNum varchar2(10), 
-inTime date, outTime date);
+create table parkDB(parkNum varchar2(10) not null primary key,
+carNum varchar2(10), outTime date);
 
 select * from parkDB;
 

@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -72,13 +74,76 @@ public class ParkDAO {
 
 	// DAO 메소드
 
-	public void list() {
+	public List<ParkVO> list() {
 
-	}
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List list = null;
+		String sql = "SELECT * FROM PARKDB ";
 
-	public void regist() {
+		try {
+			conn = getConnection();
 
-	}
+			pstmt = conn.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				list = new ArrayList();
+
+				do {
+					ParkVO vo = new ParkVO();
+
+					vo.setParkNum(rs.getString("parknum"));
+					vo.setCarNum(rs.getString("carnum"));
+					vo.setInTime(rs.getTimestamp("intime"));
+
+					list.add(vo);
+
+				} while (rs.next());
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return list;
+
+	}// list 리턴
+
+	public void regist(ParkVO vo) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Timestamp in = new Timestamp(System.currentTimeMillis());
+
+		try {
+			String sql = "update parkdb carNum = ?, inTime =? where parkNum = ? ";
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, vo.getCarNum());
+			pstmt.setTimestamp(2, in);
+			pstmt.setString(3, vo.getParkNum());
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+			close(conn);
+		} // db update
+
+	}// 등록
 
 	public int pay(ParkVO vo) {
 		Connection conn = null;
@@ -125,7 +190,7 @@ public class ParkDAO {
 
 		return pay;
 		// pay 값을 리턴!
-	}
+	}// 출차 완성
 
 	public void insertCalDB(ParkVO vo, Timestamp out, int pay) {
 		Connection conn = null;
@@ -155,14 +220,77 @@ public class ParkDAO {
 			close(conn);
 		}
 
-	}
+	}// 정산 데이터베이스 삽입구
 
-	public void search() {
+	public String search(String carNum) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List list = null;
+		String sql = "SELECT parknum FROM PARKDB where carnum = ? ";
 
-	}
+		try {
+			conn = getConnection();
 
-	public void calc() {
+			pstmt = conn.prepareStatement(sql);
 
-	}
+			pstmt.setString(1, carNum);
+
+			rs = pstmt.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return rs.toString();
+
+	}// 차량 검색
+
+	public List<CalVO> calc() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List list = null;
+		String sql = "SELECT * FROM PARKDB ";
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				list = new ArrayList();
+
+				do {
+					CalVO vo = new CalVO();
+
+					vo.setParkNum(rs.getString("parknum"));
+					vo.setCarNum(rs.getString("carnum"));
+					vo.setInTime(rs.getTimestamp("intime"));
+					vo.setOutTime(rs.getTimestamp("outtime"));
+					vo.setPay(rs.getInt("pay"));
+
+					list.add(vo);
+
+				} while (rs.next());
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return list;
+
+	}//정산 읽어오기
 
 }

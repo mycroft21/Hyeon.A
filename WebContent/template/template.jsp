@@ -24,7 +24,7 @@
 						<div class="col-md-12">
 						<table class="table" border="1" cellspacing="0">
 							<tr>
-							<td>gpgpgp</td>
+							<td><jsp:include page="../module/parking.jsp"/></td>
 							</tr>
 						</table>
 						</div>
@@ -43,6 +43,7 @@
 								</div>
 								<div class="col-md-6">
 									구역별 주차 가능 대수
+									<jsp:
 								</div>
 							</div>
 						</center>

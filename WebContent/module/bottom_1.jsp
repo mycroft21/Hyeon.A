@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<table>
+<table align="center">
 	<tr><td><font color="orange"><b>주차가능대수</b></font></td></tr>
-	<tr><td><b><font color="red">10</font> /<font color="orange">20</font></b></td></tr>
+	<tr><td><b><font color="red">10</font> <font color="orange">/ 20</font></b></td></tr>
 </table>
 
 </body>

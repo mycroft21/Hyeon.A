@@ -4,10 +4,46 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>주차장 모양</title>
+<title>주차장 형태</title>
 </head>
 <body>
+	<table border="1" cellspacing="0">
+		<tr height="75px">
+			<td width="120px">A-1</td>
+			<td rowspan="5" width="120px"></td>
+			<td width="120px">B-1</td>
+			<td width="120px">C-1</td>
+			<td rowspan="5" width="120px"></td>		
+			<td width="120px">D-1</td>
+		</tr>
+		
+		<tr height="75px">
+			<td width="120px">A-2</td>
+			<td width="120px">B-2</td>
+			<td width="120px">C-2</td>
+			<td width="120px">D-2</td>
+		</tr>
 
-
+		<tr height="75px">
+			<td width="120px">A-3</td>
+			<td width="120px">B-3</td>
+			<td width="120px">C-3</td>
+			<td width="120px">D-3</td>
+		</tr>
+		
+		<tr height="75px">
+			<td width="120px">A-4</td>
+			<td width="120px">B-4</td>
+			<td width="120px">C-4</td>
+			<td width="120px">D-4</td>
+		</tr>
+		
+		<tr height="75px">
+			<td width="120px">A-5</td>
+			<td width="120px">B-5</td>
+			<td width="120px">C-5</td>
+			<td width="120px">D-5</td>
+		</tr>
+	</table>
 </body>
 </html>

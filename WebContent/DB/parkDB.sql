@@ -8,26 +8,23 @@ drop table parkDB;
 create table calDB(parkNum varchar2(10) not null, carNum varchar2(10), 
 inTime date, outTime date, pay number);
 
-insert into parkDB (parkNum) VALUES ('A-1');
-insert into parkDB (parkNum) VALUES ('A-2');
-insert into parkDB (parkNum) VALUES ('A-3');
-insert into parkDB (parkNum) VALUES ('A-4');
-insert into parkDB (parkNum) VALUES ('A-5');
-
-insert into parkDB (parkNum) VALUES ('B-1');
-insert into parkDB (parkNum) VALUES ('B-2');
-insert into parkDB (parkNum) VALUES ('B-3');
-insert into parkDB (parkNum) VALUES ('B-4');
-insert into parkDB (parkNum) VALUES ('B-5');
-
-insert into parkDB (parkNum) VALUES ('C-1');
-insert into parkDB (parkNum) VALUES ('C-2');
-insert into parkDB (parkNum) VALUES ('C-3');
-insert into parkDB (parkNum) VALUES ('C-4');
-insert into parkDB (parkNum) VALUES ('C-5');
-
-insert into parkDB (parkNum) VALUES ('D-1');
-insert into parkDB (parkNum) VALUES ('D-2');
-insert into parkDB (parkNum) VALUES ('D-3');
-insert into parkDB (parkNum) VALUES ('D-4');
-insert into parkDB (parkNum) VALUES ('D-5');
+insert into parkDB (parkNum) VALUES ('1F-A-1');
+insert into parkDB (parkNum) VALUES ('1F-A-2');
+insert into parkDB (parkNum) VALUES ('1F-A-3');
+insert into parkDB (parkNum) VALUES ('1F-A-4');
+insert into parkDB (parkNum) VALUES ('1F-A-5');
+insert into parkDB (parkNum) VALUES ('1F-B-1');
+insert into parkDB (parkNum) VALUES ('1F-B-2');
+insert into parkDB (parkNum) VALUES ('1F-B-3');
+insert into parkDB (parkNum) VALUES ('1F-B-4');
+insert into parkDB (parkNum) VALUES ('1F-B-5');
+insert into parkDB (parkNum) VALUES ('1F-C-1');
+insert into parkDB (parkNum) VALUES ('1F-C-2');
+insert into parkDB (parkNum) VALUES ('1F-C-3');
+insert into parkDB (parkNum) VALUES ('1F-C-4');
+insert into parkDB (parkNum) VALUES ('1F-C-5');
+insert into parkDB (parkNum) VALUES ('1F-D-1');
+insert into parkDB (parkNum) VALUES ('1F-D-2');
+insert into parkDB (parkNum) VALUES ('1F-D-3');
+insert into parkDB (parkNum) VALUES ('1F-D-4');
+insert into parkDB (parkNum) VALUES ('1F-D-5');

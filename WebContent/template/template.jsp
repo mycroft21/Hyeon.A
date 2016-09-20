@@ -36,21 +36,23 @@
 						<div class="col-md-12">
 						
 						<!-- 상황판 div -->
+						<center>
 							<div class="row">
 								<div class="col-md-6">
-									현재상황판 정보
+									주차 안내
 								</div>
 								<div class="col-md-6">
-									요금입니당
+									구역별 주차 가능 대수
 								</div>
 							</div>
+						</center>
 						<!-- 상황판 div end-->
 						</div>
 					</div>
 				<!-- 상황판전체틀 div -->
 				</div>
 			<!-- 상황판,주차공간틀 div end -->
-				
+			
 				<!-- 메뉴바 -->
 				<div class="col-md-3">
 				<table class="table2" border="1">
@@ -64,6 +66,7 @@
 		</div>
 	<!-- 상황판,주차공간,메뉴바틀 div end -->
 	</div>
+
 </div>
 
 </body>

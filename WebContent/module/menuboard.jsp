@@ -7,10 +7,10 @@
 </head>
 <body>
 	<div class="menu"  align="center">
-  		 <a href="#" class="list-group-item active" >
+  		 <a href="/hyeonA/park/list.park" class="list-group-item list-group-item-info" >
   		 <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span><br>주차현황</a>
- 		 <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
- 		 <a href="#" class="list-group-item">Morbi leo risus</a>
+ 		 <a href="/hyeonA/park/list.park" class="list-group-item">주차등록</a>
+ 		 <a href="/hyeonA/park/list.park" class="list-group-item">주차해지</a>
 	</div>
 </body>
 </html>

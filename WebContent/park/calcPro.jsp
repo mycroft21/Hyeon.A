@@ -5,13 +5,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/style.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>정산부</title>
 </head>
 
 <body>
 
-<div>
+<div class="calc">
 <!-- 버튼부  -->
 <form action="calcPro.park" method="post" name="calcPro" >
 
@@ -19,7 +20,7 @@
 <input type = "date" name="date2"> 까지
 <input type="submit" value="전송">
 <input type="reset" value="초기화"><br>
-<a href="list.park"> 초기 화면</a> <br>
+<button>초기화면</button>
 
 </form>
 </div>

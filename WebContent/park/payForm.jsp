@@ -62,8 +62,13 @@ td{
 			</c:if>
 			
 			<c:if test="${avo2.carNum!=null}">
-			<td class="b">${avo2.carNum}<br>${avo2.parkNum}<br>${avo2.inTime}<br>
+			<td class="b">${avo2.carNum}<br>${avo2.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${avo2.carNum}"/>
+			<input type="hidden" name="parkNum" value="${avo2.parkNum}"/>
+			<input type="hidden" name="inTime" value="${avo2.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -72,8 +77,13 @@ td{
 			</c:if>
 			
 			<c:if test="${avo3.carNum!=null}">
-			<td class="b">${avo3.carNum}<br>${avo3.parkNum}<br>${avo3.inTime}<br>
+			<td class="b">${avo3.carNum}<br>${avo3.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${avo3.carNum}"/>
+			<input type="hidden" name="parkNum" value="${avo3.parkNum}"/>
+			<input type="hidden" name="inTime" value="${avo3.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -84,8 +94,13 @@ td{
 			</c:if>
 			
 			<c:if test="${avo4.carNum!=null}">
-			<td class="b">${avo4.carNum}<br>${avo4.parkNum}<br>${avo4.inTime}<br>
+			<td class="b">${avo4.carNum}<br>${avo4.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${avo4.carNum}"/>
+			<input type="hidden" name="parkNum" value="${avo4.parkNum}"/>
+			<input type="hidden" name="inTime" value="${avo4.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 		</tr>
@@ -97,8 +112,13 @@ td{
 			</c:if>
 			
 			<c:if test="${bvo1.carNum!=null}">
-			<td class="b">${bvo1.carNum}<br>${bvo1.parkNum}<br>${bvo1.inTime}<br>
+			<td class="b">${bvo1.carNum}<br>${bvo1.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${bvo1.carNum}"/>
+			<input type="hidden" name="parkNum" value="${bvo1.parkNum}"/>
+			<input type="hidden" name="inTime" value="${bvo1.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -109,8 +129,13 @@ td{
 			</c:if>
 			
 			<c:if test="${bvo2.carNum!=null}">
-			<td class="b">${bvo2.carNum}<br>${bvo2.parkNum}<br>${bvo2.inTime}<br>
+			<td class="b">${bvo2.carNum}<br>${bvo2.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${bvo2.carNum}"/>
+			<input type="hidden" name="parkNum" value="${bvo2.parkNum}"/>
+			<input type="hidden" name="inTime" value="${bvo2.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -119,8 +144,13 @@ td{
 			</c:if>
 			
 			<c:if test="${bvo3.carNum!=null}">
-			<td class="b">${bvo3.carNum}<br>${bvo3.parkNum}<br>${bvo3.inTime}<br>
+			<td class="b">${bvo3.carNum}<br>${bvo3.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${bvo3.carNum}"/>
+			<input type="hidden" name="parkNum" value="${bvo3.parkNum}"/>
+			<input type="hidden" name="inTime" value="${bvo3.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -131,8 +161,13 @@ td{
 			</c:if>
 			
 			<c:if test="${bvo4.carNum!=null}">
-			<td class="b">${bvo4.carNum}<br>${bvo4.parkNum}<br>${bvo4.inTime}<br>
+			<td class="b">${bvo4.carNum}<br>${bvo4.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${bvo4.carNum}"/>
+			<input type="hidden" name="parkNum" value="${bvo4.parkNum}"/>
+			<input type="hidden" name="inTime" value="${bvo4.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 		</tr>
@@ -144,8 +179,13 @@ td{
 			</c:if>
 			
 			<c:if test="${cvo1.carNum!=null}">
-			<td class="b">${cvo1.carNum}<br>${cvo1.parkNum}<br>${cvo1.inTime}<br>
+			<td class="b">${cvo1.carNum}<br>${cvo1.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${cvo1.carNum}"/>
+			<input type="hidden" name="parkNum" value="${cvo1.parkNum}"/>
+			<input type="hidden" name="inTime" value="${cvo1.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -156,8 +196,13 @@ td{
 			</c:if>
 			
 			<c:if test="${cvo2.carNum!=null}">
-			<td class="b">${cvo2.carNum}<br>${cvo2.parkNum}<br>${cvo2.inTime}<br>
+			<td class="b">${cvo2.carNum}<br>${cvo2.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${cvo2.carNum}"/>
+			<input type="hidden" name="parkNum" value="${cvo2.parkNum}"/>
+			<input type="hidden" name="inTime" value="${cvo2.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -166,8 +211,13 @@ td{
 			</c:if>
 			
 			<c:if test="${cvo3.carNum!=null}">
-			<td class="b">${cvo3.carNum}<br>${cvo3.parkNum}<br>${cvo3.inTime}<br>
+			<td class="b">${cvo3.carNum}<br>${cvo3.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${cvo3.carNum}"/>
+			<input type="hidden" name="parkNum" value="${cvo3.parkNum}"/>
+			<input type="hidden" name="inTime" value="${cvo3.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -178,8 +228,13 @@ td{
 			</c:if>
 			
 			<c:if test="${cvo4.carNum!=null}">
-			<td class="b">${cvo4.carNum}<br>${cvo4.parkNum}<br>${cvo4.inTime}<br>
+			<td class="b">${cvo4.carNum}<br>${cvo4.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${cvo4.carNum}"/>
+			<input type="hidden" name="parkNum" value="${cvo4.parkNum}"/>
+			<input type="hidden" name="inTime" value="${cvo4.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 		</tr>
@@ -191,8 +246,13 @@ td{
 			</c:if>
 			
 			<c:if test="${dvo1.carNum!=null}">
-			<td class="b">${dvo1.carNum}<br>${dvo1.parkNum}<br>${dvo1.inTime}<br>
+			<td class="b">${dvo1.carNum}<br>${dvo1.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${dvo1.carNum}"/>
+			<input type="hidden" name="parkNum" value="${dvo1.parkNum}"/>
+			<input type="hidden" name="inTime" value="${dvo1.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -203,8 +263,13 @@ td{
 			</c:if>
 			
 			<c:if test="${dvo2.carNum!=null}">
-			<td class="b">${dvo2.carNum}<br>${dvo2.parkNum}<br>${dvo2.inTime}<br>
+			<td class="b">${dvo2.carNum}<br>${dvo2.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${dvo2.carNum}"/>
+			<input type="hidden" name="parkNum" value="${dvo2.parkNum}"/>
+			<input type="hidden" name="inTime" value="${dvo2.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -213,8 +278,13 @@ td{
 			</c:if>
 			
 			<c:if test="${dvo3.carNum!=null}">
-			<td class="b">${dvo3.carNum}<br>${dvo3.parkNum}<br>${dvo3.inTime}<br>
+			<td class="b">${dvo3.carNum}<br>${dvo3.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${dvo3.carNum}"/>
+			<input type="hidden" name="parkNum" value="${dvo3.parkNum}"/>
+			<input type="hidden" name="inTime" value="${dvo3.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -225,8 +295,13 @@ td{
 			</c:if>
 			
 			<c:if test="${dvo4.carNum!=null}">
-			<td class="b">${dvo4.carNum}<br>${dvo4.parkNum}<br>${dvo4.inTime}<br>
+			<td class="b">${dvo4.carNum}<br>${dvo4.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${dvo4.carNum}"/>
+			<input type="hidden" name="parkNum" value="${dvo4.parkNum}"/>
+			<input type="hidden" name="inTime" value="${dvo4.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 		</tr>
@@ -238,8 +313,13 @@ td{
 			</c:if>
 			
 			<c:if test="${evo1.carNum!=null}">
-			<td class="b">${evo1.carNum}<br>${evo1.parkNum}<br>${evo1.inTime}<br>
+			<td class="b">${evo1.carNum}<br>${evo1.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${evo1.carNum}"/>
+			<input type="hidden" name="parkNum" value="${evo1.parkNum}"/>
+			<input type="hidden" name="inTime" value="${evo1.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -250,8 +330,13 @@ td{
 			</c:if>
 			
 			<c:if test="${evo2.carNum!=null}">
-			<td class="b">${evo2.carNum}<br>${evo2.parkNum}<br>${evo2.inTime}<br>
+			<td class="b">${evo2.carNum}<br>${evo2.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${evo2.carNum}"/>
+			<input type="hidden" name="parkNum" value="${evo2.parkNum}"/>
+			<input type="hidden" name="inTime" value="${evo2.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -260,8 +345,13 @@ td{
 			</c:if>
 			
 			<c:if test="${evo3.carNum!=null}">
-			<td class="b">${evo3.carNum}<br>${evo3.parkNum}<br>${evo3.inTime}<br>
+			<td class="b">${evo3.carNum}<br>${evo3.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${evo3.carNum}"/>
+			<input type="hidden" name="parkNum" value="${evo3.parkNum}"/>
+			<input type="hidden" name="inTime" value="${evo3.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 			
@@ -272,12 +362,16 @@ td{
 			</c:if>
 			
 			<c:if test="${evo4.carNum!=null}">
-			<td class="b">${evo4.carNum}<br>${evo4.parkNum}<br>${evo4.inTime}<br>
+			<td class="b">${evo4.carNum}<br>${evo4.inTime}<br>
+			<form action="payPro.park" method="post">
 			<input type="submit" value="출차">
+			<input type="hidden" name="carNum" value="${evo4.carNum}"/>
+			<input type="hidden" name="parkNum" value="${evo4.parkNum}"/>
+			<input type="hidden" name="inTime" value="${evo4.inTime}"/>
+			</form>
 			</td>
 			</c:if>
 		</tr>
 	</table>
-</form>
 </body>
 </html>

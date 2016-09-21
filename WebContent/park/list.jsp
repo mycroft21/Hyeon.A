@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,10 +12,10 @@
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ÁÖÂ÷Àå ÇüÅÂ</title>
+<title>ì£¼ì°¨ìž¥ í˜•íƒœ</title>
 </head>
 <body>
-	<p><font size="5" style="¸¼Àº°íµñ">W ÁÖÂ÷ Å¸¿ö 1Ãþ ÇöÈ²</font></p>
+	<p><font size="5" style="ë§‘ì€ê³ ë”•">W ì£¼ì°¨ íƒ€ì›Œ 1ì¸µ í˜„í™©</font></p>
 	<table cellspacing="1">
 		<tr height="75px">
 			<td class="a">A-1</td>

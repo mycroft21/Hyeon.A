@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>ÁÖÂ÷ ÇöÈ² jsp</title>
+<title>ì£¼ì°¨ í˜„í™© jsp</title>
 </head>
 <body>
 
 <table align="center">
-	<tr><td><font color="orange"><b>ÁÖÂ÷°¡´É´ë¼ö</b></font></td></tr>
+	<tr><td><font color="orange"><b>ì£¼ì°¨ê°€ëŠ¥ëŒ€ìˆ˜</b></font></td></tr>
 	<tr><td><b><font color="red">10</font> <font color="orange">/ 20</font></b></td></tr>
 </table>
 

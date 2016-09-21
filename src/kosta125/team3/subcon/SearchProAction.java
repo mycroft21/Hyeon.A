@@ -4,19 +4,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kosta125.team3.park.ParkDAO;
+import kosta125.team3.park.ParkVO;
 
 public class SearchProAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		
+
 		String carnum = request.getParameter("search");
-		ParkDAO pd = new ParkDAO();
-		String spot = pd.search(carnum);
+		ParkDAO dao = new ParkDAO();
 		
-		request.setAttribute("parknum", spot);
+		String parkNum = null;
+		parkNum = dao.search(carnum);
 		
-		return "/park/serchPro.jsp";
+		System.out.println(parkNum);
+		
+		request.setAttribute("parknum", parkNum);
+		request.setAttribute("carnum", carnum);
+		
+		return "/park/searchPro.jsp";
 	}
 
 }

@@ -13,7 +13,7 @@ public class SearchFormAction implements SubCon {
 		
 		
 		
-		return "/park/serchForm.jsp";
+		return "/park/searchForm.jsp";
 	}
 
 }

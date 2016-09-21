@@ -183,6 +183,7 @@ public class ParkDAO {
 
 		try {
 			String sql = "update parkdb set carNum=?, inTime=? where parkNum=?";
+			
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
 

@@ -24,15 +24,14 @@ public class CalcProAction implements SubCon {
 		String date1 = request.getParameter("date1");
 		String date2 = request.getParameter("date2");
 
-		String month1 = request.getParameter("month");
+	/*	String month1 = request.getParameter("month");
 		String month2 = null;
-
+*/
 		List<CalVO> list = pd.calc();
 
 		int calPay = 0;
 
-		System.out.println(month1);
-		if (month1 != null) {
+		/*if (month1 != null) {
 
 			month2 = "2016-09-30";
 			month1 = "2016-09-01";
@@ -40,7 +39,7 @@ public class CalcProAction implements SubCon {
 			System.out.println(month1);
 			System.out.println(month2);
 			list = pd.calc(month1, month2);
-		}
+		}*/
 
 		if (date1 != null) {
 			
@@ -48,7 +47,7 @@ public class CalcProAction implements SubCon {
 			System.out.println(date1);
 		}
 
-		if (month1 == null && date1 == null) {
+		if (date1 == null) {
 			list = pd.calc();
 		}
 		

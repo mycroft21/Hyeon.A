@@ -15,8 +15,8 @@
 		<a href="calcPro.park"> 당일 정산 보기</a> <br> 
 		
 	
-		<input type="month" name="month" value="${month }">
-		<input type="submit"			value="월정산 보기">
+		<%-- <input type="month" name="month" value="${month }">
+		<input type="submit"			value="월정산 보기"> --%>
 		 <br>
 				 <input type="date" name="date1">
 		부터 <input type="date" name="date2"> 까지 <input type="submit"

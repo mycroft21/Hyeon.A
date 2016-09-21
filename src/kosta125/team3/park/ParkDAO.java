@@ -138,8 +138,10 @@ public class ParkDAO {
 		Timestamp in = new Timestamp(System.currentTimeMillis());
 
 		try {
-			String sql = "update parkdb carNum=?, inTime=sysdate where parkNum=?";
-
+			String sql = "update parkdb set carNum=?, inTime=sysdate where parkNum=?";
+			conn = getConnection();
+			System.out.println(vo.getCarNum());
+			System.out.println(vo.getParkNum());
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, vo.getCarNum());

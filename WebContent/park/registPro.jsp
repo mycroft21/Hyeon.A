@@ -6,9 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>주차 등록 pro</title>
 </head>
 <body>
-
+	${carNum}등록 완료${parkNum}
+	
 </body>
 </html>

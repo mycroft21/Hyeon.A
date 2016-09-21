@@ -1,7 +1,34 @@
-.col-md-6 {
-  background-image: url('/hyeonA/images/bg_img1.jpg');
-  border-style: ridge;
+html, body{
+	margin: 0;
+	padding: 0;
+	width: 100%
 }
-table tr td{
-	align: center;
+div{
+	margin: 0;
+	padding: 0;
+}
+.park_container{
+	width: 870px;
+	padding: 0;
+	margin: 40px auto;
+	position: relative;
+}
+
+.parking_wrap{
+	width: 720px;
+}
+.park{
+	width: 100%;
+}
+
+.op_board{
+	width: 800px;
+	margin-top: 30px;
+}
+
+.menu{
+	width: 120px;
+	position: absolute;
+	top: 43px;
+	left:750px;
 }

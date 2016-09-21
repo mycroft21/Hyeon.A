@@ -19,10 +19,10 @@
 				
 			<!--상황판 grid -->	
 				<div class="op_board" >
-					<table>
-						<tr>
-							<td><jsp:include page="../module/bottom_1.jsp"/></td>
-							<td><jsp:include page="../module/bottom_2.jsp"/></td>
+					<table id="temp_table">
+						<tr id="temp_tr">
+							<td id="temp_td"><jsp:include page="../module/bottom_1.jsp"/></td>
+							<td id="temp_td"><jsp:include page="../module/bottom_2.jsp"/></td>
 						</tr>
 					</table>
 				</div>

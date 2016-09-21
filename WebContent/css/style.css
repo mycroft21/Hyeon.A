@@ -22,7 +22,7 @@ div{
 }
 
 .op_board{
-	width: 800px;
+	width: 720px;
 	margin-top: 30px;
 }
 
@@ -32,3 +32,17 @@ div{
 	top: 43px;
 	left:750px;
 }
+#temp_table{
+	width:720px;
+	height:120px;
+	background-image: url('/hyeonA/images/bg_img1.jpg');
+	
+}
+#temp_td, #temp_tr{
+	width:360px;
+	height:120px;
+}
+#temp_table, #temp_td, #temp_tr{
+	border: 3px solid black;
+}
+

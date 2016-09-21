@@ -216,7 +216,7 @@ public class ParkDAO {
 
 		try {
 			String sql = "insert into calDB(parkNum, carNum, inTime, outTime, pay) " + "values(?,?,?,?,?)";
-
+			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, parkNum);

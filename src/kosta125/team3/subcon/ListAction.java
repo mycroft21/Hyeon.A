@@ -26,45 +26,30 @@ public class ListAction implements SubCon{
 		
 		for(int i=1;i<=list1.size();i++){
 			ParkVO temp = (ParkVO) list1.get(i-1);
-			String parkNum = temp.getParkNum();
-			parkNum = parkNum.substring(3);
-			temp.setParkNum(parkNum);
 			String ts = "avo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}
 		
 		for(int i=1;i<=list2.size();i++){
 			ParkVO temp = (ParkVO) list2.get(i-1);
-			String parkNum = temp.getParkNum();
-			parkNum = parkNum.substring(3);
-			temp.setParkNum(parkNum);
 			String ts = "bvo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}
 		
 		for(int i=1;i<=list3.size();i++){
 			ParkVO temp = (ParkVO) list3.get(i-1);
-			String parkNum = temp.getParkNum();
-			parkNum = parkNum.substring(3);
-			temp.setParkNum(parkNum);
 			String ts = "cvo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}
 		
 		for(int i=1;i<=list4.size();i++){
 			ParkVO temp = (ParkVO) list4.get(i-1);
-			String parkNum = temp.getParkNum();
-			parkNum = parkNum.substring(3);
-			temp.setParkNum(parkNum);
 			String ts = "dvo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}
 
 		for(int i=1;i<=list5.size();i++){
 			ParkVO temp = (ParkVO) list5.get(i-1);
-			String parkNum = temp.getParkNum();
-			parkNum = parkNum.substring(3);
-			temp.setParkNum(parkNum);
 			String ts = "evo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}

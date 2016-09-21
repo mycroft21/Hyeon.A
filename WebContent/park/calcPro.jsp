@@ -19,7 +19,7 @@
 <input type = "date" name="date2"> 까지
 <input type="submit" value="전송">
 <input type="reset" value="초기화"><br>
-<button onclick="list.park">초기화면</button>
+<a href="list.park"> 초기 화면</a> <br>
 
 </form>
 </div>

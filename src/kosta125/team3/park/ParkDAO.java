@@ -329,16 +329,18 @@ public class ParkDAO {
 		ResultSet rs = null;
 		List list = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-		String sql = "select * from caldb where outtime between to_date('?','YYYY-MM-DD HH24:MI:SS') and to_date('?','YYYY-MM-DD HH24:MI:SS')";
+		String date1 = null, date2 =null;
+		String sql = "select * from caldb where outtime between to_date(?,'YYYY-MM-DD HH24:MI:SS') and to_date(?,'YYYY-MM-DD HH24:MI:SS')";
 
 		try {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, dateA + " 00:00:01");
-			pstmt.setString(2, dateB + " 23:59:59");
+			date1=dateA + " 00:00:01";
+			date2=dateB + " 23:59:59";
+			pstmt.setString(1, date1);
+			pstmt.setString(2, date2);
 
 			rs = pstmt.executeQuery();
 
@@ -367,6 +369,8 @@ public class ParkDAO {
 			close(rs);
 			close(conn);
 		}
+		System.out.println(date1);
+
 
 		return list;
 

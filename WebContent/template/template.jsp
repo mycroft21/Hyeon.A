@@ -14,7 +14,7 @@
  		<div class="parking_wrap">
 			<!--주차공간 grid -->
 				<div class="park" >
-					<jsp:include page="../module/parking.jsp"/>
+					<jsp:include page="${CONTENT }"/>
 				</div>
 				
 			<!--상황판 grid -->	

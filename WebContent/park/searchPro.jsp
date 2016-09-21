@@ -6,9 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>차량검색 pro</title>
 </head>
 <body>
+	<c:out value=${carnum }/>
 
 </body>
 </html>

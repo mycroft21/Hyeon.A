@@ -23,7 +23,7 @@
  		 <a href="/hyeonA/park/list.park" class="list-group-item list-group-item-warning">
  			 <span class="glyphicon glyphicon-share" aria-hidden="true"></span><br>주차해지</a>
  		 
- 		 <a href="/hyeonA/park/list.park" class="list-group-item list-group-item-warning">
+ 		 <a href="/hyeonA/park/searchForm.park" class="list-group-item list-group-item-warning">
  			 <span class="glyphicon glyphicon-search" aria-hidden="true"></span><br>차량검색</a>
  		 
  		 <a href="/hyeonA/park/list.park" class="list-group-item list-group-item-success">

@@ -12,13 +12,8 @@
 
 
 <c:if test="${ pay != NULL }">
-	<h1> ${ carNum } 차주님 주차요금은 ${ pay } 입니다~</h1>
+	<center><h3> ${ carNum } 차주님 주차요금은 ${ pay } 원 입니다~</h3></center>
 </c:if>
-
-<c:if test="${ pay == NULL }">
-	<h1> ${ carNum } 차주님 주차요금은 ${ pay } 입니다~</h1>
-</c:if>
-
 
 </body>
 </html>

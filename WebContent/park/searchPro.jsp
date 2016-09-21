@@ -15,7 +15,7 @@
 	<c:if test="${parknum == null }">
 		<script type="text/javascript">
 		alert(" 조회하신${carNum } 차량이 없습니다. ");
-		location.href="list.park?fnum=1f";
+		history.go(-1);
 	</script>
 	</c:if>
 

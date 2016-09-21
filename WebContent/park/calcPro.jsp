@@ -29,7 +29,8 @@
 				<th><c:out value="${calPay }" /></th>
 			</tr>
 		</table>
-		<table class="calc_table">
+	<div style="width:100%; height:400px; overflow:auto">
+		<table class="calc_table" >
 			<tr>
 				<th>주차장 번호</th>
 				<th>차량번호</th>
@@ -49,6 +50,7 @@
 			<tr>
 			</tr>
 		</table>
+		</div>
 	</div>
 </div>	
 </body>

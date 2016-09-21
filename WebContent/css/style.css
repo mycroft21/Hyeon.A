@@ -25,6 +25,7 @@ div{
 	width: 100%;
 }
 
+
 .op_board{
 	width: 720px;
 	margin-top: 30px;
@@ -57,13 +58,12 @@ div{
 	border: 1px solid black;
 } 
 
-.calc_table{
-		width:500px;
-	height: 200px;
-}
-
 .calc_table,.calc_table tr,.calc_table th, .calc_table td{
 	
 	text-align: center;
 	border: 1px solid black;
+}
+
+.search_form{
+	top:200px;
 }

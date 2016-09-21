@@ -7,10 +7,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/style.css"/>
 <title>차량검색</title>
 </head>
 <body>
-<form action="searchPro.park" method="post" >
+<form action="searchPro.park" method="post" class="search_form">
 	<table>
 		<tr>
 			<th>차량검색</th>

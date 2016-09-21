@@ -13,24 +13,16 @@
 <body>
 <div class="search">
 	<c:if test="${parknum == null }">
-	<font size="5" style="font-style: '맑은고딕'; text-align: center;">주차
-				조회 현황</font><br>
-	조회하시는 차가 없습니다. 사랑해요
+		<p>	${carnum }번의 차량은 없습니다 </p>
 		<jsp:include page="list.jsp" />
 	</c:if>
 
 	<c:if test="${parknum != null }">
-		<p>
-			
-			<font size="5" style="font-style: '맑은고딕'; text-align: center;">주차
-				조회 현황</font>
-				<br>
-				${carnum }번 차량은 ${parknum }에 있습니다.
-		</p>
 		<table cellspacing="1">
 			<tr>
 				<th colspan="6"><p align="center">
 						<font size="5" style="">W 주차 타워 1층 현황</font>
+						<br>${carnum }번 차량은 ${parknum }에 있습니다.
 					</p></th>
 			</tr>
 			<tr>

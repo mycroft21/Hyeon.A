@@ -238,6 +238,7 @@ public class ParkDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
+		
 		String sql = "SELECT parknum FROM PARKDB where carnum = ? ";
 
 		try {
@@ -314,7 +315,7 @@ public class ParkDAO {
 
 	}//당일 정산 읽어오기
 	
-	public List<CalVO> calc(int date) {
+	public List<CalVO> calc(String dateA, String dateB) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -326,6 +327,9 @@ public class ParkDAO {
 
 			pstmt = conn.prepareStatement(sql);
 
+			pstmt.setString(1, dateA);
+			pstmt.setString(2, dateB);
+						
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {

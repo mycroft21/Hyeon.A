@@ -1,12 +1,12 @@
 create table parkDB(parkNum varchar2(10) not null primary key,
 carNum varchar2(10), inTime date);
 
-select * from parkDB;
+select * from caldb;
 
 drop table parkDB;
 
 create table calDB(parkNum varchar2(10) not null, carNum varchar2(10), 
-inTime date, outTime date, pay number);
+ienTime date, outTime date, pay number);
 
 insert into parkDB (parkNum) VALUES ('1F-A-1');
 insert into parkDB (parkNum) VALUES ('1F-A-2');

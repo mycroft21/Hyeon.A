@@ -52,7 +52,18 @@ div{
 	border: 3px solid black;
 }
 
-.calc_table, tr, th, .calc_table-td{
+.calc_table2, .calc_table2 tr, .calc_table2 th{
+	text-align: center;
 	border: 1px solid black;
-	border-collapse: collapse;
+} 
+
+.calc_table{
+		width:500px;
+	height: 200px;
+}
+
+.calc_table,.calc_table tr,.calc_table th, .calc_table td{
+	
+	text-align: center;
+	border: 1px solid black;
 }

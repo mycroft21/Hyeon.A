@@ -208,6 +208,8 @@ public class ParkDAO {
 	}// 출차 완성
 
 	public void insertCalDB(ParkVO vo, Timestamp out, int pay) {
+		
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 

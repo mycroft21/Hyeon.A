@@ -11,7 +11,8 @@
 </head>
 
 <body>
-	<div class="calc">
+<div class="calc">
+	<div>
 		<!-- 버튼부  -->
 		<form action="calcPro.park" method="post" name="calcPro">
 			 <input type="date" name="date1"> 부터
@@ -22,7 +23,7 @@
 	</div>
 	<div>
 		<!-- 내용 표시부 디폴트 당일 정산 내역 -->
-		<table>
+		<table class="calc_table">
 			<tr>
 				<th>요금 합산</th>
 				<th><c:out value="${calPay }" />
@@ -42,11 +43,10 @@
 					<td><c:out value="${list.outTime }" /></td>
 					<td><c:out value="${list.pay }" /></td>
 			</c:forEach>
-
 			<tr>
-
 			</tr>
 		</table>
 	</div>
+</div>	
 </body>
 </html>

@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 import kosta125.team3.park.*;
 
 public class ParkDAO {
-
+	
 	private static ParkDAO instance = new ParkDAO();
 
 	public static ParkDAO getInstance() {
@@ -172,7 +172,7 @@ public class ParkDAO {
 			if (in.getMonth() == out.getMonth()) {
 				if (in.getDay() == out.getDay()) {
 					pay = ((out.getHours() * 60) + out.getMinutes() - (in.getHours() * 60) - in.getMinutes()) * 100;
-				} else if (in.getDay() != out.getMonth()) {
+				} else if (in.getDay() != out.getDay()) {
 					pay = ((out.getDay() - in.getDay()) * 24 * 60) - (out.getHours() * 60) + out.getMinutes()
 							- (in.getHours() * 60) - in.getMinutes();
 				} // 날짜가 다른경우
@@ -368,4 +368,54 @@ public class ParkDAO {
 
 	}// 정산 읽어오기
 
+	
+	public int setAll(){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int all = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement("select count(*) from parkdb");
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				all = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		return all;
+	}
+	
+	public int setCu(){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int all = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement("select count(*) from parkdb where carnum is null");
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				all = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		return all;
+	}
 }

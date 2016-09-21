@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
+import kosta125.team3.park.ParkDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -89,7 +90,11 @@ public class Controller extends HttpServlet{
 		System.out.println(classMap);
 		String view = null;
 		SubCon subcon = null;
-		
+		ParkDAO dao = ParkDAO.getInstance();
+		int all = dao.setAll();
+		int cu = dao.setCu();
+		request.setAttribute("cu", cu);
+		request.setAttribute("all", all);
 		try {
 			String fullCommand = request.getRequestURI();
 			/*fullCommand = hyeonA/List.park*/

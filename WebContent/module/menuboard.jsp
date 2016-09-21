@@ -26,7 +26,7 @@
  		 <a href="/hyeonA/searchForm.park" class="list-group-item list-group-item-warning">
  			 <span class="glyphicon glyphicon-search" aria-hidden="true"></span><br>차량검색</a>
  		 
- 		 <a href="/hyeonA/park/list.park" class="list-group-item list-group-item-success">
+ 		 <a href="/hyeonA/calcForm.park" class="list-group-item list-group-item-success">
  			 <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span><br>매출정산</a>
 	</div>
 </body>

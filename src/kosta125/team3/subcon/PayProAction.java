@@ -31,7 +31,6 @@ public class PayProAction implements SubCon {
 		vo.setCarNum(request.getParameter("carNum"));
 		vo.setInTime(writeDate);
 		
-		dao.pay(vo);
 		int pay = dao.pay(vo);
 		
 		request.setAttribute("carNum", carNum);

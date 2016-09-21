@@ -1,0 +1,24 @@
+
+tr{
+	height: 75px;
+}
+
+td{
+	text-align: center;
+}
+
+.a{
+	border: 1px black solid;
+	width: 120px;
+	background-color: aqua;
+}
+
+.b{
+	border: 1px black solid;
+	width: 120px;
+	background-color: pink;
+}
+
+.c{
+	width: 120px;
+}

@@ -5,32 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<style type="text/css">
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 
-tr{
-	height: 75px;
-}
-
-td{
-	text-align: center;
-}
-
-.a{
-	border: 1px black solid;
-	width: 120px;
-	background-color: aqua;
-}
-
-.b{
-	border: 1px black solid;
-	width: 120px;
-	background-color: pink;
-}
-
-.c{
-	width: 120px;
-}
-</style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>주차장 형태</title>
 </head>

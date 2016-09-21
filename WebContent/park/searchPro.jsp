@@ -6,45 +6,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<style type="text/css">
-
-tr{
-	height: 75px;
-}
-
-td{
-	text-align: center;
-}
-
-.a{
-	border: 1px black solid;
-	width: 120px;
-	background-color: aqua;
-}
-
-.b{
-	border: 1px black solid;
-	width: 120px;
-	background-color: pink;
-}
-
-.c{
-	width: 120px;
-}
-</style>
-
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/style.css"/>
 <title>차량검색 pro</title>
 </head>
 <body>
+<div class="search">
 	<c:if test="${parknum == null }">
 	<font size="5" style="font-style: '맑은고딕'; text-align: center;">주차
 				조회 현황</font><br>
 	조회하시는 차가 없습니다. 사랑해요
 		<jsp:include page="list.jsp" />
-
 	</c:if>
-
-
 
 	<c:if test="${parknum != null }">
 		<p>
@@ -256,5 +229,6 @@ td{
 			</tr>
 		</table>
 	</c:if>
+</div>	
 </body>
 </html>

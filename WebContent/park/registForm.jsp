@@ -5,35 +5,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<style type="text/css">
-
-tr{
-	height: 75px;
-}
-
-td{
-	text-align: center;
-}
-
-.a{
-	border: 1px black solid;
-	width: 120px;
-	background-color: aqua;
-}
-
-.b{
-	border: 1px black solid;
-	width: 120px;
-	background-color: pink;
-}
-
-.c{
-	width: 120px;
-}
-</style>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/style.css"/>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>주차등록</title>
 </head>
 <body>
 	<table cellspacing="1">
@@ -353,5 +329,6 @@ td{
 			<td class="b">${evo4.carNum}<br>${evo4.parkNum}<br>${evo4.inTime}</td>
 			</c:if>
 		</tr>
+	</table>
 </body>
 </html>

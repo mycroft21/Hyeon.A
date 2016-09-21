@@ -20,7 +20,7 @@ div{
 	height: 600px;
 	border: 1px solid #ffff00;
 }
-.park, .pay, .regist, .calc, .search{
+.park, .calc{
 	height: 480px;
 	width: 100%;
 }

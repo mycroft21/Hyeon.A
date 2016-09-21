@@ -13,8 +13,10 @@
 <body>
 <div class="search">
 	<c:if test="${parknum == null }">
-		<p>	${carnum }번의 차량은 없습니다 </p>
-		<jsp:include page="list.jsp" />
+		<script type="text/javascript">
+		alert(" 조회하신${carNum } 차량이 없습니다. ");
+		location.href="list.park?fnum=1f";
+	</script>
 	</c:if>
 
 	<c:if test="${parknum != null }">

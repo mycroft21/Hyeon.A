@@ -35,5 +35,5 @@ where parknum='1F-A-1';
 update parkdb set intime='20160921'
 where parknum='1F-A-1';
 
-
+SELECT parknum FROM PARKDB where carnum = '1111' 
 update parkdb set carNum = null, inTime =null where parkNum = '1F-A-1';

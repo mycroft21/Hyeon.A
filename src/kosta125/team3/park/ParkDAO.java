@@ -241,9 +241,14 @@ public class ParkDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		
 		List list = null;
+		
+		ParkVO vo = new ParkVO();
+		
 		String parknum=null;
-		String sql = "SELECT parknum FROM PARKDB where carnum = ? ";
+		
+		String sql = "SELECT * FROM PARKDB where carnum = ? ";
 
 		try {
 			conn = getConnection();
@@ -253,7 +258,13 @@ public class ParkDAO {
 			pstmt.setString(1, carNum);
 
 			rs = pstmt.executeQuery();
-			 parknum = rs.getNString("parknum");
+			
+			while(rs.next()){
+				vo.setParkNum(rs.getString("parknum"));
+				vo.setCarNum(rs.getString("carnum"));
+				vo.setInTime(rs.getTimestamp("intime"));
+				}
+			System.out.println(vo);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -263,7 +274,7 @@ public class ParkDAO {
 			close(conn);
 		}
 
-		return parknum;
+		return vo.getParkNum();
 
 	}// 차량 검색
 

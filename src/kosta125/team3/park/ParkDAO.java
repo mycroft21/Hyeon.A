@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 import kosta125.team3.park.*;
 
 public class ParkDAO {
-	
+
 	private static ParkDAO instance = new ParkDAO();
 
 	public static ParkDAO getInstance() {
@@ -185,7 +185,7 @@ public class ParkDAO {
 
 		try {
 			String sql = "update parkdb set carNum=?, inTime=? where parkNum=?";
-			
+
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
 
@@ -241,13 +241,13 @@ public class ParkDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+
 		List list = null;
-		
+
 		ParkVO vo = new ParkVO();
-		
-		String parknum=null;
-		
+
+		String parknum = null;
+
 		String sql = "SELECT * FROM PARKDB where carnum = ? ";
 
 		try {
@@ -258,14 +258,14 @@ public class ParkDAO {
 			pstmt.setString(1, carNum);
 
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()){
+
+			while (rs.next()) {
 				vo.setParkNum(rs.getString("parknum"));
 				vo.setCarNum(rs.getString("carnum"));
 				vo.setInTime(rs.getTimestamp("intime"));
-				}
+			}
 			System.out.println(vo);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -283,22 +283,14 @@ public class ParkDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		String sql = "SELECT * FROM CAlDB where outtime between ? and ?";
-
-		Timestamp today = new Timestamp(System.currentTimeMillis());
+		String sql = "select * from calDB where outtime between to_char((sysdate),'yyyy-mm-dd') and to_char((sysdate+1),'yyyy-mm-dd')";
 
 		try {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, sdf.format(today));
-			pstmt.setString(2, sdf.format(today));
-
-			System.out.println(sdf.format(today));
-			
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -338,16 +330,15 @@ public class ParkDAO {
 		List list = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		String sql = "select * from caldb where outtime between ? and ? ";
+		String sql = "select * from caldb where outtime between to_date('?','YYYY-MM-DD HH24:MI:SS') and to_date('?','YYYY-MM-DD HH24:MI:SS')";
 
 		try {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement(sql);
 
-			
-			pstmt.setString(1, dateA);
-			pstmt.setString(2, dateB);
+			pstmt.setString(1, dateA + " 00:00:01");
+			pstmt.setString(2, dateB + " 23:59:59");
 
 			rs = pstmt.executeQuery();
 
@@ -381,8 +372,7 @@ public class ParkDAO {
 
 	}// 정산 읽어오기
 
-	
-	public int setAll(){
+	public int setAll() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -392,7 +382,7 @@ public class ParkDAO {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement("select count(*) from parkdb");
-			
+
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				all = rs.getInt(1);
@@ -406,8 +396,8 @@ public class ParkDAO {
 		}
 		return all;
 	}
-	
-	public int setCu(){
+
+	public int setCu() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -417,7 +407,7 @@ public class ParkDAO {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement("select count(*) from parkdb where carnum is null");
-			
+
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				all = rs.getInt(1);

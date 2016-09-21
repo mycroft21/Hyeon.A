@@ -9,7 +9,8 @@
 <title>주차 등록 pro</title>
 </head>
 <body>
-	${carNum}등록 완료${parkNum}
-	
+	${carNum} 차량이 정상적으로 등록되었습니다.<br>
+	주차 위치는 ${parkNum} 입니다.<br>
+	이용해주셔서 감사합니다.<br>
 </body>
 </html>

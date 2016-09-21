@@ -138,13 +138,12 @@ public class ParkDAO {
 		Timestamp in = new Timestamp(System.currentTimeMillis());
 
 		try {
-			String sql = "update parkdb carNum = ?, inTime =? where parkNum = ? ";
+			String sql = "update parkdb carNum=?, inTime=sysdate where parkNum=?";
 
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, vo.getCarNum());
-			pstmt.setTimestamp(2, in);
-			pstmt.setString(3, vo.getParkNum());
+			pstmt.setString(2, vo.getParkNum());
 
 			pstmt.executeUpdate();
 
@@ -183,8 +182,8 @@ public class ParkDAO {
 		insertCalDB(vo, out, pay);// db ют╥б
 
 		try {
-			String sql = "update parkdb carNum = ?, inTime =? where parkNum = ? ";
-
+			String sql = "update parkdb set carNum=?, inTime=? where parkNum=?";
+			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, null);

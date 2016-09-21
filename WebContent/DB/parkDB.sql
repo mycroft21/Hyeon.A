@@ -1,5 +1,5 @@
 create table parkDB(parkNum varchar2(10) not null primary key,
-carNum varchar2(10), outTime date);
+carNum varchar2(10), inTime date);
 
 select * from parkDB;
 
@@ -28,3 +28,12 @@ insert into parkDB (parkNum) VALUES ('1F-D-2');
 insert into parkDB (parkNum) VALUES ('1F-D-3');
 insert into parkDB (parkNum) VALUES ('1F-D-4');
 insert into parkDB (parkNum) VALUES ('1F-D-5');
+
+update parkdb set carnum='1111'
+where parknum='1F-A-1';
+
+update parkdb set intime='20160921'
+where parknum='1F-A-1';
+
+
+update parkdb set carNum = null, inTime =null where parkNum = '1F-A-1';

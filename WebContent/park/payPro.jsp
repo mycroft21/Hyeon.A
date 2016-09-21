@@ -6,9 +6,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>payPro.jsp</title>
 </head>
 <body>
+
+
+<c:if test="${ pay != NULL }">
+	<h1> ${ carNum } 차주님 주차요금은 ${ pay } 입니다~</h1>
+</c:if>
+
+<c:if test="${ pay == NULL }">
+	<h1> ${ carNum } 차주님 주차요금은 ${ pay } 입니다~</h1>
+</c:if>
 
 </body>
 </html>

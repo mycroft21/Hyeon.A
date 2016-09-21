@@ -20,12 +20,14 @@ import kosta125.team3.park.*;
 public class ParkDAO {
 
 	private static ParkDAO instance = new ParkDAO();
+
 	public static ParkDAO getInstance() {
 		return instance;
 	}
-	public ParkDAO() {	}  
-	
-	
+
+	public ParkDAO() {
+	}
+
 	// get connection()
 
 	public Connection getConnection() throws Exception {
@@ -89,9 +91,9 @@ public class ParkDAO {
 		ResultSet rs = null;
 		List list = null;
 		String sql = "select * from (select * from parkdb where parknum like ?) where parknum like ?";
-		floor = floor.toUpperCase()+"%";
-		String row = "%-"+String.valueOf(ro);
-		System.out.println(floor+"  "+row);
+		floor = floor.toUpperCase() + "%";
+		String row = "%-" + String.valueOf(ro);
+		System.out.println(floor + "  " + row);
 		try {
 			conn = getConnection();
 
@@ -238,7 +240,7 @@ public class ParkDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
-		
+		String parknum=null;
 		String sql = "SELECT parknum FROM PARKDB where carnum = ? ";
 
 		try {
@@ -249,6 +251,8 @@ public class ParkDAO {
 			pstmt.setString(1, carNum);
 
 			rs = pstmt.executeQuery();
+			 parknum = rs.getNString("parknum");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -257,7 +261,7 @@ public class ParkDAO {
 			close(conn);
 		}
 
-		return rs.toString();
+		return parknum;
 
 	}// 차량 검색
 
@@ -266,22 +270,21 @@ public class ParkDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
-	      SimpleDateFormat  sdf = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-				
 		String sql = "SELECT * FROM CAlDB where outtime between ? and ?";
-		
+
 		Timestamp today = new Timestamp(System.currentTimeMillis());
 
-		
 		try {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setString(1, sdf.format(today));
 			pstmt.setString(2, sdf.format(today));
 
+			System.out.println(sdf.format(today));
 			
 			rs = pstmt.executeQuery();
 
@@ -313,13 +316,15 @@ public class ParkDAO {
 
 		return list;
 
-	}//당일 정산 읽어오기
-	
+	}// 당일 정산 읽어오기
+
 	public List<CalVO> calc(String dateA, String dateB) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
 		String sql = "select * from caldb where outtime between ? and ? ";
 
 		try {
@@ -327,9 +332,10 @@ public class ParkDAO {
 
 			pstmt = conn.prepareStatement(sql);
 
+			
 			pstmt.setString(1, dateA);
 			pstmt.setString(2, dateB);
-						
+
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -360,6 +366,6 @@ public class ParkDAO {
 
 		return list;
 
-	}//정산 읽어오기
+	}// 정산 읽어오기
 
 }

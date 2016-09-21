@@ -13,7 +13,7 @@
 
 <div>
 <!-- 버튼부  -->
-<form action="CalcProAction.park" method="post" name="calcPro" >
+<form action="calcPro.park" method="post" name="calcPro" >
 
 <input type = "date" name="date1"> 부터
 <input type = "date" name="date2"> 까지

@@ -179,9 +179,14 @@ public class ParkDAO {
 			}
 			// 달 이다른경우 년이 다른경우 추가 바람
 		}
-
-		insertCalDB(vo, out, pay);// db 입력
-
+		return pay;}
+		
+public void clear(ParkVO vo){
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
 		try {
 			String sql = "update parkdb set carNum=?, inTime=? where parkNum=?";
 
@@ -202,10 +207,12 @@ public class ParkDAO {
 			close(conn);
 		} // db update
 
-		return pay;
+	
 		// pay 값을 리턴!
 	}// 출차 완성
 
+	//insertCalDB(vo, out, pay);// db 입력구 미나야 이것좀 프로에서 해줘
+	
 	public void insertCalDB(ParkVO vo, Timestamp out, int pay) {
 		
 		

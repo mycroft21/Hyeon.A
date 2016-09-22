@@ -19,6 +19,7 @@ public class RegistProAction implements SubCon {
 		ParkDAO dao = ParkDAO.getInstance();
 		dao.regist(vo);
 		
+		
 		request.setAttribute("carNum", vo.getCarNum());
 		request.setAttribute("parkNum", vo.getParkNum());
 		

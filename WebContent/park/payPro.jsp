@@ -12,12 +12,17 @@
 <title>Insert title here</title>
 </head>
 <body>
- 안녕히 가십쇼
+<div class="bg_white">
+
+<table align="center">
+<tr>
+<td>
+감사합니다.
 <br> 
- 차넘버 ${vo.carNum } 님의 요금은 <br>
- 
- ${pay }입니다.
- 
+${vo.carNum } 차주님의 요금은 <br>
+${pay } 입니다.
+
+
 	<form action="payPro2.park" method="post">
 			<input type="submit" value="출차">
 			<input type="hidden" name="carnum" value="${vo.carNum}"/>
@@ -25,8 +30,10 @@
 			<input type="hidden" name="intime" value="${vo.inTime}"/>
 			<input type="hidden" name="outtime" value="${outtime}"/>
 			<input type="hidden" name="pay" value="${pay }"/>
-			</form>
-
-
+	</form>
+</td>
+</tr>
+</table>
+</div>
 </body>
 </html>

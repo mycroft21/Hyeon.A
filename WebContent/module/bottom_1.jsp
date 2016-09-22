@@ -8,9 +8,15 @@
 </head>
 <body>
 
-<table align="center">
-	<tr><td><font color="orange"><b>주차가능대수</b></font></td></tr>
-	<tr><td><b><font color="red">${cu}</font> <font color="orange">/ ${all}</font></b></td></tr>
+<table align="center" width="340px">
+	<tr>
+		<td align="center">
+			<b><font color="white" size="3" face="맑은고딕">주차가능대수</font>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<font color="red" size="5" face="맑은고딕">${cu} </font> <font color="orange" size="5" face="맑은고딕"> / ${all}</font>
+			</b>
+		</td>
+	</tr>
 </table>
 
 </body>

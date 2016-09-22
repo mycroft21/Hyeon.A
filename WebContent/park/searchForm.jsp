@@ -8,6 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <link rel="stylesheet"  type="text/css" href="/hyeonA/css/style.css"/>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 <title>차량검색</title>
 </head>
 <body>

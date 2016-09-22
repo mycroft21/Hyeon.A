@@ -12,9 +12,16 @@
 </head>
 <body>
 	<table cellspacing="1">
-	<tr><th colspan="6"><p align="center"><font size="5" style="맑은고딕">W 주차 타워 1층 현황</font></p></th></tr>
+	<tr bgcolor="white">
+		<th colspan="6">
+			<center>
+			<font size="5" face="맑은고딕" color="#1E96FF">주차관리시스템<br></font>
+			<font size="5" face="맑은고딕" color="#b4b4b4" style="font-style: italic;">Parking Management System<br></font>
+			</center>
+			<div align="right"><font size="2" face="맑은고딕" color="#b4b4b4">Pangyo W Tower <b>1F</b></font></div>
+		</th>
+	</tr>
 		<tr>
-		
 			<c:if test="${avo1.carNum==null}">
 			<td class="a">${avo1.parkNum}</td>
 			</c:if>

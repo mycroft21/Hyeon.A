@@ -4,6 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet"  type="text/css" href="/hyeonA/css/style.css"/>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 
 <title>메인페이지</title>
 </head>
@@ -13,8 +14,8 @@
  		<!-- 상황판,주차공간-->
  		<div class="parking_wrap">
 			<!--주차공간 grid -->
-				<div class="park" >
-					<jsp:include page="${CONTENT }"/>
+				<div class="park">
+					<jsp:include page="${CONTENT}"/>
 				</div>
 				
 			<!--상황판 grid -->	

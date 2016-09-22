@@ -179,13 +179,14 @@ public class ParkDAO {
 			}
 			// 달 이다른경우 년이 다른경우 추가 바람
 		}
-		return pay;}
+		return pay;
+	}
 		
-public void clear(ParkVO vo){
+	public void clear(ParkVO vo){
 	
-	Connection conn = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 	
 		try {
 			String sql = "update parkdb set carNum=?, inTime=? where parkNum=?";
@@ -206,14 +207,10 @@ public void clear(ParkVO vo){
 			close(pstmt);
 			close(conn);
 		} // db update
-
-	
-		// pay 값을 리턴!
 	}// 출차 완성
 
-	//insertCalDB(vo, out, pay);// db 입력구 미나야 이것좀 프로에서 해줘
 	
-	public void insertCalDB(ParkVO vo, Timestamp out, int pay) {
+	public void insertCalDB(ParkVO vo, String out, int pay) {
 		
 		
 		Connection conn = null;
@@ -230,10 +227,12 @@ public void clear(ParkVO vo){
 			pstmt.setString(1, parkNum);
 			pstmt.setString(2, carNum);
 			pstmt.setTimestamp(3, inTime);
-			pstmt.setTimestamp(4, out);
+			pstmt.setString(4, out);
 			pstmt.setInt(5, pay);
 
 			pstmt.executeUpdate();
+			
+			clear(vo);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -242,6 +241,7 @@ public void clear(ParkVO vo){
 			close(pstmt);
 			close(conn);
 		}
+
 
 	}// 정산 데이터베이스 삽입구
 

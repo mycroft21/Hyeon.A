@@ -13,7 +13,8 @@ import kosta125.team3.park.ParkVO;
 public class PayProAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+		request.setCharacterEncoding("UTF-8");
+
 		ParkDAO dao = ParkDAO.getInstance();
 		String parkNum = request.getParameter("parkNum");
 		String carNum = request.getParameter("carNum");
@@ -34,9 +35,10 @@ public class PayProAction implements SubCon {
 		int pay = dao.pay(vo);
 		
 		request.setAttribute("carNum", carNum);
-	  	request.setAttribute("pay", pay);		
+	  	request.setAttribute("pay", pay);
 		
 	  	return "/park/payPro.jsp";
+
 	}
 
 }

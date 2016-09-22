@@ -38,7 +38,7 @@ div{
 #temp_table{
 	width:720px;
 	height:40px;
-   background-color: black;
+	background-color: black;
 	
 }
 #temp_td, #temp_tr{
@@ -49,9 +49,8 @@ div{
 .park, .calc{
 	position:relative;
 	margin:0 auto;
-	height: 480px;
-	width: 650px;
-	border: 1px solid #000;
+	height: 525px;
+	width: 720px;
 }
 
 .calc_table2_wrap {

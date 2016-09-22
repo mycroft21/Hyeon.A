@@ -6,15 +6,14 @@
 <html>
 <head>
 <link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
-
+<link rel="stylesheet" type="text/css" href="/hyeonA/css/style.css" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>주차장 형태</title>
 </head>
 <body>
-
+<div>
 	<table cellspacing="1">
-	<tr><th colspan="6"><p align="center"><font size="5" style="맑은고딕">W 주차 타워 1층 현황</font></p></th></tr>
 		<tr>
 		
 			<c:if test="${avo1.carNum==null}">
@@ -351,5 +350,6 @@
 			</c:if>
 		</tr>
 	</table>
+</div>
 </body>
 </html>

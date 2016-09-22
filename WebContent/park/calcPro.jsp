@@ -6,6 +6,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/hyeonA/css/style.css" />
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>정산부</title>
 </head>

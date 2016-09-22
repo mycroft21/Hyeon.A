@@ -24,13 +24,8 @@
 <title>주차등록</title>
 </head>
 <body>
-	<table cellspacing="1">
-		<tr>
-			<th colspan="6"><p align="center">
-				<font size="5" style="">W 주차 타워 1층 현황</font>
-			</p></th>
-		</tr>
-
+<div>
+	<table cellspacing="1">	
 		<!-- a행 -->
 		<tr>
 			<c:if test="${avo1.carNum==null}">
@@ -346,5 +341,6 @@
 			</c:if>
 		</tr>
 	</table>
+</div>
 </body>
 </html>

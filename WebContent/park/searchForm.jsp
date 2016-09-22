@@ -12,17 +12,19 @@
 <title>차량검색</title>
 </head>
 <body>
-<form action="searchPro.park" method="post" class="search_form">
-	<table>
-		<tr>
-			<th>차량검색</th>
-		</tr>
-		<tr>
-			<td>검색할 차량번호를 입력해주세요
-			<br><input type="text" name="search" >&nbsp;&nbsp;
-			<input type="submit" value="검색"></td>
-		</tr>
-	</table>
-</form>
+<div>
+	<form action="searchPro.park" method="post" >
+		<table  class="search_form_table" >
+			<tr>
+				<th>차량검색</th>
+			</tr>
+			<tr>
+				<td>검색할 차량번호를 입력해주세요
+				<br><input type="text" name="search" >&nbsp;&nbsp;
+				<input type="submit" value="검색"></td>
+			</tr>
+		</table>
+	</form>
+</div>
 </body>
 </html>

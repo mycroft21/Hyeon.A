@@ -19,9 +19,7 @@ public class PayPro2Action implements SubCon {
 				
 		ParkVO vo = new ParkVO();
 		String 	carnum,	parknum,intime,outtime;
-		
-		
-		
+				
 		String out = request.getParameter("out");
 		carnum = request.getParameter("carnum");
 		parknum= request.getParameter("parknum");

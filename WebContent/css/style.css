@@ -11,16 +11,23 @@ div{
    background-image: url('/hyeonA/images/bg_img1.jpg');
    background-repeat: repeat;
 }
+.parking_top{
+	margin: 1px auto;	
+}
+
 .park_container{
 	width: 870px;
 	padding: 0;
 	margin: 20px auto;
 	position: relative;
+	border: 1px solid pink;
 }
 
 .parking_wrap{
+	
 	width: 720px;
 	height: 600px;
+	border: 1px solid red;
 }
 
 
@@ -83,9 +90,19 @@ div{
  	right:45px;
  }
 
-.search_form{
+.search_form_wrap{
 	top:200px;
+	margin: auto;
+	border: 3px solid pink;
 }
+.search_form_table, .search_form_table tr th, .search_form_table td {
+	margin: auto;
+	text-align: center;
+}
+.search_form_table tr th{
+	font: 25px oblique;
+}
+
 .calc_table_wrap_top{
 	position: relative;
 	border: 1px solid #ff00ff;

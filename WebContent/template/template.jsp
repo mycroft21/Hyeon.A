@@ -12,7 +12,14 @@
  <!-- 전체틀 -->
  	<div class="park_container">
  		<!-- 상황판,주차공간-->
+ 			
  		<div class="parking_wrap">
+ 		 	<!-- top로고 -->
+ 			<div class ="parking_top">
+ 				<jsp:include page="../module/top.jsp"/>
+ 			</div>
+ 			<!-- top로고end -->
+ 			
 			<!--주차공간 grid -->
 				<div class="park">
 					<jsp:include page="${CONTENT}"/>

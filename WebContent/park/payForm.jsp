@@ -7,6 +7,7 @@
 <head>
 <link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 
+
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>주차장 형태</title>
 </head>
@@ -27,6 +28,7 @@
 			<input type="hidden" name="carNum" value="${avo1.carNum}"/>
 			<input type="hidden" name="parkNum" value="${avo1.parkNum}"/>
 			<input type="hidden" name="inTime" value="${avo1.inTime}"/>
+			
 			</form>
 			</td>
 			</c:if>

@@ -159,14 +159,14 @@ public class ParkDAO {
 
 	}// 등록
 
-	public int pay(ParkVO vo) {
+	public int pay(ParkVO vo, Timestamp outtime) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
 		int pay = 0;
 
-		Timestamp in = vo.getInTime(), out = new Timestamp(System.currentTimeMillis());
+		Timestamp in = vo.getInTime(), out = outtime;
 
 		// 요금계산
 		if (in.getYear() == out.getYear()) {

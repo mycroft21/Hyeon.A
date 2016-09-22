@@ -2,17 +2,31 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 
-<c:if test="${ pay != NULL }">
-	<script type="text/javascript">
-		alert("  ${ carNum } 차주님 주차요금은 ${ pay } 원 입니다. ");
-		var result = confirm("출차 하시겠습니까?");
-			if(result==TRUE){
-				alert("출차 완료되었습니다.");
-			} else{
-				alert("취소 되었습니다.");
-			}
 
-		location.href="list.park?fnum=1f";
-	</script>
-</c:if>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+ 안녕히 가십쇼
+<br> 
+ 차넘버 ${vo.carNum } 님의 요금은 <br>
+ 
+ ${pay }입니다.
+ 
+	<form action="payPro2.park" method="post">
+			<input type="submit" value="출차">
+			<input type="hidden" name="carnum" value="${vo.carNum}"/>
+			<input type="hidden" name="parknum" value="${vo.parkNum}"/>
+			<input type="hidden" name="intime" value="${vo.inTime}"/>
+			<input type="hidden" name="outtime" value="${outtime}"/>
+			<input type="hidden" name="pay" value="${pay }"/>
+			</form>
+
+
+</body>
+</html>

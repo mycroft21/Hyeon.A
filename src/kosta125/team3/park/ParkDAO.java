@@ -174,8 +174,7 @@ public class ParkDAO {
 				if (in.getDay() == out.getDay()) {
 					pay = ((out.getHours() * 60) + out.getMinutes() - (in.getHours() * 60) - in.getMinutes()) * 100;
 				} else if (in.getDay() != out.getDay()) {
-					pay = ((out.getDay() - in.getDay()) * 24 * 60) - (out.getHours() * 60) + out.getMinutes()
-							- (in.getHours() * 60) - in.getMinutes();
+					pay = (((out.getDay() - in.getDay()) * 24 * 60) + ((out.getHours()* 60+out.getMinutes())- ((in.getHours()* 60) +in.getMinutes())) )*100;
 				} // 날짜가 다른경우
 			}
 			// 달 이다른경우 년이 다른경우 추가 바람

@@ -7,25 +7,26 @@ div{
 	margin: 0;
 	padding: 0;
 }
+.park{
+   background-image: url('/hyeonA/images/bg_img1.jpg');
+   background-repeat: repeat;
+}
 .park_container{
 	width: 870px;
 	padding: 0;
 	margin: 20px auto;
 	position: relative;
-	border: 1px solid #8000ff;
 }
 
 .parking_wrap{
 	width: 720px;
 	height: 600px;
-	border: 1px solid #ffff00;
 }
 
 
 .op_board{
 	width: 720px;
-	margin-top: 30px;
-	border: 1px solid red;
+	margin-top: 20px;
 }
 
 .menu{
@@ -33,20 +34,16 @@ div{
 	position: absolute;
 	top: 75px;
 	left:750px;
-	border: 1px solid #ff8000;
 }
 #temp_table{
 	width:720px;
-	height:120px;
-	background-image: url('/hyeonA/images/bg_img1.jpg');
+	height:40px;
+   background-color: black;
 	
 }
 #temp_td, #temp_tr{
 	width:360px;
-	height:120px;
-}
-#temp_table, #temp_td, #temp_tr{
-	border: 3px solid black;
+	height:40px;
 }
 
 .park, .calc{

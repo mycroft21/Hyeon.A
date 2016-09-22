@@ -9,9 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
+	<div align="center">
 		<!-- 버튼부 -->
 		<form action="calcPro.park" method="post" name="calcform" >
+		<br>
 		<a href="calcPro.park"> 당일 정산 보기</a> <br> 
 		
 	

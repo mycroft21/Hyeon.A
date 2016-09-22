@@ -11,16 +11,17 @@
 </head>
 
 <body>
-<div class="calc">
+<div class="calc" >
 	<div align="center" padding="20px">
 		<!-- 버튼부  -->
 		<form action="calcPro.park" method="post" name="calcPro">
+		<br><br><br>
 			 <input type="date" name="date1"> 부터
-			 <input type="date" name="date2"> 까지 <input type="submit" value="전송">
-			 <input type="reset" value="초기화"><br>
+			 <input type="date" name="date2"> 까지 
+			 <input type="submit" value="전송"> <input type="reset" value="초기화"><br>
 		</form>
 	</div>
-	<div align="center" >
+	<div class="calc_table2_wrap">
 			<br>
 		<!-- 내용 표시부 디폴트 당일 정산 내역 -->
 		<table class="calc_table2">
@@ -29,27 +30,31 @@
 				<th><c:out value="${calPay }" /></th>
 			</tr>
 		</table>
-	<div style="width:100%; height:400px; overflow:auto">
-		<table class="calc_table" >
-			<tr>
-				<th>주차장 번호</th>
-				<th>차량번호</th>
-				<th>입차 시간</th>
-				<th>출차 시간</th>
-				<th>요금</th>
-			</tr>
-			<br>
-			<c:forEach var="list" items="${list }">
-				<tr>
-					<td><c:out value="${list.parkNum }" /></td>
-					<td><c:out value="${list.carNum }" /></td>
-					<td><c:out value="${list.inTime }" /></td>
-					<td><c:out value="${list.outTime }" /></td>
-					<td><c:out value="${list.pay }" /></td>
-			</c:forEach>
-			<tr>
-			</tr>
-		</table>
+		<div class="calc_table_wrap_top">
+			<div class="calc_table_wrap" >
+				<table class="calc_table" >
+						<thead>
+							<tr>
+								<th>주차장 번호</th>
+								<th>차량번호</th>
+								<th>입차 시간</th>
+								<th>출차 시간</th>
+								<th>요금</th >
+							</tr>
+						</thead>	
+					<c:forEach var="list" items="${list }">
+						<tbody>
+								<tr>
+									<td><c:out value="${list.parkNum }" /></td>
+									<td><c:out value="${list.carNum }" /></td>
+									<td><c:out value="${list.inTime }" /></td>
+									<td><c:out value="${list.outTime }" /></td>
+									<td><c:out value="${list.pay }" /></td>
+								</tr>
+						</tbody>
+					</c:forEach>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>	

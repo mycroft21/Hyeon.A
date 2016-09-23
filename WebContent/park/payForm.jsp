@@ -19,8 +19,8 @@
        var startDate = new Date(document.forms[name].elements["hidd"].value);
        
        
-       var day = (endDate.getDate()-endDate.getHours())*24*60;
-       var hours = (endDate.getHours()-endDate.getHours())*60;
+       var day = (startDate.getDate()-endDate.getHours())*24*60;
+       var hours = (endDate.getHours()-startDate.getHours())*60;
        var min = (endDate.getMinutes()-startDate.getMinutes());
        var tmp = hours+min;
       //var tmp = (endDate.getTime()-startDate.getTime())/60000; 

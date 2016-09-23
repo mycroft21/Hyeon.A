@@ -8,110 +8,140 @@ div{
 	padding: 0;
 } 
 .park{
-   background-image: url('/hyeonA/images/bg_img2.jpg');
-   background-repeat: repeat;
+   background-color: #8c8c8c;
+   height: 530px;
 }
 .parking_top{
 	margin: 1px auto;	
 }
 
 .park_container{
-	width: 870px;
-	padding: 0;
-	margin: 20px auto;
-	position: relative;
-	border: 1px solid pink;
+   width: 960px;
+   height: 620px;
+   padding: 0;
+   position: relative;
+   margin: auto;
 }
 
 .parking_wrap{
-	width: 720px;
-	height: 600px;
-	border: 1px solid red;
+   width: 800px;
+   height: 500px;
 }
 
 .op_board{
-	width: 720px;
-	margin-top: 20px;
+   width: 800px;
+   margin: auto;
 }
 
 .menu{
 	width: 120px;
 	position: absolute;
 	top: 75px;
-	left:750px;
+   left: 830px;
 }
 #temp_table{
-	width:720px;
+   width:800px;
 	height:40px;
 	background-color: black;
 	
 }
 #temp_td, #temp_tr{
-	width:360px;
+   width:400px;
 	height:40px;
 }
 
- .park, .calc_wrap{
+.calc_wrap{
  	position:relative; 
 	margin:0 auto;
-	height: 478px;
-	width: 715px;
-} 
+   height: 530px;
+}  
 .calc{
-	border: 1px solid #0000ff;
-	height: 460px;
+	height: 480px;
 	text-align: center;
 	position: relative;
 	margin: 0 auto;
 }
 .calc_table_wrap{
-	width: 600px;
-    height: 365px;
-    margin: 10px auto;
-
- 	overflow-y: scroll; 
-	border: 1px solid yellow;
+	width: 606px;
+    height: 350px;
+   margin: 5px auto; 
 }
-.calc_table{
-	width: 100%;
-    text-align: center; 
-    border-collapse:collapse; 
+.calc_table_wrap table{
+	border-collapse:collapse;
     table-layout: fixed;
-	border: 1px solid black;
-	margin: 0 auto;
 }
-.calc_table thead tr{
-	margin: -1px 0 0 -1px;
-    width: 600px;
-    height: 10px;
-    display: table; 
-    table-layout: fixed;
-    	position: absolute;
-    background-color: #d4d4d4;
-}
-.calc_table thead th{
-	text-align: center;
-}
-.calc_table tfoot tr{
+.calc_top tr{
+	position: absolute;
 	margin: -1px 0 0 -1px; 
     width: 600px;
  	height: 10px; 
     display: table;
-    table-layout: fixed;
+   	table-layout: fixed;
+	background-color: #d4d4d4;
+}
+.calc_top tr th{
+	text-align: center;
+}
+.top_th1{
+	width: 74px;
+}
+.top_th2{
+	width: 76px;
+}
+.top_th3{
+	width: 106px;
+}
+.top_th4{
+	width: 90px;
+}
+.top_th5{
+	width: 98px;
+}
+
+.calc_mid{
+	position: absolute;
+	width: 600px;
+    height: 315px;
+    margin: 0 0 0 -2px;
+    top: 123px;
+ 	overflow-y:auto; 
+}
+
+.calc_mid tr{
+	width: 600px;
+	height: 10px; 
+}
+
+ .calc_bottom {
+	position:absolute;
+	bottom: 40px;
+} 
+ .calc_bottom tr{
+	position: absolute;
+	margin: -1px 0 0 -1px; 
+    width: 600px;
+ 	height: 10px; 
+    display: table;
+    text-align: center;
+   	table-layout: fixed;
 	background-color: #d4d4d4;
 } 
- .calc_table tbody tr{
- 	width: 600px;
-	height: 5px;
-}
- .calc_table tbody{
-  	overflow: auto;
-  	max-height:200px
- }
 
-.calc_table_tr, .calc_table_td, .calc_table th{
-	border:1px solid black;
+.calc_cell_1{
+	width: 103px;
+	background-color: white;
+	border: 1px solid black;
 }
+.calc_cell_2{
+	width: 140px;
+	background-color: white;
+	border: 1px solid black;
+}
+
+.calc_table td{
+	border: 1px solid black;
+}
+
 
 .2_wrap {
 	position:relative;
@@ -122,7 +152,6 @@ div{
 .search_form_wrap{
 	top:200px;
 	margin: auto;
-	border: 3px solid pink;
 }
 .search_form_table, .search_form_table tr th, .search_form_table td {
 	margin: auto;
@@ -131,4 +160,3 @@ div{
 .search_form_table tr th{
 	font: 25px oblique;
 }
-

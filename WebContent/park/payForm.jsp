@@ -10,29 +10,58 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>주차장 형태</title>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+   function btnClick(d) {
+
+      var name = d;
+      var endDate = new Date();
+       var startDate = new Date(document.forms[name].elements["hidd"].value);
+       
+       
+       var day = (endDate.getDate()-endDate.getHours())*24*60;
+       var hours = (endDate.getHours()-endDate.getHours())*60;
+       var min = (endDate.getMinutes()-startDate.getMinutes());
+       var tmp = hours+min;
+      //var tmp = (endDate.getTime()-startDate.getTime())/60000; 
+       var pay = tmp*100;  
+
+      if (confirm('요금은 '+pay+'원 입니다. 정말 차량을 정말로 출차하시겠습니까?') == true) {
+         //if(confirm(pay + " 차량을 정말로 출차하시겠습니까?") == true) {
+                  document.forms[name].elemnts["pay"].value = pay;
+                   document.forms[name].submit();
+      } else {
+         return false;
+      }
+   };
+</script>
+
 </head>
 <body>
-<div>
-	<table cellspacing="1">
-		<tr>
-		
-			<c:if test="${avo1.carNum==null}">
-			<td class="a">${avo1.parkNum}</td>
-			</c:if>
-			
-			<c:if test="${avo1.carNum!=null}">
-			<td class="b">${avo1.carNum}<br>${avo1.inTime}<br>
-			<form action="payPro.park" method="post">
-			<input type="submit" value="출차">
-			<input type="hidden" name="carNum" value="${avo1.carNum}"/>
-			<input type="hidden" name="parkNum" value="${avo1.parkNum}"/>
-			<input type="hidden" name="inTime" value="${avo1.inTime}"/>
-			
-			</form>
-			</td>
-			</c:if>
-			
-			<td class="c"></td>
+   <div>
+      <table cellspacing="1">
+         <tr>
+
+            <c:if test="${avo1.carNum==null}">
+               <td class="a">${avo1.parkNum}</td>
+            </c:if>
+
+            <c:if test="${avo1.carNum!=null}">
+               <td class="b">${avo1.carNum}<br>${avo1.inTime}<br>
+                  <form action="payPro.park" method="post" name="f1">
+                     <input type="submit" value="출차"
+                        onclick="btnClick('f1');return false;"> <input type="hidden"
+                        value="${avo1time}" name="hidd"> <input type="hidden"
+                        name="carNum" value="${avo1.carNum}" /> <input type="hidden"
+                        name="parkNum" value="${avo1.parkNum}" /> <input type="hidden"
+                        name="inTime" value="${avo1.inTime}" /><input type="hidden"
+                        name="pay" value = ""/>
+
+                  </form>
+               </td>
+            </c:if>
+
+            <td class="c"></td>
 			
 			<c:if test="${avo2.carNum==null}">
 			<td class="a">${avo2.parkNum}</td>

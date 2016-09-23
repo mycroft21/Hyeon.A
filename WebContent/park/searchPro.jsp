@@ -20,14 +20,12 @@
 		</c:if>
 
 		<c:if test="${cheak != 0 }">
+			<script type="text/javascript">
+				alert(" ${carnum }번 차량은 ${parknum }에 있습니다.");
+			</script>
+
 			<table cellspacing="1">
 				<tr>
-					<th colspan="6"><p align="center">
-							<font size="5" style="">W 주차 타워 1층 현황</font> <br>${cheak }대 있습니다.
-						</p></th>
-				</tr>
-				<tr>
-
 					<c:if test="${acar0!=800}">
 						<td class="a">${avo1.parkNum}</td>
 					</c:if>

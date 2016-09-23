@@ -10,15 +10,18 @@ td{
 .a{
 	border: 3px solid white;
 	width: 120px;
+	height: 90px;
 	background-color: #d2d2d2;
 }
 
 .b{
 	border: 3px solid white;
 	width: 120px;
+	height: 90px;
 	background-color: pink;
 }
 
 .c{
 	width: 120px;
+	height: 90px;
 }

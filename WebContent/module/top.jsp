@@ -1,17 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>th125</title>
 </head>
 <body>
-	<div align="center">
-		<font size="5" face="맑은고딕" color="#1E96FF">주차관리시스템<br></font>
-		<font size="5" face="맑은고딕" color="#b4b4b4" style="font-style: italic;">Parking Management System<br></font>
+	<div>
+		<table>
+			<tr>
+				<td width="1350px" height="30px" bgcolor="#1E96FF"><font
+					size="5" face="맑은고딕" color="#FFFFFF"><b>주차관리시스템</b>&nbsp;<img
+						src="/hyeonA/images/car.png"><br></font> <font size="5"
+					face="맑은고딕" color="#b4b4b4" style="font-style: italic;">Parking
+						Management System<br>
+				</font>
+				<td>
+			</tr>
+		</table>
 	</div>
-	<div  align="right">
-		<font size="2" face="맑은고딕" color="#b4b4b4">Pangyo W Tower <b>1F</b>&nbsp;&nbsp;</font>
-	</div>
+
 </body>
 </html>

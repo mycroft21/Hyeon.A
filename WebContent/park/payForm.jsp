@@ -97,7 +97,7 @@
 				onmouseout="this.style.backgroundColor='pink'"
 				style="cursor: pointer;"
 				onclick="btnClick('a3');return false;">
-				${avo3.carNum}<br>${v.inTime}<br>
+				${avo3.carNum}<br>${avo3.inTime}<br>
 					<form action="payPro.park" method="post" name="a3">
 						<input type="hidden" value="${avo3.inTime}" name="hidd">
 						<input type="hidden" name="carNum" value="${avo3.carNum}" />

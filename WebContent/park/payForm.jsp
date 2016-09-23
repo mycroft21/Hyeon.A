@@ -18,10 +18,10 @@
 		var endDate = new Date();
 		var startDate = new Date(document.forms[name].elements["hidd"].value);
 
-		var day = (startDate.getDate() - endDate.getDate()) * 24 * 60;
+		var day = (endDate.getDate() - startDate.getDate()) * 24 * 60;
 		var hours = (endDate.getHours() - startDate.getHours()) * 60;
 		var min = (endDate.getMinutes() - startDate.getMinutes());
-		var tmp = hours + min;
+		var tmp = day + hours + min;
 		//var tmp = (endDate.getTime()-startDate.getTime())/60000; 
 		var pay = tmp * 100;
 

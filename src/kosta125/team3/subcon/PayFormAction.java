@@ -45,24 +45,52 @@ public class PayFormAction implements SubCon {
 		
 		for(int i=1;i<=list2.size();i++){
 			ParkVO temp = (ParkVO) list2.get(i-1);
+			if(temp.getInTime()!=null){
+				time1 = sdf1.format(temp.getInTime());
+				time2 = sdf2.format(temp.getInTime());
+				intime = time1 + "T" + time2;
+				String tst = "bvo"+String.valueOf(i)+"time";
+				request.setAttribute(tst, intime);
+			}
 			String ts = "bvo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}
 		
 		for(int i=1;i<=list3.size();i++){
 			ParkVO temp = (ParkVO) list3.get(i-1);
+			if(temp.getInTime()!=null){
+				time1 = sdf1.format(temp.getInTime());
+				time2 = sdf2.format(temp.getInTime());
+				intime = time1 + "T" + time2;
+				String tst = "cvo"+String.valueOf(i)+"time";
+				request.setAttribute(tst, intime);
+			}
 			String ts = "cvo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}
 		
 		for(int i=1;i<=list4.size();i++){
 			ParkVO temp = (ParkVO) list4.get(i-1);
+			if(temp.getInTime()!=null){
+				time1 = sdf1.format(temp.getInTime());
+				time2 = sdf2.format(temp.getInTime());
+				intime = time1 + "T" + time2;
+				String tst = "dvo"+String.valueOf(i)+"time";
+				request.setAttribute(tst, intime);
+			}
 			String ts = "dvo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}
 
 		for(int i=1;i<=list5.size();i++){
 			ParkVO temp = (ParkVO) list5.get(i-1);
+			if(temp.getInTime()!=null){
+				time1 = sdf1.format(temp.getInTime());
+				time2 = sdf2.format(temp.getInTime());
+				intime = time1 + "T" + time2;
+				String tst = "evo"+String.valueOf(i)+"time";
+				request.setAttribute(tst, intime);
+			}
 			String ts = "evo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}

@@ -6,36 +6,25 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/hyeonA/css/style.css" />
-<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>정산부</title>
 </head>
 
 <body>
-<div class="calc" >
-	<div align="center" padding="20px">
+<div class="calc_wrap" >
+	<div class="calc">
 		<!-- 버튼부  -->
 		<form action="calcPro.park" method="post" name="calcPro">
-		<br><br><br>
+			<br><br><br>
 			 <input type="date" name="date1"> 부터
 			 <input type="date" name="date2"> 까지 
 			 <input type="submit" value="전송"> <input type="reset" value="초기화"><br>
 		</form>
-	</div>
-	<div class="calc_table2_wrap">
-			<br>
 		<!-- 내용 표시부 디폴트 당일 정산 내역 -->
-		<table class="calc_table2">
-			<tr>
-				<th>요금 합산</th>
-				<th><c:out value="${calPay }" /></th>
-			</tr>
-		</table>
-		<div class="calc_table_wrap_top">
 			<div class="calc_table_wrap" >
-				<table class="calc_table" >
+				<table class="calc_table" cellpadding="4">
 						<thead>
-							<tr>
+							<tr class="calc_table_tr">
 								<th>주차장 번호</th>
 								<th>차량번호</th>
 								<th>입차 시간</th>
@@ -45,19 +34,24 @@
 						</thead>	
 					<c:forEach var="list" items="${list }">
 						<tbody>
-								<tr>
-									<td><c:out value="${list.parkNum }" /></td>
-									<td><c:out value="${list.carNum }" /></td>
-									<td><c:out value="${list.inTime }" /></td>
-									<td><c:out value="${list.outTime }" /></td>
-									<td><c:out value="${list.pay }" /></td>
+								<tr class="calc_table_tr">
+									<td class="calc_table_td"><c:out value="${list.parkNum }" /></td>
+									<td class="calc_table_td"><c:out value="${list.carNum }" /></td>
+									<td class="calc_table_td"><c:out value="${list.inTime }" /></td>
+									<td class="calc_table_td"><c:out value="${list.outTime }" /></td>
+									<td class="calc_table_td"><c:out value="${list.pay }" /></td>
 								</tr>
 						</tbody>
 					</c:forEach>
+						<tfoot>
+							<tr class="calc_table_tr">
+								<td class="calc_table_td" colspan="3">총 매출</td>
+								<td class="calc_table_td" colspan="2"><c:out value="${calPay }" /></td>
+							</tr>
+						</tfoot>
 				</table>
 			</div>
 		</div>
 	</div>
-</div>	
 </body>
 </html>

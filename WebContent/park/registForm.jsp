@@ -10,15 +10,15 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
-	function btnClick() {
-		
-		if(confirm(document.getElementById("carNum").value + "차량을 정말로 등록하시겠습니까?") == true) {
-		//if(confirm(carName + " 차량을 정말로 등록하시겠습니까?") == true) {
-			form.submit();
-		} else {
-			return false;
-		}
-	};
+	function button_event(registBtn){
+      	var name = registBtn;
+      	var carNum = document.forms[name].elements["carNum"].value;
+      	if (confirm("[" + carNum + "] 차량을 정말로 등록하시겠습니까?") == true){    // 확인
+        	document.forms[name].submit();
+      	} else {   // 취소
+      		return false;
+      	}
+	}
 </script>
 
 <title>주차등록</title>
@@ -31,9 +31,9 @@
 			<c:if test="${avo1.carNum==null}">
 				<td class="a">${avo1.parkNum}<br>
 					<form action="registPro.park" method="get" name="f1a1" >
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br>
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br>
 						<input type="hidden" name="parkNum" value="${avo1.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1a1');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -46,10 +46,10 @@
 
 			<c:if test="${avo2.carNum==null}">
 				<td class="a">${avo2.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fb1">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1b1">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${avo2.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1b1');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -60,10 +60,10 @@
 
 			<c:if test="${avo3.carNum==null}">
 				<td class="a">${avo3.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fc1">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br>
+					<form action="registPro.park" method="get" name="f1c1">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br>
 						<input type="hidden" name="parkNum" value="${avo3.parkNum}">
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1c1');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -76,10 +76,10 @@
 
 			<c:if test="${avo4.carNum==null}">
 				<td class="a">${avo4.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fd1">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1d1">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${avo4.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1d1');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -93,10 +93,10 @@
 		<tr>
 			<c:if test="${bvo1.carNum==null}">
 				<td class="a">${bvo1.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fa2">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1a2">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${bvo1.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1a2');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -109,10 +109,10 @@
 
 			<c:if test="${bvo2.carNum==null}">
 				<td class="a">${bvo2.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fb2">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1b2">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${bvo2.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1b2');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -123,10 +123,10 @@
 
 			<c:if test="${bvo3.carNum==null}">
 				<td class="a">${bvo3.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fc2">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1c2">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${bvo3.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1c2');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -139,10 +139,10 @@
 
 			<c:if test="${bvo4.carNum==null}">
 				<td class="a">${bvo4.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fd2">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1d2">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${bvo4.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1d2');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -156,10 +156,10 @@
 		<tr>
 			<c:if test="${cvo1.carNum==null}">
 				<td class="a">${cvo1.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fa3">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1a3">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${cvo1.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1a3');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -172,10 +172,10 @@
 
 			<c:if test="${cvo2.carNum==null}">
 				<td class="a">${cvo2.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fb3">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1b3">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${cvo2.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1b3');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -186,10 +186,10 @@
 
 			<c:if test="${cvo3.carNum==null}">
 				<td class="a">${cvo3.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fc3">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1c3">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${cvo3.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1c3');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -202,10 +202,10 @@
 
 			<c:if test="${cvo4.carNum==null}">
 				<td class="a">${cvo4.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fd3">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1d3">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${cvo4.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1d3');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -219,10 +219,10 @@
 		<tr>
 			<c:if test="${dvo1.carNum==null}">
 				<td class="a">${dvo1.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fa4">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1a4">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${dvo1.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1a4');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -235,10 +235,10 @@
 
 			<c:if test="${dvo2.carNum==null}">
 				<td class="a">${dvo2.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fb4">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1b4">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${dvo2.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1b4');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -249,10 +249,10 @@
 
 			<c:if test="${dvo3.carNum==null}">
 				<td class="a">${dvo3.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fc4">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1c4">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${dvo3.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1c4');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -265,10 +265,10 @@
 
 			<c:if test="${dvo4.carNum==null}">
 				<td class="a">${dvo4.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fd4">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1d4">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${dvo4.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1d4');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -282,10 +282,10 @@
 		<tr>
 			<c:if test="${evo1.carNum==null}">
 				<td class="a">${evo1.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fa5">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1a5">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${evo1.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1a5');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -298,10 +298,10 @@
 
 			<c:if test="${evo2.carNum==null}">
 				<td class="a">${evo2.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fb5">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1b5">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${evo2.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1b5');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -312,10 +312,10 @@
 
 			<c:if test="${evo3.carNum==null}">
 				<td class="a">${evo3.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fc5">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1c5">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${evo3.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1c5');return false;">
 					</form>
 				</td>
 			</c:if>
@@ -328,10 +328,10 @@
 
 			<c:if test="${evo4.carNum==null}">
 				<td class="a">${evo4.parkNum}<br>
-					<form action="registPro.park" method="get" name="1fd5">
-						<input type="text" name="carNum" id="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+					<form action="registPro.park" method="get" name="f1d5">
+						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${evo4.parkNum}"> 
-						<input type="submit" value="등록" id="btn" onclick="btnClick();return false;">
+						<input type="submit" value="등록" onclick="button_event('f1d5');return false;">
 					</form>
 				</td>
 			</c:if>

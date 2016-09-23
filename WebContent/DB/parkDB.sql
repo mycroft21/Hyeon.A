@@ -1,13 +1,9 @@
-create table parkDB(parkNum varchar2(10) not null primary key,
-carNum varchar2(10), inTime date);
+create table parkDB(parkNum varchar2(20) not null primary key,
+carNum varchar2(20), inTime date);
 
-select * from caldb;
 select * from parkDB;
 
 drop table parkDB;
-
-create table calDB(parkNum varchar2(10) not null, carNum varchar2(10), 
-ienTime date, outTime date, pay number);
 
 insert into parkDB (parkNum) VALUES ('1F-A-1');
 insert into parkDB (parkNum) VALUES ('1F-A-2');
@@ -30,11 +26,13 @@ insert into parkDB (parkNum) VALUES ('1F-D-3');
 insert into parkDB (parkNum) VALUES ('1F-D-4');
 insert into parkDB (parkNum) VALUES ('1F-D-5');
 
-update parkdb set carnum='1111'
-where parknum='1F-A-1';
 
-update parkdb set intime='20160921'
-where parknum='1F-A-1';
+select parkNum from parkDB where carNum = '1111';
 
-SELECT parknum FROM PARKDB where carnum = '1111' 
-update parkdb set carNum = null, inTime =null where parkNum = '1F-A-1';
+update parkDB set carNum = null, inTime = null where parkNum = '1F-A-1';
+
+update parkDB set carNum=?, inTime=?, outTime=? where parkNum=?;
+
+update parkdb set carNum='1111' where parkNum='1F-A-1';
+
+update parkdb set inTime='20160921' where parkNum='1F-A-1';

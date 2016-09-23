@@ -41,7 +41,7 @@
 			<c:if test="${avo1.carNum==null}">
 				<td class="a"><div class="parkNum">${avo1.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1a1" >
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br>
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br>
 						<input type="hidden" name="parkNum" value="${avo1.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1a1');return false;">
 					</form>
@@ -57,7 +57,7 @@
 			<c:if test="${avo2.carNum==null}">
 				<td class="a"><div class="parkNum">${avo2.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1b1">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${avo2.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1b1');return false;">
 					</form>
@@ -65,13 +65,13 @@
 			</c:if>
 
 			<c:if test="${avo2.carNum!=null}">
-				<td class="b"><div class="parkNum">${avo2.parkNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo2.inTime}</div></td>
+				<td class="b"><div class="parkNum">${avo2.parkNum}<br></div><div class="carNum">${avo2.carNum}<br></div><div class="intime">${avo2.inTime}</div></td>
 			</c:if>
 
 			<c:if test="${avo3.carNum==null}">
 				<td class="a"><div class="parkNum">${avo3.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1c1">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br>
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br>
 						<input type="hidden" name="parkNum" value="${avo3.parkNum}">
 						<input type="submit" value="등록" onclick="button_event('f1c1');return false;">
 					</form>
@@ -79,7 +79,7 @@
 			</c:if>
 
 			<c:if test="${avo3.carNum!=null}">
-				<td class="b"><div class="parkNum">${avo3.parkNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo3.inTime}</div></td>
+				<td class="b"><div class="parkNum">${avo3.parkNum}<br></div><div class="carNum">${avo3.carNum}<br></div><div class="intime">${avo3.inTime}</div></td>
 			</c:if>
 
 			<td class="c"></td>
@@ -87,7 +87,7 @@
 			<c:if test="${avo4.carNum==null}">
 				<td class="a"><div class="parkNum">${avo4.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1d1">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${avo4.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1d1');return false;">
 					</form>
@@ -95,7 +95,7 @@
 			</c:if>
 
 			<c:if test="${avo4.carNum!=null}">
-				<td class="b"><div class="parkNum">${avo4.parkNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo4.inTime}</div></td>
+				<td class="b"><div class="parkNum">${avo4.parkNum}<br></div><div class="carNum">${avo4.carNum}<br></div><div class="intime">${avo4.inTime}</div></td>
 			</c:if>
 		</tr>
 
@@ -104,7 +104,7 @@
 			<c:if test="${bvo1.carNum==null}">
 				<td class="a"><div class="parkNum">${bvo1.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1a2">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${bvo1.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1a2');return false;">
 					</form>
@@ -120,7 +120,7 @@
 			<c:if test="${bvo2.carNum==null}">
 				<td class="a"><div class="parkNum">${bvo2.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1b2">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${bvo2.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1b2');return false;">
 					</form>
@@ -134,7 +134,7 @@
 			<c:if test="${bvo3.carNum==null}">
 				<td class="a"><div class="parkNum">${bvo3.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1c2">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${bvo3.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1c2');return false;">
 					</form>
@@ -150,7 +150,7 @@
 			<c:if test="${bvo4.carNum==null}">
 				<td class="a"><div class="parkNum">${bvo4.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1d2">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${bvo4.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1d2');return false;">
 					</form>
@@ -167,7 +167,7 @@
 			<c:if test="${cvo1.carNum==null}">
 				<td class="a"><div class="parkNum">${cvo1.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1a3">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${cvo1.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1a3');return false;">
 					</form>
@@ -183,7 +183,7 @@
 			<c:if test="${cvo2.carNum==null}">
 				<td class="a"><div class="parkNum">${cvo2.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1b3">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${cvo2.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1b3');return false;">
 					</form>
@@ -197,7 +197,7 @@
 			<c:if test="${cvo3.carNum==null}">
 				<td class="a"><div class="parkNum">${cvo3.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1c3">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${cvo3.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1c3');return false;">
 					</form>
@@ -213,7 +213,7 @@
 			<c:if test="${cvo4.carNum==null}">
 				<td class="a"><div class="parkNum">${cvo4.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1d3">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${cvo4.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1d3');return false;">
 					</form>
@@ -230,7 +230,7 @@
 			<c:if test="${dvo1.carNum==null}">
 				<td class="a"><div class="parkNum">${dvo1.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1a4">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${dvo1.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1a4');return false;">
 					</form>
@@ -246,7 +246,7 @@
 			<c:if test="${dvo2.carNum==null}">
 				<td class="a"><div class="parkNum">${dvo2.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1b4">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${dvo2.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1b4');return false;">
 					</form>
@@ -260,7 +260,7 @@
 			<c:if test="${dvo3.carNum==null}">
 				<td class="a"><div class="parkNum">${dvo3.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1c4">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${dvo3.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1c4');return false;">
 					</form>
@@ -276,7 +276,7 @@
 			<c:if test="${dvo4.carNum==null}">
 				<td class="a"><div class="parkNum">${dvo4.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1d4">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${dvo4.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1d4');return false;">
 					</form>
@@ -293,7 +293,7 @@
 			<c:if test="${evo1.carNum==null}">
 				<td class="a"><div class="parkNum">${evo1.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1a5">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${evo1.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1a5');return false;">
 					</form>
@@ -309,7 +309,7 @@
 			<c:if test="${evo2.carNum==null}">
 				<td class="a"><div class="parkNum">${evo2.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1b5">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${evo2.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1b5');return false;">
 					</form>
@@ -323,7 +323,7 @@
 			<c:if test="${evo3.carNum==null}">
 				<td class="a"><div class="parkNum">${evo3.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1c5">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${evo3.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1c5');return false;">
 					</form>
@@ -339,7 +339,7 @@
 			<c:if test="${evo4.carNum==null}">
 				<td class="a"><div class="parkNum">${evo4.parkNum}</div>
 					<form action="registPro.park" method="get" name="f1d5">
-						<input type="text" name="carNum" size="8" maxlength="8" placeholder="차량번호 입력"><br> 
+						<input type="text" name="carNum" size="8" maxlength="7" placeholder="차량번호 입력"><br> 
 						<input type="hidden" name="parkNum" value="${evo4.parkNum}"> 
 						<input type="submit" value="등록" onclick="button_event('f1d5');return false;">
 					</form>

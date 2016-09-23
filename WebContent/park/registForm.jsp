@@ -65,7 +65,7 @@
 			</c:if>
 
 			<c:if test="${avo2.carNum!=null}">
-				<td class="b"><div class="parkNum">${avo2.parkNum}<br></div><div class="carNum">${avo2.carNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo2.inTime}</div></td>
+				<td class="b"><div class="parkNum">${avo2.parkNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo2.inTime}</div></td>
 			</c:if>
 
 			<c:if test="${avo3.carNum==null}">
@@ -79,7 +79,7 @@
 			</c:if>
 
 			<c:if test="${avo3.carNum!=null}">
-				<td class="b"><div class="parkNum">${avo3.parkNum}<br></div><div class="carNum">${avo3.carNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo3.inTime}</div></td>
+				<td class="b"><div class="parkNum">${avo3.parkNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo3.inTime}</div></td>
 			</c:if>
 
 			<td class="c"></td>
@@ -95,7 +95,7 @@
 			</c:if>
 
 			<c:if test="${avo4.carNum!=null}">
-				<td class="b"><div class="parkNum">${avo4.parkNum}<br></div><div class="carNum">${avo4.carNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo4.inTime}</div></td>
+				<td class="b"><div class="parkNum">${avo4.parkNum}<br></div><div class="carNum">${avo1.carNum}<br></div><div class="intime">${avo4.inTime}</div></td>
 			</c:if>
 		</tr>
 

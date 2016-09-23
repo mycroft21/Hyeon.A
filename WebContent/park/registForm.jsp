@@ -10,15 +10,18 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
+	<!--
 	function button_event(registBtn){
       	var name = registBtn;
       	var carNum = document.forms[name].elements["carNum"].value;
-      	if (confirm("[" + carNum + "] 차량을 정말로 등록하시겠습니까?") == true){    // 확인
+      	var parkNum = document.forms[name].elements["parkNum"].value;
+      	if (confirm("[" + carNum + "] 차량을 [" + parkNum + "] 위치에 정말로 등록하시겠습니까?") == true){    // 확인
         	document.forms[name].submit();
       	} else {   // 취소
       		return false;
       	}
 	}
+	//-->
 </script>
 
 <title>주차등록</title>

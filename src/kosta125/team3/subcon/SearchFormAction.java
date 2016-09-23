@@ -11,8 +11,6 @@ public class SearchFormAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		
-		
 		return "/park/searchForm.jsp";
 	}
 

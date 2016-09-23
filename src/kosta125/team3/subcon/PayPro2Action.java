@@ -36,7 +36,7 @@ public class PayPro2Action implements SubCon {
 		vo.setParkNum(parknum);
 		int pay = Integer.parseInt(request.getParameter("pay"));
 		
-		dao.insertCalDB(vo, out, pay);
+		//dao.insertCalDB(vo, out, pay);
 		
 		return "/park/list.jsp";
 	}

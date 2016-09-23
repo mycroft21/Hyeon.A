@@ -210,7 +210,7 @@ public class ParkDAO {
 	}// 출차 완성
 
 	
-	public void insertCalDB(ParkVO vo, String out, int pay) {
+	public void insertCalDB(ParkVO vo, Timestamp out, String pay) {
 		
 		
 		Connection conn = null;
@@ -227,8 +227,8 @@ public class ParkDAO {
 			pstmt.setString(1, parkNum);
 			pstmt.setString(2, carNum);
 			pstmt.setTimestamp(3, inTime);
-			pstmt.setString(4, out);
-			pstmt.setInt(5, pay);
+			pstmt.setTimestamp(4, out);
+			pstmt.setString(5, pay);
 
 			pstmt.executeUpdate();
 			

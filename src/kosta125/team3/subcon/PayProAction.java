@@ -19,9 +19,9 @@ public class PayProAction implements SubCon {
 		String parkNum = request.getParameter("parkNum");
 		String carNum = request.getParameter("carNum");
 		String inTime = request.getParameter("inTime");
-		System.out.println(parkNum);
-		System.out.println(carNum);
-		
+		String pay = request.getParameter("pay");
+
+
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date parsedDate = sdf.parse(inTime);
 		Timestamp writeDate = new Timestamp(parsedDate.getTime());
@@ -34,12 +34,11 @@ public class PayProAction implements SubCon {
 		vo.setCarNum(request.getParameter("carNum"));
 		vo.setInTime(writeDate);
 		
-		int pay = dao.pay(vo,outtime);
+
+		dao.insertCalDB(vo, outtime, pay);
+		dao.clear(vo);
 		
-		request.setAttribute("vo", vo);
-		request.setAttribute("outtime", outtime);
-			
-	  	request.setAttribute("pay", pay);
+		request.setAttribute("carNum", carNum);
 		
 	  	return "/park/payPro.jsp";
 

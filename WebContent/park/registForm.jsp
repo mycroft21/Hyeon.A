@@ -14,11 +14,18 @@
 	function button_event(registBtn){
       	var name = registBtn;
       	var carNum = document.forms[name].elements["carNum"].value;
+		var carNum2 = /^[0-9][0-9][가-힣][0-9][0-9][0-9][0-9]$/;	// ex) 공백 없이 00가0000 형식만 받음
       	var parkNum = document.forms[name].elements["parkNum"].value;
-      	if (confirm("[" + carNum + "] 차량을 [" + parkNum + "] 위치에 정말로 등록하시겠습니까?") == true){    // 확인
-        	document.forms[name].submit();
-      	} else {   // 취소
+      	
+      	if(!carNum2.test(carNum)) {
+      		alert("잘못된 차량 번호입니다. 공백 없이 [00가0000] 형식으로 입력하세요.");
       		return false;
+      	} else {
+	      	if (confirm("[" + carNum + "] 차량을 [" + parkNum + "] 위치에 정말로 등록하시겠습니까?") == true){    // 확인
+        		document.forms[name].submit();
+      		} else {   // 취소
+      			return false;
+      		}
       	}
 	}
 	//-->

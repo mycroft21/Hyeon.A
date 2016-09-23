@@ -174,20 +174,22 @@ public class ParkDAO {
 				if (in.getDay() == out.getDay()) {
 					pay = ((out.getHours() * 60) + out.getMinutes() - (in.getHours() * 60) - in.getMinutes()) * 100;
 				} else if (in.getDay() != out.getDay()) {
-					pay = (((out.getDay() - in.getDay()) * 24 * 60) + ((out.getHours()* 60+out.getMinutes())- ((in.getHours()* 60) +in.getMinutes())) )*100;
+					pay = (((out.getDay() - in.getDay()) * 24 * 60)
+							+ ((out.getHours() * 60 + out.getMinutes()) - ((in.getHours() * 60) + in.getMinutes())))
+							* 100;
 				} // 날짜가 다른경우
 			}
 			// 달 이다른경우 년이 다른경우 추가 바람
 		}
 		return pay;
 	}
-		
-	public void clear(ParkVO vo){
-	
+
+	public void clear(ParkVO vo) {
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-	
+
 		try {
 			String sql = "update parkdb set carNum=?, inTime=? where parkNum=?";
 
@@ -209,10 +211,8 @@ public class ParkDAO {
 		} // db update
 	}// 출차 완성
 
-	
 	public void insertCalDB(ParkVO vo, Timestamp out, String pay) {
-		
-		
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
@@ -231,7 +231,7 @@ public class ParkDAO {
 			pstmt.setString(5, pay);
 
 			pstmt.executeUpdate();
-			
+
 			clear(vo);
 
 		} catch (Exception e) {
@@ -242,35 +242,39 @@ public class ParkDAO {
 			close(conn);
 		}
 
-
 	}// 정산 데이터베이스 삽입구
 
-	public String search(String carNum) {
+	public List search(String carNum) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		List list = null;
-
+		List<String> list = new ArrayList<String>();
+		String A = null;
 		ParkVO vo = new ParkVO();
 
-		String parknum = null;
-
-		String sql = "SELECT * FROM PARKDB where carnum = ? ";
+		String sql = "SELECT * FROM PARKDB WHERE CARNUM LIKE ?";
 
 		try {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, carNum);
+			A = "%" + carNum + "%";
+
+			pstmt.setString(1, A);
 
 			rs = pstmt.executeQuery();
 
+			
+			
 			while (rs.next()) {
 				vo.setParkNum(rs.getString("parknum"));
 				vo.setCarNum(rs.getString("carnum"));
 				vo.setInTime(rs.getTimestamp("intime"));
+				
+				list.add(rs.getString("carnum"));
+
 			}
 			System.out.println(vo);
 
@@ -282,7 +286,7 @@ public class ParkDAO {
 			close(conn);
 		}
 
-		return vo.getParkNum();
+		return list;
 
 	}// 차량 검색
 
@@ -337,7 +341,7 @@ public class ParkDAO {
 		ResultSet rs = null;
 		List list = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		String date1 = null, date2 =null;
+		String date1 = null, date2 = null;
 		String sql = "select * from caldb where outtime between to_date(?,'YYYY-MM-DD HH24:MI:SS') and to_date(?,'YYYY-MM-DD HH24:MI:SS')";
 
 		try {
@@ -345,8 +349,8 @@ public class ParkDAO {
 
 			pstmt = conn.prepareStatement(sql);
 
-			date1=dateA + " 00:00:01";
-			date2=dateB + " 23:59:59";
+			date1 = dateA + " 00:00:01";
+			date2 = dateB + " 23:59:59";
 			pstmt.setString(1, date1);
 			pstmt.setString(2, date2);
 
@@ -378,7 +382,6 @@ public class ParkDAO {
 			close(conn);
 		}
 		System.out.println(date1);
-
 
 		return list;
 

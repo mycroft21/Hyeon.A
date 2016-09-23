@@ -1,5 +1,6 @@
 package kosta125.team3.subcon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,16 +12,27 @@ import kosta125.team3.park.ParkVO;
 public class SearchProAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("UTF-8");
-		String carnum = request.getParameter("search");
 
+		request.setCharacterEncoding("UTF-8");
+
+		String A = request.getParameter("search");
+
+		String check = "800";
+
+		List<String> list = new ArrayList<String>();
+		ParkVO vo = new ParkVO();
 		ParkDAO da = new ParkDAO();
 
-		String parkNum = da.search(carnum);
-		System.out.println(parkNum);
+		list = da.search(A);
 
-		request.setAttribute("parknum", parkNum);
-		request.setAttribute("carnum", carnum);
+		List<String> carNum = new ArrayList<>();
+		if (list.size() != 0) {
+			for (int i = 0; i < list.size(); i++) {
+
+				vo.setCarNum(list.get(i));
+				carNum.add(vo.getCarNum());
+			}
+		}
 
 		String fnum = "1F";
 
@@ -32,12 +44,34 @@ public class SearchProAction implements SubCon {
 		List list4 = dao.list(fnum, 4);
 		List list5 = dao.list(fnum, 5);
 
-		System.out.println(parkNum);
-		System.out.println(carnum);
+		if (carNum.size() > 0) {
+			int x = carNum.size();
+			request.setAttribute("cheak", x);
+		} else {
+			request.setAttribute("cheak", 0);
+		}
+
+		System.out.println(carNum.size());
 
 		for (int i = 1; i <= list1.size(); i++) {
 			ParkVO temp = (ParkVO) list1.get(i - 1);
 			String ts = "avo" + String.valueOf(i);
+
+			int z = 0;
+			for (int j = 0; j < carNum.size(); j++) {
+				if (carNum.get(j).equals(temp.getCarNum())) {
+					z++;
+					String ta = "acar" + String.valueOf(i - 1);
+					request.setAttribute(ta, j);
+				}
+
+			}
+			if (z != 0) {
+				String ta = "acar" + String.valueOf(i - 1);
+				request.setAttribute(ta, check);
+
+			}
+
 			request.setAttribute(ts, temp);
 
 		}
@@ -45,24 +79,83 @@ public class SearchProAction implements SubCon {
 		for (int i = 1; i <= list2.size(); i++) {
 			ParkVO temp = (ParkVO) list2.get(i - 1);
 			String ts = "bvo" + String.valueOf(i);
+			int z = 0;
+			for (int j = 0; j < carNum.size(); j++) {
+				if (carNum.get(j).equals(temp.getCarNum())) {
+					z++;
+					String ta = "bcar" + String.valueOf(i - 1);
+					request.setAttribute(ta, j);
+				}
+
+			}
+			if (z != 0) {
+				String ta = "bcar" + String.valueOf(i - 1);
+				request.setAttribute(ta, check);
+
+			}
 			request.setAttribute(ts, temp);
+
 		}
 
 		for (int i = 1; i <= list3.size(); i++) {
 			ParkVO temp = (ParkVO) list3.get(i - 1);
 			String ts = "cvo" + String.valueOf(i);
+			int z = 0;
+			for (int j = 0; j < carNum.size(); j++) {
+				if (carNum.get(j).equals(temp.getCarNum())) {
+					z++;
+					String ta = "ccar" + String.valueOf(i - 1);
+					request.setAttribute(ta, j);
+				}
+
+			}
+			if (z != 0) {
+				String ta = "ccar" + String.valueOf(i - 1);
+				request.setAttribute(ta, check);
+
+			}
 			request.setAttribute(ts, temp);
 		}
 
 		for (int i = 1; i <= list4.size(); i++) {
 			ParkVO temp = (ParkVO) list4.get(i - 1);
 			String ts = "dvo" + String.valueOf(i);
+			int z = 0;
+			for (int j = 0; j < carNum.size(); j++) {
+				if (carNum.get(j).equals(temp.getCarNum())) {
+					z++;
+					String ta = "dcar" + String.valueOf(i - 1);
+					request.setAttribute(ta, j);
+				}
+
+			}
+			if (z != 0) {
+				String ta = "dcar" + String.valueOf(i - 1);
+				request.setAttribute(ta, check);
+
+			}
 			request.setAttribute(ts, temp);
 		}
 
 		for (int i = 1; i <= list5.size(); i++) {
+
 			ParkVO temp = (ParkVO) list5.get(i - 1);
 			String ts = "evo" + String.valueOf(i);
+			int z = 0;
+			for (int j = 0; j < carNum.size(); j++) {
+				if (carNum.get(j).equals(temp.getCarNum())) {
+					z++;
+					String ta = "ecar" + String.valueOf(i - 1);
+					request.setAttribute(ta, j);
+				}
+
+			}
+			if (z != 0) {
+				String ta = "ecar" + String.valueOf(i - 1);
+				request.setAttribute(ta, check);
+
+			}
+
 			request.setAttribute(ts, temp);
 		}
 

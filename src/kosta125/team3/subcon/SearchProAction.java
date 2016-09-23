@@ -11,7 +11,7 @@ import kosta125.team3.park.ParkVO;
 public class SearchProAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		request.setCharacterEncoding("UTF-8");
 		String carnum = request.getParameter("search");
 
 		ParkDAO da = new ParkDAO();

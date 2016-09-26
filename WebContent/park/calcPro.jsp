@@ -11,7 +11,6 @@
 </head>
 
 <body>
-	<div class="calc_wrap">
 		<div class="calc">
 			<!-- 버튼부  -->
 			<form action="calcPro.park" method="post" name="calcPro">
@@ -50,7 +49,6 @@
 							</tr>
 					</table>
 			</div>
-		</div>
-	</div>		
+		</div>	
 </body>
 </html>

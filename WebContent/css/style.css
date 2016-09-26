@@ -14,7 +14,6 @@ div{
 }
 
 //전체틀DIV
-
 .park_container{
    width: 960px;
    height: 620px;
@@ -24,7 +23,6 @@ div{
 }
 
 //주차공간,상황판DIV
-
 .parking_wrap{
    width: 800px;
    height: 500px;
@@ -37,7 +35,6 @@ div{
 }
 
 //상황판DIV
-
 .op_board{
    width: 800px;
    margin: auto;
@@ -50,37 +47,42 @@ div{
 	top: 75px;
    left: 830px;
 }
+
+//상황판안의 테이블
 #temp_table{
    width:800px;
 	height:40px;
 	background-color: black;
-	
 }
+
+//상황판안의 테이블의 td,tr
 #temp_td, #temp_tr{
    width:400px;
 	height:40px;
 }
 
-.calc_wrap{
- 	position:relative; 
-	margin:0 auto;
-   height: 530px;
-}  
+//요금정산 전체틀 
 .calc{
 	height: 480px;
 	text-align: center;
 	position: relative;
 	margin: 0 auto;
 }
+
+//요금정산 테이블을감싸는 전체틀
 .calc_table_wrap{
 	width: 606px;
     height: 350px;
    margin: 5px auto; 
 }
+
+//요금정산 테이블
 .calc_table_wrap table{
 	border-collapse:collapse;
     table-layout: fixed;
 }
+
+//요금정산 헤드부분
 .calc_top tr{
 	position: absolute;
 	margin: -1px 0 0 -1px; 
@@ -109,6 +111,7 @@ div{
 	width: 98px;
 }
 
+//요금정산테이블의 중간부분 /스크롤바있음
 .calc_mid{
 	position: absolute;
 	width: 600px;
@@ -122,21 +125,6 @@ div{
 	width: 600px;
 	height: 10px; 
 }
-
- .calc_bottom {
-	position:absolute;
-	bottom: 40px;
-} 
- .calc_bottom tr{
-	position: absolute;
-	margin: -1px 0 0 -1px; 
-    width: 600px;
- 	height: 10px; 
-    display: table;
-    text-align: center;
-   	table-layout: fixed;
-	background-color: #d4d4d4;
-} 
 
 .calc_cell_1{
 	width: 103px;
@@ -153,6 +141,21 @@ div{
 	border: 1px solid black;
 }
 
+//요금정산테이블의 꼬리부분
+ .calc_bottom {
+	position:absolute;
+	bottom: 40px;
+} 
+ .calc_bottom tr{
+	position: absolute;
+	margin: -1px 0 0 -1px; 
+    width: 600px;
+ 	height: 10px; 
+    display: table;
+    text-align: center;
+   	table-layout: fixed;
+	background-color: #d4d4d4;
+} 
 
 .2_wrap {
 	position:relative;
@@ -164,6 +167,8 @@ div{
 	top:200px;
 	margin: auto;
 }
+
+//차량검색테이블
 .search_form_table, .search_form_table tr th, .search_form_table td {
 	margin: auto;
 	text-align: center;

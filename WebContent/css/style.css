@@ -1,7 +1,14 @@
- html, body{
+body{
 	margin: 0;
 	padding: 0;
-	width: 100%
+	width: 100%;
+	background-image: url("/hyeonA/images/juchajang.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+		
+}
+body img{
+	-ms-interpolation-mode: bicubic;  
 }
 div{
 	margin: 0;
@@ -42,6 +49,7 @@ div{
 /* 주차공간 DIV */
 .park{
 	background-color: #e8e1e4;
+	background-color: rgba( 255, 255, 255, 0.5 );
 /*     background-image:url("/hyeonA/images/park_board.jpg");
    	background-size: 100% 100%;
     background-repeat: no-repeat; */

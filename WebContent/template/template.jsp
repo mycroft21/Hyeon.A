@@ -14,8 +14,8 @@
 	</div>
 	<!-- 전체틀 -->
 	<div class="park_container">
+	
 		<!-- 상황판,주차공간-->
-
 		<div class="parking_wrap">
 			<div align="left">
 				<font size="2" face="맑은고딕" color="#b4b4b4"> <b>Pangyo W Tower 1F</b>&nbsp;&nbsp;
@@ -33,7 +33,6 @@
 				<table id="temp_table">
 					<tr id="temp_tr">
 						<td id="temp_td"><jsp:include page="../module/bottom_1.jsp" /></td>
-						<td id="temp_td"><jsp:include page="../module/bottom_2.jsp" /></td>
 					</tr>
 				</table>
 			</div>

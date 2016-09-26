@@ -7,13 +7,13 @@ div{
 	margin: 0;
 	padding: 0;
 } 
-.park{
-   background-color: #8c8c8c;
-   height: 530px;
-}
+
+//메인탑DIV
 .parking_top{
 	margin: 1px auto;	
 }
+
+//전체틀DIV
 
 .park_container{
    width: 960px;
@@ -23,16 +23,27 @@ div{
    margin: auto;
 }
 
+//주차공간,상황판DIV
+
 .parking_wrap{
    width: 800px;
    height: 500px;
 }
+
+//주차공간DIV
+.park{
+   background-color: #8c8c8c;
+   height: 530px;
+}
+
+//상황판DIV
 
 .op_board{
    width: 800px;
    margin: auto;
 }
 
+//메뉴DIV
 .menu{
 	width: 120px;
 	position: absolute;

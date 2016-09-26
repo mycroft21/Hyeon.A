@@ -19,7 +19,7 @@
 		<!-- 상황판,주차공간-->
 		<div class="parking_wrap">
 			<div align="right">
-				<font size="2" face="맑은고딕" color="#b4b4b4"> <b>Pangyo W Tower 1F</b>&nbsp;&nbsp;
+				<font size="2" face="맑은고딕" color="#686c80"> <b>Pangyo W Tower 1F</b>&nbsp;&nbsp;
 				</font>
 			</div>
 			<!--주차공간 grid -->

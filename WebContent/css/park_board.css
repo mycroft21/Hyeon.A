@@ -8,17 +8,17 @@ td{
 }
 
 .a{
-	border: 3px solid white;
+	border: 5px solid white;
 	width: 120px;
 	height: 90px;
-	background-color: #fee8a5;
+	background-color: #fefcd8;
 }
 
 .b{
-	border: 3px solid white;
+	border: 5px solid white;
 	width: 120px;
 	height: 90px;
-	background-color: #ff8080;
+	background-color: #ffceef;
 }
 
 .c{

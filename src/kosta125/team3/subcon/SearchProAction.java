@@ -19,7 +19,7 @@ public class SearchProAction implements SubCon {
 
 		String check = "800";
 
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<ParkVO> list = new ArrayList<ParkVO>();
 		
 		
 		ParkDAO da = new ParkDAO();
@@ -31,18 +31,12 @@ public class SearchProAction implements SubCon {
 
 		if (list.size() != 0) {
 			
-			for (int i = 0; i < list.size(); i=i+2) {
+			for (int i = 0; i < list.size(); i++) {
 				ParkVO vo = new ParkVO();
-
-				vo.setCarNum("");vo.setParkNum("");
-				
-				vo.setCarNum(list.get(i));
-				vo.setParkNum(list.get(i+1));
-			
+							vo=list.get(i);		
 				carNum.add(vo.getCarNum());
 				
-				System.out.println("\n"+vo.getCarNum()+"\n");
-				System.out.println("vo="+vo);
+				
 				
 				carinfo.add(vo);
 			}
@@ -50,7 +44,6 @@ public class SearchProAction implements SubCon {
 		
 		request.setAttribute("carNum", carNum);
 		request.setAttribute("carinfo", carinfo);
-
 		
 
 		String fnum = "1F";

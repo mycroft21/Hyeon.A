@@ -244,14 +244,14 @@ public class ParkDAO {
 
 	}// 정산 데이터베이스 삽입구
 
-	public List search(String carNum) {
+	public ArrayList search(String carNum) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		List<String> list = new ArrayList<String>();
+		ArrayList<ParkVO> list = new ArrayList<ParkVO>();
 		String A = null;
-		ParkVO vo = new ParkVO();
+	
 
 		String sql = "SELECT * FROM PARKDB WHERE CARNUM LIKE ?";
 
@@ -269,14 +269,15 @@ public class ParkDAO {
 			
 			
 			while (rs.next()) {
+				ParkVO vo = new ParkVO();
 				vo.setParkNum(rs.getString("parknum"));
 				vo.setCarNum(rs.getString("carnum"));
 				vo.setInTime(rs.getTimestamp("intime"));
 				
-				list.add(rs.getString("carnum"));
+				list.add(vo);
 
 			}
-			System.out.println(vo);
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();

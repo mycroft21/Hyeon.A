@@ -33,6 +33,10 @@ update parkDB set carNum = null, inTime = null where parkNum = '1F-A-1';
 
 update parkDB set carNum=?, inTime=?, outTime=? where parkNum=?;
 
-update parkdb set carNum='1111' where parkNum='1F-A-1';
+update parkDB set carNum='1111' where parkNum='1F-A-1';
 
-update parkdb set inTime='20160921' where parkNum='1F-A-1';
+update parkDB set inTime='20160921' where parkNum='1F-A-1';
+
+select count(*) from parkDB where parkNum like '1F-A%';
+
+select count(*) from parkDB where parkNum like '1F-A%' and carNum is null;

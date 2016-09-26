@@ -8,12 +8,12 @@ div{
 	padding: 0;
 } 
 
-//메인탑DIV
+/* 메인탑DIV */
 .parking_top{
 	margin: 1px auto;	
 }
 
-//전체틀DIV
+/* 전체틀DIV */
 .park_container{
    width: 960px;
    height: 620px;
@@ -22,25 +22,25 @@ div{
    margin: auto;
 }
 
-//주차공간,상황판DIV
+/* 주차공간,상황판DIV */
 .parking_wrap{
    width: 800px;
    height: 500px;
 }
 
-//주차공간DIV
+/* 주차공간DIV */
 .park{
    background-color: #8c8c8c;
    height: 530px;
 }
 
-//상황판DIV
+/* 상황판DIV */
 .op_board{
    width: 800px;
    margin: auto;
 }
 
-//메뉴DIV
+/* 메뉴DIV */
 .menu{
 	width: 120px;
 	position: absolute;
@@ -48,20 +48,20 @@ div{
    left: 830px;
 }
 
-//상황판안의 테이블
+/* 상황판안의 테이블 */
 #temp_table{
    width:800px;
 	height:40px;
 	background-color: black;
 }
 
-//상황판안의 테이블의 td,tr
+/* 상황판안의 테이블의 td,tr */
 #temp_td, #temp_tr{
    width:400px;
 	height:40px;
 }
 
-//요금정산 전체틀 
+/* 요금정산 전체틀  */
 .calc{
 	height: 480px;
 	text-align: center;
@@ -69,20 +69,20 @@ div{
 	margin: 0 auto;
 }
 
-//요금정산 테이블을감싸는 전체틀
+/* 요금정산 테이블을감싸는 전체틀 */
 .calc_table_wrap{
 	width: 606px;
     height: 350px;
    margin: 5px auto; 
 }
 
-//요금정산 테이블
+/* 요금정산 테이블 */
 .calc_table_wrap table{
 	border-collapse:collapse;
     table-layout: fixed;
 }
 
-//요금정산 헤드부분
+/* 요금정산 헤드부분 */
 .calc_top tr{
 	position: absolute;
 	margin: -1px 0 0 -1px; 
@@ -111,7 +111,7 @@ div{
 	width: 98px;
 }
 
-//요금정산테이블의 중간부분 /스크롤바있음
+/* 요금정산테이블의 중간부분 /스크롤바있음 */
 .calc_mid{
 	position: absolute;
 	width: 600px;
@@ -141,7 +141,7 @@ div{
 	border: 1px solid black;
 }
 
-//요금정산테이블의 꼬리부분
+/* 요금정산테이블의 꼬리부분 */
  .calc_bottom {
 	position:absolute;
 	bottom: 40px;
@@ -157,18 +157,18 @@ div{
 	background-color: #d4d4d4;
 } 
 
-.2_wrap {
+ .2_wrap {
 	position:relative;
 	width:100%;
 	margin:20px auto;
 }
 
-.search_form_wrap{
+ .search_form_wrap{
 	top:200px;
 	margin: auto;
-}
+} 
 
-//차량검색테이블
+/* 차량검색테이블 */
 .search_form_table, .search_form_table tr th, .search_form_table td {
 	margin: auto;
 	text-align: center;

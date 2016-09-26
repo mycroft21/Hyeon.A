@@ -19,20 +19,39 @@ public class SearchProAction implements SubCon {
 
 		String check = "800";
 
-		List<String> list = new ArrayList<String>();
-		ParkVO vo = new ParkVO();
+		ArrayList<String> list = new ArrayList<String>();
+		
+		
 		ParkDAO da = new ParkDAO();
 
 		list = da.search(A);
 
-		List<String> carNum = new ArrayList<>();
-		if (list.size() != 0) {
-			for (int i = 0; i < list.size(); i++) {
+		ArrayList<String> carNum = new ArrayList<String>();
+		ArrayList<ParkVO> carinfo = new ArrayList<ParkVO>();
 
+		if (list.size() != 0) {
+			
+			for (int i = 0; i < list.size(); i=i+2) {
+				ParkVO vo = new ParkVO();
+
+				vo.setCarNum("");vo.setParkNum("");
+				
 				vo.setCarNum(list.get(i));
+				vo.setParkNum(list.get(i+1));
+			
 				carNum.add(vo.getCarNum());
+				
+				System.out.println("\n"+vo.getCarNum()+"\n");
+				System.out.println("vo="+vo);
+				
+				carinfo.add(vo);
 			}
 		}
+		
+		request.setAttribute("carNum", carNum);
+		request.setAttribute("carinfo", carinfo);
+
+		
 
 		String fnum = "1F";
 

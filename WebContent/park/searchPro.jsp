@@ -21,7 +21,16 @@
 
 		<c:if test="${cheak != 0 }">
 			<script type="text/javascript">
-				alert(" ${carnum }번 차량은 ${parknum }에 있습니다.");
+				var str = "";
+			</script>
+
+			<c:forEach var="carinfo" items="${carinfo}" >
+				<script type="text/javascript">
+					str = str + " ${carinfo.carNum}번 차량은 ${carinfo.parkNum}에 있습니다.\n";
+				</script>
+			</c:forEach>
+			<script type="text/javascript">
+				alert(str);
 			</script>
 
 			<table cellspacing="1">

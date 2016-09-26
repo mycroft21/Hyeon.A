@@ -9,15 +9,16 @@
 <title>메인페이지</title>
 </head>
 <body>
-	<div class="parking_top">
-		<jsp:include page="../module/top.jsp" />
-	</div>
 	<!-- 전체틀 -->
 	<div class="park_container">
+	 	<!-- 탑_로고 -->
+		<div class="parking_top">
+			<jsp:include page="../module/top.jsp" />
+		</div>
 	
 		<!-- 상황판,주차공간-->
 		<div class="parking_wrap">
-			<div align="left">
+			<div align="right">
 				<font size="2" face="맑은고딕" color="#b4b4b4"> <b>Pangyo W Tower 1F</b>&nbsp;&nbsp;
 				</font>
 			</div>

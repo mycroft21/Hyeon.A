@@ -8,6 +8,14 @@ div{
 	padding: 0;
 } 
 
+/* 탑_div */
+.top_table{
+	width: 950px;
+	height: 30px;
+	background-color: #4aa5ff;
+	border-radius: 10px;
+}
+
 /* 메인탑 DIV */
 .parking_top{
 	margin: 1px auto;	
@@ -30,8 +38,11 @@ div{
 
 /* 주차공간 DIV */
 .park{
-   background-color: #8c8c8c;
+   background-image:url("/hyeonA/images/park_board.jpg");
+   	background-size: 100% 100%;
+    background-repeat: no-repeat;
    height: 530px;
+   border-radius: 10px;
 }
 
 /* 상황판 DIV */
@@ -45,19 +56,24 @@ div{
 .menu{
 	width: 120px;
 	position: absolute;
-	top: 75px;
+	top: 100px;
 	left: 830px;
 }
 
 /* 상황판 안의 테이블 */
 #temp_table{
 	width:800px;
-	background-color: black;
+	background-image: url("/hyeonA/images/op_board.jpg");
+	opacity: 0.9;
+	filter: alpha(opacity:100);
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	border-radius: 10px;
 }
 
 /* 상황판 안의 테이블 tr로 높이 지정 */
 #temp_table tr{
-	height: 50px;
+	height: 60px;
 }
  
 /* 요금정산 전체틀  */

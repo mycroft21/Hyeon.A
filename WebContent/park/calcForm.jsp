@@ -21,6 +21,10 @@
 		<%-- <input type="month" name="month" value="${month }">
 		<input type="submit"			value="월정산 보기"> --%>
 		 <br>
+		 특정 차량으로 검색 하고 싶으면 입력하세요! %nsbp;%nsbp;
+		 <input type = "text" name = "carNum">
+		 
+		 <br>
 				 <input type="date" name="date1">
 		부터 <input type="date" name="date2"> 까지 <input type="submit"
 			value="전송">

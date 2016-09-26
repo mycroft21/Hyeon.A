@@ -14,6 +14,9 @@
 		<div class="calc">
 			<!-- 버튼부  -->
 			<form action="calcPro.park" method="post" name="calcPro">
+				차량 번호 검사 &nbsp;
+				 <input type = "text" name = "carNum">
+				 
 				<br> <br> <br> <input type="date" name="date1">
 				부터 <input type="date" name="date2"> 까지 <input type="submit"
 					value="전송"> <input type="reset" value="초기화"><br>

@@ -251,7 +251,6 @@ public class ParkDAO {
 
 		ArrayList<ParkVO> list = new ArrayList<ParkVO>();
 		String A = null;
-	
 
 		String sql = "SELECT * FROM PARKDB WHERE CARNUM LIKE ?";
 
@@ -266,18 +265,15 @@ public class ParkDAO {
 
 			rs = pstmt.executeQuery();
 
-			
-			
 			while (rs.next()) {
 				ParkVO vo = new ParkVO();
 				vo.setParkNum(rs.getString("parknum"));
 				vo.setCarNum(rs.getString("carnum"));
 				vo.setInTime(rs.getTimestamp("intime"));
-				
+
 				list.add(vo);
 
 			}
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -304,6 +300,55 @@ public class ParkDAO {
 
 			pstmt = conn.prepareStatement(sql);
 
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				list = new ArrayList();
+
+				do {
+					CalVO vo = new CalVO();
+
+					vo.setParkNum(rs.getString("parknum"));
+					vo.setCarNum(rs.getString("carnum"));
+					vo.setInTime(rs.getTimestamp("intime"));
+					vo.setOutTime(rs.getTimestamp("outtime"));
+					vo.setPay(rs.getInt("pay"));
+
+					list.add(vo);
+
+				} while (rs.next());
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return list;
+
+	}// 당일 정산 읽어오기
+
+	public List<CalVO> calc(String carNum) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List list = null;
+
+		String sql = "select * from calDB where outtime between to_char((sysdate),'yyyy-mm-dd') and to_char((sysdate+1),'yyyy-mm-dd') and carnum like ?";
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(sql);
+
+			String A = "%" + carNum + "%";
+			System.out.println("a1= " + A);
+			pstmt.setString(1, A);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -388,6 +433,66 @@ public class ParkDAO {
 
 	}// 정산 읽어오기
 
+	public List<CalVO> calc(String date1, String date2, String carNum) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List list = null;
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String dateA = null, dateB = null;
+		String sql = "select * from caldb where outtime between to_date(?,'YYYY-MM-DD HH24:MI:SS') and to_date(?,'YYYY-MM-DD HH24:MI:SS') and carNum like ?";
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(sql);
+
+			String A = "%" + carNum + "%";
+
+			System.out.println("a2= " + A);
+			
+			dateA = date1 + " 00:00:01";
+			dateB = date2 + " 23:59:59";
+			
+			pstmt.setString(1, dateA);
+			pstmt.setString(2, dateB);
+			pstmt.setString(3, A);
+
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				list = new ArrayList();
+
+				do {
+					CalVO vo = new CalVO();
+
+					vo.setParkNum(rs.getString("parknum"));
+					vo.setCarNum(rs.getString("carnum"));
+					vo.setInTime(rs.getTimestamp("intime"));
+					vo.setOutTime(rs.getTimestamp("outtime"));
+					vo.setPay(rs.getInt("pay"));
+
+					list.add(vo);
+
+				} while (rs.next());
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		System.out.println(date1);
+
+		return list;
+
+	}// 차번호로 검색
+
 	public int setAll() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -398,7 +503,7 @@ public class ParkDAO {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("select count(*) from parkdb");
 			rs = pstmt.executeQuery();
-			
+
 			if (rs.next()) {
 				all = rs.getInt(1);
 			}
@@ -422,7 +527,7 @@ public class ParkDAO {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("select count(*) from parkdb where carnum is null");
 			rs = pstmt.executeQuery();
-			
+
 			if (rs.next()) {
 				cu = rs.getInt(1);
 			}
@@ -435,126 +540,126 @@ public class ParkDAO {
 		}
 		return cu;
 	}// 전체 남아있는 주차 가능 대수
-	
+
 	public int setPartAll(String name) {
-	      Connection conn = null;
-	      PreparedStatement pstmt = null;
-	      ResultSet rs = null;
-	      int partAll = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int partAll = 0;
 
-	      try {
-	         conn = getConnection();
+		try {
+			conn = getConnection();
 
-	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-"+name+"%'");
+			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-" + name + "%'");
 
-	         rs = pstmt.executeQuery();
-	         if (rs.next()) {
-	        	 partAll = rs.getInt(1);
-	         }
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      } finally {
-	         close(pstmt);
-	         close(rs);
-	         close(conn);
-	      }
-	      return partAll;
-	   }// 1층의 구역별 전체 주차 가능 대수
-	   
-	   public int setCuA() {
-	      Connection conn = null;
-	      PreparedStatement pstmt = null;
-	      ResultSet rs = null;
-	      int cuA = 0;
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				partAll = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		return partAll;
+	}// 1층의 구역별 전체 주차 가능 대수
 
-	      try {
-	         conn = getConnection();
-	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-A%' and carNum is null");
-	         rs = pstmt.executeQuery();
-	         
-	         if (rs.next()) {
-	            cuA = rs.getInt(1);
-	         }
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      } finally {
-	         close(pstmt);
-	         close(rs);
-	         close(conn);
-	      }
-	      return cuA;
-	   }// A구역 _ 남아있는 주차 가능 대수
-	   
-	   public int setCuB() {
-	      Connection conn = null;
-	      PreparedStatement pstmt = null;
-	      ResultSet rs = null;
-	      int cuB = 0;
+	public int setCuA() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int cuA = 0;
 
-	      try {
-	         conn = getConnection();
-	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-B%' and carNum is null");
-	         rs = pstmt.executeQuery();
-	         
-	         if (rs.next()) {
-	            cuB = rs.getInt(1);
-	         }
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      } finally {
-	         close(pstmt);
-	         close(rs);
-	         close(conn);
-	      }
-	      return cuB;
-	   }// B구역 _ 남아있는 주차 가능 대수
-	   
-	   public int setCuC() {
-	      Connection conn = null;
-	      PreparedStatement pstmt = null;
-	      ResultSet rs = null;
-	      int cuC = 0;
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-A%' and carNum is null");
+			rs = pstmt.executeQuery();
 
-	      try {
-	         conn = getConnection();
-	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-C%' and carNum is null");
-	         rs = pstmt.executeQuery();
-	         
-	         if (rs.next()) {
-	            cuC = rs.getInt(1);
-	         }
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      } finally {
-	         close(pstmt);
-	         close(rs);
-	         close(conn);
-	      }
-	      return cuC;
-	   }// C구역 _ 남아있는 주차 가능 대수
-	   
-	   public int setCuD() {
-	      Connection conn = null;
-	      PreparedStatement pstmt = null;
-	      ResultSet rs = null;
-	      int cuD = 0;
+			if (rs.next()) {
+				cuA = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		return cuA;
+	}// A구역 _ 남아있는 주차 가능 대수
 
-	      try {
-	         conn = getConnection();
-	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-D%' and carNum is null");
-	         rs = pstmt.executeQuery();
-	         
-	         if (rs.next()) {
-	            cuD = rs.getInt(1);
-	         }
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      } finally {
-	         close(pstmt);
-	         close(rs);
-	         close(conn);
-	      }
-	      return cuD;
-	   }// D구역 _ 남아있는 주차 가능 대수
-	
+	public int setCuB() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int cuB = 0;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-B%' and carNum is null");
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				cuB = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		return cuB;
+	}// B구역 _ 남아있는 주차 가능 대수
+
+	public int setCuC() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int cuC = 0;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-C%' and carNum is null");
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				cuC = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		return cuC;
+	}// C구역 _ 남아있는 주차 가능 대수
+
+	public int setCuD() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int cuD = 0;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-D%' and carNum is null");
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				cuD = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		return cuD;
+	}// D구역 _ 남아있는 주차 가능 대수
+
 }

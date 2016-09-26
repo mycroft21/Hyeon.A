@@ -87,39 +87,58 @@ public class Controller extends HttpServlet{
 	}
 	
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(classMap);
-		String view = null;
-		SubCon subcon = null;
-		ParkDAO dao = ParkDAO.getInstance();
-		int all = dao.setAll();
-		int cu = dao.setCu();
-		request.setAttribute("cu", cu);
-		request.setAttribute("all", all);
-		try {
-			String fullCommand = request.getRequestURI();
-			/*fullCommand = hyeonA/List.park*/
-			System.out.println("fullCommand : "+fullCommand);//확인용
-			String projectName = request.getContextPath();
-			/*projectName = hyeonA*/
-			String classKey = null;
-			/*이 변수에는 fullCommand - projectName이 들어갈 예정*/
-			
-			if(fullCommand.indexOf(projectName)==0){
-				classKey = fullCommand.substring(projectName.length()+1);
-				System.out.println(classKey);
-			}
-			
-			subcon = (SubCon) classMap.get(classKey);
-			System.out.println("subcon : "+subcon);
-			view = subcon.process(request, response);
-			System.out.println("view : "+view);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		request.setAttribute("CONTENT", view);
-		RequestDispatcher rd = request.getRequestDispatcher("template/template.jsp");
-		rd.forward(request, response);
-		/*해당 내용을 템플릿으로 보냅니다.*/
-	}
+	      System.out.println(classMap);
+	      String view = null;
+	      SubCon subcon = null;
+	      
+	      ParkDAO dao = ParkDAO.getInstance();
+	      int all = dao.setAll();
+	      int cu = dao.setCu();
+	      int partA = dao.setPartAll("A");
+	      int partB = dao.setPartAll("B");
+	      int partC = dao.setPartAll("C");
+	      int partD = dao.setPartAll("D");
+	      int cuA = dao.setCuA();
+	      int cuB = dao.setCuB();
+	      int cuC = dao.setCuC();
+	      int cuD = dao.setCuD();      
+	      
+	      request.setAttribute("all", all);
+	      request.setAttribute("cu", cu);
+	      request.setAttribute("partA", partA);
+	      request.setAttribute("partB", partB);
+	      request.setAttribute("partC", partC);
+	      request.setAttribute("partD", partD);
+	      request.setAttribute("cuA", cuA);
+	      request.setAttribute("cuB", cuB);
+	      request.setAttribute("cuC", cuC);
+	      request.setAttribute("cuD", cuD);
+	      
+	      try {
+	         String fullCommand = request.getRequestURI();
+	         /*fullCommand = hyeonA/List.park*/
+	         System.out.println("fullCommand : "+fullCommand);//확인용
+	         String projectName = request.getContextPath();
+	         /*projectName = hyeonA*/
+	         String classKey = null;
+	         /*이 변수에는 fullCommand - projectName이 들어갈 예정*/
+	         
+	         if(fullCommand.indexOf(projectName)==0){
+	            classKey = fullCommand.substring(projectName.length()+1);
+	            System.out.println(classKey);
+	         }
+	         
+	         subcon = (SubCon) classMap.get(classKey);
+	         System.out.println("subcon : "+subcon);
+	         view = subcon.process(request, response);
+	         System.out.println("view : "+view);
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	      request.setAttribute("CONTENT", view);
+	      RequestDispatcher rd = request.getRequestDispatcher("template/template.jsp");
+	      rd.forward(request, response);
+	      /*해당 내용을 템플릿으로 보냅니다.*/
+	   }
 	
 }

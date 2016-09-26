@@ -395,10 +395,9 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-
 			pstmt = conn.prepareStatement("select count(*) from parkdb");
-
 			rs = pstmt.executeQuery();
+			
 			if (rs.next()) {
 				all = rs.getInt(1);
 			}
@@ -410,22 +409,21 @@ public class ParkDAO {
 			close(conn);
 		}
 		return all;
-	}
+	}// 전체 주차 공간
 
 	public int setCu() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		int all = 0;
+		int cu = 0;
 
 		try {
 			conn = getConnection();
-
 			pstmt = conn.prepareStatement("select count(*) from parkdb where carnum is null");
-
 			rs = pstmt.executeQuery();
+			
 			if (rs.next()) {
-				all = rs.getInt(1);
+				cu = rs.getInt(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -434,6 +432,128 @@ public class ParkDAO {
 			close(rs);
 			close(conn);
 		}
-		return all;
-	}
+		return cu;
+	}// 전체 남아있는 주차 가능 대수
+	
+	public int setPartAll(String name) {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      int partAll = 0;
+
+	      try {
+	         conn = getConnection();
+
+	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-"+name+"%'");
+
+	         rs = pstmt.executeQuery();
+	         if (rs.next()) {
+	        	 partAll = rs.getInt(1);
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close(pstmt);
+	         close(rs);
+	         close(conn);
+	      }
+	      return partAll;
+	   }// 1층의 구역별 전체 주차 가능 대수
+	   
+	   public int setCuA() {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      int cuA = 0;
+
+	      try {
+	         conn = getConnection();
+	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-A%' and carNum is null");
+	         rs = pstmt.executeQuery();
+	         
+	         if (rs.next()) {
+	            cuA = rs.getInt(1);
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close(pstmt);
+	         close(rs);
+	         close(conn);
+	      }
+	      return cuA;
+	   }// A구역 _ 남아있는 주차 가능 대수
+	   
+	   public int setCuB() {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      int cuB = 0;
+
+	      try {
+	         conn = getConnection();
+	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-B%' and carNum is null");
+	         rs = pstmt.executeQuery();
+	         
+	         if (rs.next()) {
+	            cuB = rs.getInt(1);
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close(pstmt);
+	         close(rs);
+	         close(conn);
+	      }
+	      return cuB;
+	   }// B구역 _ 남아있는 주차 가능 대수
+	   
+	   public int setCuC() {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      int cuC = 0;
+
+	      try {
+	         conn = getConnection();
+	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-C%' and carNum is null");
+	         rs = pstmt.executeQuery();
+	         
+	         if (rs.next()) {
+	            cuC = rs.getInt(1);
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close(pstmt);
+	         close(rs);
+	         close(conn);
+	      }
+	      return cuC;
+	   }// C구역 _ 남아있는 주차 가능 대수
+	   
+	   public int setCuD() {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      int cuD = 0;
+
+	      try {
+	         conn = getConnection();
+	         pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-D%' and carNum is null");
+	         rs = pstmt.executeQuery();
+	         
+	         if (rs.next()) {
+	            cuD = rs.getInt(1);
+	         }
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close(pstmt);
+	         close(rs);
+	         close(conn);
+	      }
+	      return cuD;
+	   }// D구역 _ 남아있는 주차 가능 대수
+	
 }

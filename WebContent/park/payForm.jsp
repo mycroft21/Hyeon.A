@@ -87,7 +87,7 @@
 			<c:if test="${avo1.carNum!=null}">
 				<td class="b" id="a1"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('a1');return false;">
 				${avo1.carNum}<br>${avo1.inTime}<br><div id="av1"></div>
@@ -114,7 +114,7 @@
 			<c:if test="${avo2.carNum!=null}">
 				<td class="b" id="a2"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('a2');return false;">
 				${avo2.carNum}<br>${avo2.inTime}<br><div id="av2"></div>
@@ -139,7 +139,7 @@
 			<c:if test="${avo3.carNum!=null}">
 				<td class="b" id="a3"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('a3');return false;">
 				${avo3.carNum}<br>${avo3.inTime}<br><div id="av3"></div>
@@ -166,7 +166,7 @@
 			<c:if test="${avo4.carNum!=null}">
 				<td class="b" id="a4"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('a4');return false;">
 				${avo4.carNum}<br>${avo4.inTime}<br><div id="av4"></div>
@@ -194,7 +194,7 @@
 			<c:if test="${bvo1.carNum!=null}">
 				<td class="b" id="b1"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('b1');return false;">
 				${bvo1.carNum}<br>${bvo1.inTime}<br><div id="bv1"></div>
@@ -221,7 +221,7 @@
 			<c:if test="${bvo2.carNum!=null}">
 				<td class="b" id="b2"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('b2');return false;">
 				${bvo2.carNum}<br>${bvo2.inTime}<br><div id="bv2"></div>
@@ -246,7 +246,7 @@
 			<c:if test="${bvo3.carNum!=null}">
 				<td class="b" id="b3"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('b3');return false;">
 				${bvo3.carNum}<br>${bvo3.inTime}<br><div id="bv3"></div>
@@ -273,7 +273,7 @@
 			<c:if test="${bvo4.carNum!=null}">
 				<td class="b" id="b4"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('b4');return false;">
 				${bvo4.carNum}<br>${bvo4.inTime}<br><div id="bv4"></div>
@@ -301,7 +301,7 @@
 			<c:if test="${cvo1.carNum!=null}">
 				<td class="b" id="c1"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('c1');return false;">
 				${cvo1.carNum}<br>${cvo1.inTime}<br><div id="cv1"></div>
@@ -328,7 +328,7 @@
 			<c:if test="${cvo2.carNum!=null}">
 				<td class="b" id="c2"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('c2');return false;">
 				${cvo2.carNum}<br>${cvo2.inTime}<br><div id="cv2"></div>
@@ -353,7 +353,7 @@
 			<c:if test="${cvo3.carNum!=null}">
 				<td class="b" id="c3"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('c3');return false;">
 				${cvo3.carNum}<br>${cvo3.inTime}<br><div id="cv3"></div>
@@ -380,7 +380,7 @@
 			<c:if test="${cvo4.carNum!=null}">
 				<td class="b" id="c4"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('c4');return false;">
 				${cvo4.carNum}<br>${cvo4.inTime}<br><div id="cv4"></div>
@@ -408,7 +408,7 @@
 			<c:if test="${dvo1.carNum!=null}">
 				<td class="b" id="d1"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('d1');return false;">
 				${dvo1.carNum}<br>${dvo1.inTime}<br><div id="dv1"></div>
@@ -435,7 +435,7 @@
 			<c:if test="${dvo2.carNum!=null}">
 				<td class="b" id="d2"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('d2');return false;">
 				${dvo2.carNum}<br>${dvo2.inTime}<br><div id="dv2"></div>
@@ -460,7 +460,7 @@
 			<c:if test="${dvo3.carNum!=null}">
 				<td class="b" id="d3"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('d3');return false;">
 				${dvo3.carNum}<br>${dvo3.inTime}<br><div id="dv3"></div>
@@ -487,7 +487,7 @@
 			<c:if test="${dvo4.carNum!=null}">
 				<td class="b" id="d4"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('d4');return false;">
 				${dvo4.carNum}<br>${dvo4.inTime}<br><div id="dv4"></div>
@@ -515,7 +515,7 @@
 			<c:if test="${evo1.carNum!=null}">
 				<td class="b" id="e1"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('e1');return false;">
 				${evo1.carNum}<br>${evo1.inTime}<br><div id="ev1"></div>
@@ -542,7 +542,7 @@
 			<c:if test="${evo2.carNum!=null}">
 				<td class="b" id="e2"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('e2');return false;">
 				${evo2.carNum}<br>${evo2.inTime}<br><div id="ev2"></div>
@@ -567,7 +567,7 @@
 			<c:if test="${evo3.carNum!=null}">
 				<td class="b" id="e3"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('e3');return false;">
 				${evo3.carNum}<br>${evo3.inTime}<br><div id="ev3"></div>
@@ -594,7 +594,7 @@
 			<c:if test="${evo4.carNum!=null}">
 				<td class="b" id="e4"
 				onmouseover="this.style.backgroundColor='orange'"
-				onmouseout="this.style.backgroundColor='pink'"
+				onmouseout="this.style.backgroundColor='#ffceef'"
 				style="cursor: pointer;"
 				onclick="btnClick('e4');return false;">
 				${evo4.carNum}<br>${evo4.inTime}<br><div id="ev4"></div>

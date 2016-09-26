@@ -410,13 +410,13 @@ public class ParkDAO {
 			close(conn);
 		}
 		return all;
-	}
+	}// 전체 주차 가능 대수
 
 	public int setCu() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		int all = 0;
+		int cu = 0;
 
 		try {
 			conn = getConnection();
@@ -425,7 +425,7 @@ public class ParkDAO {
 
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				all = rs.getInt(1);
+				cu = rs.getInt(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -434,6 +434,6 @@ public class ParkDAO {
 			close(rs);
 			close(conn);
 		}
-		return all;
-	}
+		return cu;
+	}// 남아있는 주차 가능 대수
 }

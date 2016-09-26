@@ -1,0 +1,9 @@
+diff a/src/kosta125/team3/park/ParkDAO.java b/src/kosta125/team3/park/ParkDAO.java	(rejected hunks)
+@@ -410,7 +410,6 @@
+ 			close(conn);
+ 		}
+ 		return all;
+-	}
+ 	}// ��ü ���� ���� ���
+ 
+ 	public int setCu() {

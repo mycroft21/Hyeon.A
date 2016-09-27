@@ -11,7 +11,7 @@ public class ModifyProAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("euc-kr");
 		
 		MemoDAO dao = MemoDAO.getInstance();
 		MemoVO vo = new MemoVO();
@@ -20,7 +20,10 @@ public class ModifyProAction implements SubCon {
 		vo.setSubject(request.getParameter("subject"));
 		vo.setContent(request.getParameter("content"));
 		vo.setPass(request.getParameter("pass"));
-		
+		System.out.println(vo.getMemoNum());
+		System.out.println(vo.getSubject());
+		System.out.println(vo.getContent());
+		System.out.println(vo.getPass());
 		int check = dao.modify(vo);
 		
 		System.out.println("check: " + check);

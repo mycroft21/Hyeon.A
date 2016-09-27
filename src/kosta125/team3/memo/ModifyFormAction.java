@@ -11,7 +11,8 @@ public class ModifyFormAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("euc-kr");
+		
 		int memoNum = Integer.parseInt(request.getParameter("memoNum"));
 
 		MemoDAO dao = MemoDAO.getInstance();

@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+	pageEncoding="euc-kr"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <link rel="stylesheet"  type="text/css" href="/hyeonA/css/memoStyle.css"/>
-<title>ë©”ëª¨ ìˆ˜ì •</title>
+<title>¸Ş¸ğ ¼öÁ¤</title>
 </head>
 <body>
 <form name="modify" action="modifyPro.memo" method="post">
@@ -16,46 +16,46 @@
 	<table>
 	<tr>
 		<td align="center" colspan="2">
-			<h4><b>ë©”ëª¨ ìˆ˜ì •</b></h4>
+			<h4><b>¸Ş¸ğ ¼öÁ¤</b></h4>
 		</td>
 	</tr>
 	<tr>
 		<td align="center">
-			<b>ì œëª©</b>	
+			<b>Á¦¸ñ</b>	
 		</td>
 		<td>
 			<input type="hidden" name="subject" value="${subject}">
-			<textarea rows="1" cols="50" name="subject">
-				${ subject }
-			</textarea>
+<textarea rows="1" cols="50" name="subject">
+${ subject }
+</textarea>
 		</td>
 	</tr>
 	<tr>
 		<td align="center">
-			<b>ë‚´ìš©</b>
+			<b>³»¿ë</b>
 		</td>
 		<td>
 			<input type="hidden" name="content" value="${content}">
-			<textarea rows="10" cols="50" name="content">
-			${ content }
-			</textarea>
+<textarea rows="10" cols="50" name="content">
+${ content }
+</textarea>
 		</td>
 	</tr>
 	<tr>
 		<td align="center">
-			<b>ë“±ë¡ì‹œê°„</b>
+			<b>µî·Ï½Ã°£</b>
 		</td>
-		<td>
-			${ memoTime }
-		</td>
+<td>
+${ memoTime }
+</td>
 	</tr>
 	<tr>
 		<td align="center">
-			<b>ë¹„ë°€ë²ˆí˜¸</b>
+			<b>ºñ¹Ğ¹øÈ£</b>
 		</td>
 		<td>
 			<input type="password" size="10" maxlength="10" name="pass">
-			<input type="submit" value="ìˆ˜ì •">
+			<input type="submit" value="¼öÁ¤">
 		</td>
 	</tr>
 	</table>

@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+	pageEncoding="euc-kr"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <c:if test="${ check == 1 }">
 	<script type="text/javascript">
-		alert("ìˆ˜ì • ì™„ë£Œ!");
+		alert("¼öÁ¤ ¿Ï·á!");
 	</script>
 	<meta http-equiv="Refresh" content="0; url=list.memo">
 </c:if>
 
 <c:if test="${ check != 1 }">
 	<script type="text/javascript">
-		alert("ë¹„ë°€ë²ˆí˜¸ê°€ ë§žì§€ ì•ŠìŠµë‹ˆë‹¤.");
+		alert("ºñ¹Ð¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.");
 		history.go(-1);
 	</script>
 </c:if>

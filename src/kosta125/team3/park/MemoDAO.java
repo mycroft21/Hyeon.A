@@ -143,6 +143,7 @@ public class MemoDAO {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("delete from memoDB where memoNum=?");
 			pstmt.setInt(1, memoNum);
+			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{
@@ -273,5 +274,49 @@ public class MemoDAO {
 		}
 		return list;
 	}//±Û °Ë»ö
+	
+	public int modify(MemoVO vo) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		ResultSet rs = null;
+		
+		
+		int result = -1;
+
+		try {
+			conn = getConnection();
+		
+
+					sql = "update memoDB set subject = ?, content = ?, memoTime = sysdate where memoNum = ? and pass = ?";
+
+					pstmt = conn.prepareStatement(sql);
+
+					pstmt.setString(1, vo.getSubject());
+					pstmt.setString(2, vo.getContent());
+					pstmt.setInt(3, vo.getMemoNum());
+					pstmt.setString(4, vo.getPass());
+
+					System.out.println("pass: " + vo.getSubject());
+					System.out.println("pass: " + vo.getContent());
+					System.out.println("pass: " + vo.getMemoNum());
+					System.out.println("pass: " + vo.getPass());
+
+					result = pstmt.executeUpdate();
+
+				
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return result;
+	}
+
 	
 }

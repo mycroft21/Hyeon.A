@@ -15,15 +15,15 @@
 <div class="search_form_wrap">
 	<form action="searchPro.park" method="post" >
 		<table  class="search_form_table" >
-			<tr>
+			<tr height="20px">
 				<th>차량검색</th>
 			</tr>
 			<tr>
-				<td>검색할 차량번호를 입력해주세요
-				<br><input type="text" name="search" >&nbsp;&nbsp;
+				<td>검색할 차량번호를 입력해주세요<br><br>
+				<input type="text" name="search" >&nbsp;&nbsp;
 				<input type="submit" value="검색"></td>
 			</tr>
-		</table>
+		</table><br>
 	</form>
 </div>
 </body>

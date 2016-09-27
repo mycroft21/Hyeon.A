@@ -199,7 +199,7 @@ div {
 }
 
 .search_form_wrap {
-	width: 300px;
+	width: 340px;
 	margin: 140px 0 0 0;
 	background-color: white;
 	opacity: 0.9;
@@ -208,6 +208,9 @@ div {
 }
 
 /* 차량검색 테이블 */
+.search_form_table tr th{
+	height: 100px;
+}
 .search_form_table, .search_form_table tr th, .search_form_table td {
 	margin: auto;
 	text-align: center;

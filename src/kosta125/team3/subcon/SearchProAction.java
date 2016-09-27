@@ -14,16 +14,12 @@ public class SearchProAction implements SubCon {
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		request.setCharacterEncoding("UTF-8");
-
 		String A = request.getParameter("search");
-
 		String check = "800";
 
 		ArrayList<ParkVO> list = new ArrayList<ParkVO>();
-		
-		
+			
 		ParkDAO da = new ParkDAO();
-
 		list = da.search(A);
 
 		ArrayList<String> carNum = new ArrayList<String>();
@@ -33,11 +29,9 @@ public class SearchProAction implements SubCon {
 			
 			for (int i = 0; i < list.size(); i++) {
 				ParkVO vo = new ParkVO();
-							vo=list.get(i);		
+				vo=list.get(i);		
+				
 				carNum.add(vo.getCarNum());
-				
-				
-				
 				carinfo.add(vo);
 			}
 		}
@@ -45,7 +39,6 @@ public class SearchProAction implements SubCon {
 		request.setAttribute("carNum", carNum);
 		request.setAttribute("carinfo", carinfo);
 		
-
 		String fnum = "1F";
 
 		ParkDAO dao = ParkDAO.getInstance();
@@ -76,16 +69,12 @@ public class SearchProAction implements SubCon {
 					String ta = "acar" + String.valueOf(i - 1);
 					request.setAttribute(ta, j);
 				}
-
 			}
 			if (z != 0) {
 				String ta = "acar" + String.valueOf(i - 1);
 				request.setAttribute(ta, check);
-
 			}
-
 			request.setAttribute(ts, temp);
-
 		}
 
 		for (int i = 1; i <= list2.size(); i++) {
@@ -98,15 +87,12 @@ public class SearchProAction implements SubCon {
 					String ta = "bcar" + String.valueOf(i - 1);
 					request.setAttribute(ta, j);
 				}
-
 			}
 			if (z != 0) {
 				String ta = "bcar" + String.valueOf(i - 1);
 				request.setAttribute(ta, check);
-
 			}
 			request.setAttribute(ts, temp);
-
 		}
 
 		for (int i = 1; i <= list3.size(); i++) {
@@ -119,7 +105,6 @@ public class SearchProAction implements SubCon {
 					String ta = "ccar" + String.valueOf(i - 1);
 					request.setAttribute(ta, j);
 				}
-
 			}
 			if (z != 0) {
 				String ta = "ccar" + String.valueOf(i - 1);
@@ -139,12 +124,10 @@ public class SearchProAction implements SubCon {
 					String ta = "dcar" + String.valueOf(i - 1);
 					request.setAttribute(ta, j);
 				}
-
 			}
 			if (z != 0) {
 				String ta = "dcar" + String.valueOf(i - 1);
 				request.setAttribute(ta, check);
-
 			}
 			request.setAttribute(ts, temp);
 		}
@@ -160,17 +143,13 @@ public class SearchProAction implements SubCon {
 					String ta = "ecar" + String.valueOf(i - 1);
 					request.setAttribute(ta, j);
 				}
-
 			}
 			if (z != 0) {
 				String ta = "ecar" + String.valueOf(i - 1);
 				request.setAttribute(ta, check);
-
 			}
-
 			request.setAttribute(ts, temp);
 		}
-
 		return "/park/searchPro.jsp";
 	}
 

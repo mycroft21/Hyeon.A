@@ -199,10 +199,7 @@ public class MemoDAO {
 
 		return list;
 	}//총 페이지 로딩
-	
-	
-	
-	
+		
 	
 	public void list(){
 		

@@ -43,15 +43,15 @@
 			<c:set var="endPage" value="${startPage + pageBlock - 1}"/>
 			
 			<c:if test="${startPage > 5}">
-				<a href="list.do?pageNum=${startPage - 5}">[이전]</a>
+				<a href="list.memo?pageNum=${startPage - 5}">[이전]</a>
 			</c:if>
 	
 			<c:forEach var="i" begin="${startPage}" end="${endPage}">
-				<a href="list.do?pageNum=${i}">[${i}]</a>
+				<a href="list.memo?pageNum=${i}">[${i}]</a>
 			</c:forEach>
 	
 			<c:if test="${endPage < pageCount}">
-				<a href="list.do?pageNum=${startPage+5}">[다음]</a>
+				<a href="list.memo?pageNum=${startPage+5}">[다음]</a>
 			</c:if>
 		</c:if>
 

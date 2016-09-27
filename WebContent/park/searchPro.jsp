@@ -14,7 +14,7 @@
 	<div class="search">
 		<c:if test="${cheak == 0 }">
 			<script type="text/javascript">
-				alert(" 조회하신  차량이 없습니다. ");
+				alert(" 조회하신 차량이 없습니다. ");
 				history.go(-1);
 			</script>
 		</c:if>

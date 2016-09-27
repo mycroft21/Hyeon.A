@@ -30,7 +30,6 @@ public class MemoDAO {
 	public MemoDAO() {
 	}
 
-
 	public Connection getConnection() throws Exception {
 
 		Context ctx = new InitialContext();
@@ -39,7 +38,6 @@ public class MemoDAO {
 
 		return ds.getConnection();
 	}
-
 
 	public static void close(Connection conn) {
 		if (conn != null) {
@@ -227,10 +225,52 @@ public class MemoDAO {
 		return list;
 	}//총 페이지 로딩
 		
-	
 	public void list(){
 		
 	}
 	
+	public ArrayList search(String keyField, String keyWord) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		ArrayList<MemoVO> list = new ArrayList<MemoVO>();
+		
+		try {
+			String sql = "select * from memoDB ";
+			
+			if(keyWord != null && !keyWord.equals("")) { //키워드가 공백이 아니라면
+			sql += "where " + keyField.trim() + "like '%"+keyWord.trim()+"%' order by memoTime";
+			
+			} else { //모든 레코드 검색
+				sql += "order by memoTime";
+			}
+			
+			System.out.println("sql = " + sql);
+			
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MemoVO vo = new MemoVO();
+				vo.setMemoNum(rs.getInt("memoNum"));
+				vo.setSubject(rs.getString("subject"));
+				vo.setContent(rs.getString("content"));
+				vo.setMemoTime(rs.getTimestamp("memoTime"));
+				vo.setPass(rs.getString("pass"));
+				
+				list.add(vo);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+		return list;
+	}//글 검색
 	
 }

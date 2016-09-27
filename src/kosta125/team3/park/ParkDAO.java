@@ -297,9 +297,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-
 			pstmt = conn.prepareStatement(sql);
-
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -386,13 +384,13 @@ public class ParkDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String date1 = null, date2 = null;
 		String sql = "select * from caldb where outtime between to_date(?,'YYYY-MM-DD HH24:MI:SS') and to_date(?,'YYYY-MM-DD HH24:MI:SS')";
 
 		try {
 			conn = getConnection();
-
 			pstmt = conn.prepareStatement(sql);
 
 			date1 = dateA + " 00:00:01";

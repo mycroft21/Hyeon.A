@@ -61,7 +61,7 @@ public class SearchProAction implements SubCon {
 		for (int i = 1; i <= list1.size(); i++) {
 			ParkVO temp = (ParkVO) list1.get(i - 1);
 			String ts = "avo" + String.valueOf(i);
-
+			
 			int z = 0;
 			for (int j = 0; j < carNum.size(); j++) {
 				if (carNum.get(j).equals(temp.getCarNum())) {

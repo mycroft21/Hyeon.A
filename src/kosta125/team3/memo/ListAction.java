@@ -27,7 +27,7 @@ public class ListAction implements SubCon {
 	      
 	      List list = null;
 	      
-	      MemoDAO dao = MemoDAO.getInstance(); 
+	      MemoDAO dao = new MemoDAO();
 	      
 	      count = dao.getListAllcount();  
 	      
@@ -36,6 +36,7 @@ public class ListAction implements SubCon {
 	      } else {
 	         list=Collections.EMPTY_LIST;
 	      }
+	      
 	      number = count - ( currentPage - 1 ) * pageSize ;
 	      request.setAttribute("currentPage", new Integer(currentPage));
 	      request.setAttribute("startRow", new Integer(startRow));
@@ -45,7 +46,8 @@ public class ListAction implements SubCon {
 	      request.setAttribute("number", new Integer(number));
 	      request.setAttribute("list", list);
 	      
-	      return "/memo/list.memo";
+	      
+	      return "/memo/list.jsp";
 	}
 
 }

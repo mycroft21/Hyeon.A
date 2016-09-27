@@ -202,12 +202,13 @@ public class MemoDAO {
 
 				do {
 					MemoVO vo = new MemoVO();
-					vo.setMemoNum(rs.getInt("memoNum"));
-					vo.setContent(rs.getString("content"));
-					vo.setMemoTime(rs.getTimestamp("memoTime"));
-					vo.setPass(rs.getString("pass"));
-					vo.setSubject(rs.getString("subject"));
-					
+
+					vo.setMemoNum(rs.getInt(1));
+					vo.setContent(rs.getString(3));
+					vo.setMemoTime(rs.getTimestamp(4));
+					vo.setPass(rs.getString(5));
+					vo.setSubject(rs.getString(2));
+
 					list.add(vo);
 
 				} while (rs.next());

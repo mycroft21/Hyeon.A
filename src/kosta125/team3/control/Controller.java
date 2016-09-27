@@ -137,7 +137,7 @@ public class Controller extends HttpServlet{
 	         e.printStackTrace();
 	      }
 	      request.setAttribute("CONTENT", view);
-	      RequestDispatcher rd = request.getRequestDispatcher("template/template.jsp");
+	      RequestDispatcher rd = request.getRequestDispatcher("/template/template.jsp");
 	      rd.forward(request, response);
 	      /*해당 내용을 템플릿으로 보냅니다.*/
 	   }

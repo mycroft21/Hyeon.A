@@ -8,20 +8,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>리스트</title>
 </head>
+		<c:if test="${count == 0}">
+			<table width="700" border="1" cellpadding="0" cellspacing="0">
+				<tr>
+					<td align="center">게시판에 저장된 글이 없습니다.</td>
+				</tr>
+			</table>
+		</c:if>
 
-<talbe>
+
+
+		
+<c:if test="${count > 0}">
+
+<table>
 <tr>
 <th>글번호</th>
 <th>제목</th>
 <th>작성시간</th>
 </tr>
-<c:forEach items = "${list }" var = "list" >
+
+			<c:forEach items = "${list }" var = "list" >
 <tr>
-<td><c:out value="${list.memonum }" /></td>
-<td><c:out value="${list.subject }" /></td>
-<td><c:out value="${list.content }" /></td>
+<td><a href="">${list.memoNum }</a></td>
+<td><a href="">${list.subject }</a></td>
+<td><a href="">${list.content }</a></td>
 </tr>
 </c:forEach>
+			</table>
+		</c:if>
+
+
 
 <br>
 

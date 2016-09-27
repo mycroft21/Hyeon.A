@@ -90,17 +90,19 @@ div{
  
 /* 요금정산 전체틀  */
 .calc{
+	width: 750px;
 	height: 480px;
 	text-align: center;
 	position: relative;
+	top: -13px;
 	margin: 0 auto;
 }
 
 /* 요금정산 테이블을 감싸는 전체틀 */
 .calc_table_wrap{
 	width: 606px;
-    height: 350px;
-	margin: 5px auto; 
+    height: 310px;
+	margin: 10px auto; 
 }
 
 /* 요금정산 테이블 */
@@ -112,9 +114,8 @@ div{
 /* 요금정산 헤드부분 */
 .calc_top tr{
 	position: absolute;
-	margin: -1px 0 0 -1px; 
     width: 600px;
- 	height: 10px; 
+ 	height: 20px; 
     display: table;
    	table-layout: fixed;
 	background-color: #d4d4d4;
@@ -142,9 +143,9 @@ div{
 .calc_mid{
 	position: absolute;
 	width: 600px;
-    height: 315px;
-    margin: 0 0 0 -2px;
-    top: 123px;
+    height: 274px;
+    margin: 0 0 0 0 ;
+    top: 176px;
  	overflow-y:auto; 
 }
 
@@ -171,18 +172,19 @@ div{
 /* 요금정산 테이블의 꼬리 부분 */
  .calc_bottom {
 	position:absolute;
-	bottom: 40px;
+	bottom: 10px;
 } 
  .calc_bottom tr{
-	position: absolute;
-	margin: -1px 0 0 -1px; 
+	/* margin: -1px 0 0 -1px;  */
     width: 600px;
- 	height: 10px; 
+ 	height: 15px; 
     display: table;
-    text-align: center;
    	table-layout: fixed;
 	background-color: #d4d4d4;
 } 
+ .calc_bottom td{
+     text-align: center;
+ }
 
  .2_wrap {
 	position:relative;

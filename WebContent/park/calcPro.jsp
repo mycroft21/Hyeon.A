@@ -14,10 +14,13 @@
 	<div class="calc">
 		<!-- 버튼부  -->
 		<form action="calcPro.park" method="post" name="calcPro">
-			차량 번호 검사 &nbsp; <input type="text" name="carNum"> <br> <br>
-			<br> <input type="date" name="date1"> 부터 <input
-				type="date" name="date2"> 까지 <input type="submit" value="전송">
-			<input type="reset" value="초기화"><br>
+		<br><br>
+			차량 번호 검사 &nbsp; <input type="text" name="carNum">
+			<br>
+			<br><br>
+			<input type="date" name="date1"> 부터
+			<input type="date" name="date2"> 까지 
+			<input type="submit" value="전송">&nbsp;<input type="reset" value="초기화"><br>
 		</form>
 		<!-- 내용 표시부 디폴트 당일 정산 내역 -->
 		<div class="calc_table_wrap">
@@ -38,7 +41,7 @@
 							<td class="calc_cell_1"><c:out value="${list.carNum }" /></td>
 							<td class="calc_cell_2"><c:out value="${list.inTime }" /></td>
 							<td class="calc_cell_2"><c:out value="${list.outTime }" /></td>
-							<td class="calc_cell_1"><fmt:formatNumber value="${list.pay}" pattern="000,000.## 원"/></td>
+							<td class="calc_cell_1"><fmt:formatNumber value="${list.pay}" pattern="￦ ###,###,###"/></td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -46,7 +49,7 @@
 			<table class="calc_bottom">
 				<tr>
 					<td class="calc_table_td" colspan="3"><b>총 매출</b></td>
-					<td class="calc_table_td" colspan="2"><b><fmt:formatNumber value="${calPay}" pattern="000,000.## 원"/>
+					<td class="calc_table_td" colspan="2"><b><fmt:formatNumber value="${calPay}" pattern="￦ ###,###"/>
 
 </b></td>
 				</tr>

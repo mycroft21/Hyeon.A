@@ -24,11 +24,10 @@
 		 특정 차량으로 검색 하고 싶으면 입력하세요! &nbsp;&nbsp;
 		 <input type = "text" name = "carNum">
 		 
-		 <br>
-				 <input type="date" name="date1">
-		부터 <input type="date" name="date2"> 까지 <input type="submit"
-			value="전송">
-			<input type="reset" value="초기화"><br>
+		 <br><br>
+				 <input type="date" name="date1"> - <input type="date" name="date2">  
+				 <input type="submit" value="전송">
+				<input type="reset" value="초기화"><br>
 			</form>
 	</div>
 

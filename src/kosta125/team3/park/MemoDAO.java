@@ -287,7 +287,6 @@ public class MemoDAO {
 
 		try {
 			conn = getConnection();
-		
 
 					sql = "update memoDB set subject = ?, content = ?, memoTime = sysdate where memoNum = ? and pass = ?";
 

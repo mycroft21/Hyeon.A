@@ -1,17 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=euc-kr"
-	pageEncoding="euc-kr"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/memoStyle.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <c:if test="${ check == 1 }">
 	<script type="text/javascript">
-		alert("¼öÁ¤ ¿Ï·á!");
+		alert("ìˆ˜ì • ì™„ë£Œ!");
 	</script>
 	<meta http-equiv="Refresh" content="0; url=list.memo">
 </c:if>
 
 <c:if test="${ check != 1 }">
 	<script type="text/javascript">
-		alert("ºñ¹Ð¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.");
+		alert("ë¹„ë°€ë²ˆí˜¸ê°€ ë§žì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		history.go(-1);
 	</script>
 </c:if>

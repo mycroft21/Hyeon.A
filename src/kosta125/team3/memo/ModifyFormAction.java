@@ -11,7 +11,7 @@ public class ModifyFormAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("UTF-8");
 		
 		int memoNum = Integer.parseInt(request.getParameter("memoNum"));
 

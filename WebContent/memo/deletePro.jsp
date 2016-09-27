@@ -6,9 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>Delete Pro</title>
+
 </head>
 <body>
-
+	<c:if test="${result==1}">
+		<div align="center">성공적으로 삭제되었습니다.<br><button onclick="document.location.href='list.memo'">목록</button></div>
+	</c:if>
+	<c:if test="${result==0}">
+		<div align="center">암호가 틀렸습니다.<br><button onclick="history.go(-1)">뒤로</button></div>
+	</c:if>
 </body>
 </html>

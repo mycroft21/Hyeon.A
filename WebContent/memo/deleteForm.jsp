@@ -34,10 +34,10 @@
 				<td colspan="2">해당 메모를 정말 지우시려면 암호를 입력해주세요.</td>
 			</tr>
 			<tr>
-				<td class="name1">암호</td><td class="name2"><input type="password" name="passwd" size="7"></td>
+				<td class="name1">암호</td><td class="name2"><input type="password" name="passwd" size="7"><input type="hidden" name="memoNum" value="${vo.memoNum}"></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="삭제"></button>&nbsp;<button name="cancel" onclick="history.go(-1)">취소</button></td>
+				<td colspan="2" align="center"><input type="submit" value="삭제">&nbsp;&nbsp;<button name="cancel" onclick="history.go(-1)">취소</button></td>
 			</tr>
 		</table>
 	</form>

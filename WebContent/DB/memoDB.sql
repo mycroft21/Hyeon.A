@@ -14,6 +14,10 @@ insert into memoDB (memoNum, subject, content, memotime, pass) values (mNumbers.
 
 select * from memoDB;
 
-delete from memoDB where memoNum=3;
+drop table memoDB;
+
+drop sequence mNumbers;
+
+delete from memoDB where memoNum=2;
 
 select * from memoDB where memonum between 1 and 5;

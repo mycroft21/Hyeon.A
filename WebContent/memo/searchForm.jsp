@@ -6,9 +6,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>글 검색</title>
 </head>
 <body>
-
+<form action="searchPro.memo" method="post">
+	<table>
+		<tr>
+			<td>
+				<select name="keyField">
+					<option value="0"> --- 선택 --- </option>
+					<option value="memoNum"> 글번호 </option>
+					<option value="subject"> 글제목 </option>
+					<option value="content"> 글내용 </option>
+				</select> 
+				
+				<input type="text" name="keyWord" />
+				<input type="submit" value="검색" />
+			</td>
+		</tr>
+	</table>
+</form>
 </body>
 </html>

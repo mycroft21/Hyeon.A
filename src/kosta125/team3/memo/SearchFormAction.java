@@ -8,7 +8,8 @@ import kosta125.team3.subcon.SubCon;
 public class SearchFormAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return null;
+		
+		return "/memo/searchForm.jsp";
 	}
 
 }

@@ -14,7 +14,7 @@
 <body>
 <div class="search_form_wrap">
 	<form action="searchPro.park" method="post" >
-		<table  class="search_form_table" >
+		<table class="search_form_table" >
 			<tr height="20px">
 				<th>차량검색</th>
 			</tr>

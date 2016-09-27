@@ -191,11 +191,16 @@ div{
 }
 
  .search_form_wrap{
-	top:200px;
-	margin: auto;
+ 	width: 300px;
+	margin: 140px  0 0 0;
+	background-color: white;
+	opacity: 0.9;
+	filter: alpha(opacity:100);
+	border-radius: 10px;
 } 
 
 /* 차량검색 테이블 */
+
 .search_form_table, .search_form_table tr th, .search_form_table td {
 	margin: auto;
 	text-align: center;

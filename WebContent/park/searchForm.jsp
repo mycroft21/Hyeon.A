@@ -12,7 +12,7 @@
 <title>차량검색</title>
 </head>
 <body>
-<div>
+<div class="search_form_wrap">
 	<form action="searchPro.park" method="post" >
 		<table  class="search_form_table" >
 			<tr>

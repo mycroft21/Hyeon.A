@@ -10,8 +10,25 @@
 <title>Delete Form</title>
 </head>
 <body>
-	<table>
-	
+	<table class="check">
+		<tr>
+			<th colspan="2"><h3>지우실 메모를 확인해주세요.</h3></th>
+		</tr>
+		<tr>
+			<td class="name1">메모제목</td><td class="name2">${vo.subject}</td>
+		</tr>
+		<tr>
+			<td class="name1">작성일자</td><td class="name2">${vo.memoTime}</td>
+		</tr>
+		<tr>
+			<td colspan="2">메모내용</td>
+			<td colspan="2" class="content">${vo.content}</td>
+		</tr>
 	</table>
+	<form name="delete">
+		<table class="confirm">
+		
+		</table>
+	</form>
 </body>
 </html>

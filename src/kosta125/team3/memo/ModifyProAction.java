@@ -15,16 +15,11 @@ public class ModifyProAction implements SubCon {
 		
 		MemoDAO dao = MemoDAO.getInstance();
 		MemoVO vo = new MemoVO();
-		
-		int memoNum = Integer.parseInt(request.getParameter("memoNum"));
-		String subject = request.getParameter("subject");
-		String content = request.getParameter("content");
-		String pass = request.getParameter("pass");
-		
-		vo.setMemoNum(memoNum);
-		vo.setSubject(subject);
-		vo.setContent(content);
-		vo.setPass(pass);
+
+		vo.setMemoNum(Integer.parseInt(request.getParameter("memoNum")));
+		vo.setSubject(request.getParameter("subject"));
+		vo.setContent(request.getParameter("content"));
+		vo.setPass(request.getParameter("pass"));
 		
 		System.out.println(vo.getMemoNum());
 		System.out.println(vo.getSubject());

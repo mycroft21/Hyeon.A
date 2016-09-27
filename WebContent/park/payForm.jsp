@@ -40,8 +40,13 @@
 			var endDate = new Date();
 			var startDate = new Date(document.forms[name].elements["hidd"].value);
 			var pay = Math.round((endDate.getTime() - startDate.getTime()) / 60000) * 100;
-			document.getElementById(fl).innerHTML =	pay + "원";
+			document.getElementById(fl).innerHTML = "￦ "+	pay.format();
 		}
+	};
+	
+	Number.prototype.format = function(n, x) {
+	    var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+	    return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
 	};
 	
 	function times(){

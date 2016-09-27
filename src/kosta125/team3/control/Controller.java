@@ -88,6 +88,7 @@ public class Controller extends HttpServlet{
 	
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	      System.out.println(classMap);
+	      System.out.println(classMap.size());
 	      String view = null;
 	      SubCon subcon = null;
 	      

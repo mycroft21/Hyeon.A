@@ -5,6 +5,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style type="text/css">
+#first{
+background-color: white;
+margin: 10px auto;
+margin-left:30px;
+width:200px; 
+height:220px;
+float: left;
+
+}
+#second{
+background-color: lightgray;
+position: relative;
+height: 50px;
+}
+#third{
+background-color: white;
+padding: 3px;
+}
+.control{
+width: 120px;
+}
+.list_wrap{
+width: 700px;
+}
+.right{
+position: absolute;
+right: 0;
+padding: 2px;
+width: 80px;
+}
+.left{
+position: absolute;
+left:0;
+top:25px;
+padding: 2px;
+width: 80px;
+}
+
+</style>
+
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>리스트</title>
 </head>
@@ -17,31 +58,26 @@
 		</c:if>
 
 
-
+<div class="list_wrap">
 		
 <c:if test="${count > 0}">
 
-<table>
-<tr>
-<th>글번호</th>
-<th>제목</th>
-<th>작성시간</th>
-</tr>
-
-			<c:forEach items = "${list }" var = "list" >
-<tr>
-<td><a href="">${list.memoNum }</a></td>
-<td><a href="">${list.subject }</a></td>
-<td><a href="">${list.content }</a></td>
-</tr>
-</c:forEach>
-			</table>
-		</c:if>
-
-
+		<c:forEach items = "${list }" var = "list" >
+			<div id = "first">
+				<div id = "second">
+					<div class="right" >
+						<a href=""> 글번호 : ${list.memoNum } </a>
+					</div>
+					<div  class="left">${list.subject }</div>
+				</div>
+				<div id="third">${list.content }</div>
+			</div>
+		</c:forEach>
+	
+</c:if>
 
 <br>
-
+<div class="control">
 	<c:if test="${count > 0}">
 			<c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1 )}"/>
 			<c:set var="startPage" value="${1}"/>
@@ -71,6 +107,7 @@
 				<a href="list.memo?pageNum=${startPage+5}">[다음]</a>
 			</c:if>
 		</c:if>
-
+</div>
+</div>
 </body>
 </html>

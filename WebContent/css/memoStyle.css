@@ -1,5 +1,12 @@
-@CHARSET "EUC-KR";
-
-table {
+table{
 	margin: auto;
+}
+
+td{
+	height: 20px;
+}
+
+.scroll{
+	height: 530px;
+	overflow: scroll;
 }

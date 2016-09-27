@@ -10,6 +10,7 @@
 <title>Delete Form</title>
 </head>
 <body>
+	<div class="scroll">
 	<table class="check">
 		<tr>
 			<th colspan="2"><h3>지우실 메모를 확인해주세요.</h3></th>
@@ -22,13 +23,24 @@
 		</tr>
 		<tr>
 			<td colspan="2">메모내용</td>
+		</tr>
+		<tr>
 			<td colspan="2" class="content">${vo.content}</td>
 		</tr>
 	</table>
 	<form name="delete">
 		<table class="confirm">
-		
+			<tr>
+				<td colspan="2">해당 메모를 정말 지우시려면 암호를 입력해주세요.</td>
+			</tr>
+			<tr>
+				<td class="name1">암호</td><td class="name2"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="삭제"></button>&nbsp;<button name="cancel" onclick="history.go(-1)">취소</button></td>
+			</tr>
 		</table>
 	</form>
+	</div>
 </body>
 </html>

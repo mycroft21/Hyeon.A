@@ -98,7 +98,6 @@ public class MemoDAO {
 				vo.setSubject(rs.getString(2));
 				vo.setContent(rs.getString(3));
 				vo.setMemoTime(rs.getTimestamp(4));
-				vo.setPass(rs.getString(5));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

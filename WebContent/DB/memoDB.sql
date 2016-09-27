@@ -11,3 +11,5 @@ create SEQUENCE mNumbers
 insert into memoDB (memoNum, subject, content, memotime) values (mNumbers.nextval, '첫메모', '테스트합니다.', sysdate);
 
 select * from memoDB;
+
+select * from memoDB where memonum between 1 and 5;

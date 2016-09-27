@@ -15,6 +15,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+
+
 import kosta125.team3.park.*;
 
 public class MemoDAO {
@@ -123,4 +125,88 @@ public class MemoDAO {
 			close(conn);
 		}
 	}
+	public int getListAllcount() {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count = 0;
+
+		try {
+
+			conn = getConnection();
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM memoDB");
+			rs = pstmt.executeQuery();
+
+			if (rs.next())
+				count = rs.getInt(1);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return count;
+
+	}// ÃÑ ¼ö ¼¼±â
+	
+	public List<MemoVO> getSelectAll(int startRow, int endRow) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List list = null;
+		String sql = null;
+
+		try {
+			conn = getConnection();
+
+			sql = "select * from memoDB where memonum between ? and ?";
+
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				list = new ArrayList(endRow);
+
+				do {
+					MemoVO vo = new MemoVO();
+					vo.setMemoNum(rs.getInt("memoNum"));
+					vo.setContent(rs.getString("content"));
+					vo.setMemoTime(rs.getTimestamp("memoTime"));
+					vo.setPass(rs.getString("pass"));
+					vo.setSubject(rs.getString("subject"));
+					
+					list.add(vo);
+
+				} while (rs.next());
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return list;
+	}//ÃÑ ÆäÀÌÁö ·Îµù
+	
+	
+	
+	
+	
+	public void list(){
+		
+	}
+	
+	
 }

@@ -25,7 +25,7 @@
 		 <input type = "text" name = "carNum"  class="textbox">&nbsp;<input type="submit" value="검색">
 		 
 		 <br><br>
-				 <input type="date" name="date1" class="datebox"> - <input type="date" name="date2" >  
+				 <input type="date" name="date1" class="datebox"> - <input type="date" name="date2"  class="datebox">  
 				 <input type="submit" value="검색" > 
 				<input type="reset" value="초기화" ><br>
 			</form>

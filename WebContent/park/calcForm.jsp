@@ -6,8 +6,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/hyeonA/css/style.css" />
-<link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -21,13 +21,13 @@
 		<%-- <input type="month" name="month" value="${month }">
 		<input type="submit"			value="월정산 보기"> --%>
 		 <br>
-		 특정 차량으로 검색 하고 싶으면 입력하세요! &nbsp;&nbsp;
-		 <input type = "text" name = "carNum">
+		 검색할 특정 차량의 번호를 입력하세요! &nbsp;&nbsp;
+		 <input type = "text" name = "carNum"  class="textbox">&nbsp;<input type="submit" value="검색">
 		 
 		 <br><br>
-				 <input type="date" name="date1"> - <input type="date" name="date2">  
-				 <input type="submit" value="전송">
-				<input type="reset" value="초기화"><br>
+				 <input type="date" name="date1" class="datebox"> - <input type="date" name="date2" >  
+				 <input type="submit" value="검색" > 
+				<input type="reset" value="초기화" ><br>
 			</form>
 	</div>
 

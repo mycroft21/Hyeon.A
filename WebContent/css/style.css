@@ -1,71 +1,68 @@
-body{
+body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	background-image: url("/hyeonA/images/juchajang.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-		
 }
-body img{
-	-ms-interpolation-mode: bicubic;  
+
+body img {
+	-ms-interpolation-mode: bicubic;
 }
-div{
+
+div {
 	margin: 0;
 	padding: 0;
-} 
+}
 
 /* 탑_div */
-.top_table{
+.top_table {
 	width: 950px;
 	height: 60px;
 	background-color: #46a3ff;
 	border-radius: 10px;
 }
-.top_table tr{
+
+.top_table tr {
 	height: 120px;
 }
 
 /* 메인탑 DIV */
-.parking_top{
-	margin: 1px auto;	
+.parking_top {
+	margin: 1px auto;
 }
 
 /* 전체틀 DIV */
-.park_container{
-   width: 960px;
-   height: 800px;
-   padding: 0;
-   position: relative;
-   margin: auto;
+.park_container {
+	width: 960px;
+	height: 800px;
+	padding: 0;
+	position: relative;
+	margin: auto;
 }
 
 /* 주차공간, 상황판 DIV */
-.parking_wrap{
-   width: 800px;
-   height: 500px;
+.parking_wrap {
+	width: 800px;
+	height: 500px;
 }
 
 /* 주차공간 DIV */
-.park{
-	background-color: #e8e1e4;
-	background-color: rgba( 255, 255, 255, 0.5 );
-/*     background-image:url("/hyeonA/images/park_board.jpg");
-   	background-size: 100% 100%;
-    background-repeat: no-repeat; */
-   height: 530px;
-   border-radius: 10px;
+.park {
+	background-color: rgba(255, 255, 265, 0.6);
+	height: 530px;
+	border-radius: 10px;
 }
 
 /* 상황판 DIV */
-.op_board{
-   width: 950px;
-   margin: 21px auto;;
+.op_board {
+	width: 950px;
+	margin: 21px auto;;
 }
 
-
 /* 메뉴 DIV */
-.menu{
+.menu {
 	width: 120px;
 	position: absolute;
 	top: 140px;
@@ -73,23 +70,23 @@ div{
 }
 
 /* 상황판 안의 테이블 */
-#temp_table{
-	width:800px;
+#temp_table {
+	width: 800px;
 	background-image: url("/hyeonA/images/op_board.jpg");
 	opacity: 0.9;
-	filter: alpha(opacity:100);
+	filter: alpha(opacity : 100);
 	background-size: 100% 100%;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	border-radius: 10px;
 }
 
 /* 상황판 안의 테이블 tr로 높이 지정 */
-#temp_table tr{
+#temp_table tr {
 	height: 60px;
 }
- 
+
 /* 요금정산 전체틀  */
-.calc{
+.calc {
 	width: 750px;
 	height: 480px;
 	text-align: center;
@@ -99,114 +96,137 @@ div{
 }
 
 /* 요금정산 테이블을 감싸는 전체틀 */
-.calc_table_wrap{
+.calc_table_wrap {
 	width: 606px;
-    height: 310px;
-	margin: 10px auto; 
+	height: 310px;
+	margin: 10px auto;
 }
 
 /* 요금정산 테이블 */
-.calc_table_wrap table{
-	border-collapse:collapse;
-    table-layout: fixed;
+.calc_table_wrap table {
+	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 /* 요금정산 헤드부분 */
-.calc_top tr{
+.calc_top tr {
 	position: absolute;
-    width: 600px;
- 	height: 20px; 
-    display: table;
-   	table-layout: fixed;
+	width: 600px;
+	height: 20px;
+	display: table;
+	table-layout: fixed;
 	background-color: #d4d4d4;
 }
-.calc_top tr th{
+
+.calc_top tr th {
 	text-align: center;
 }
-.top_th1{
+
+.top_th1 {
 	width: 74px;
 }
-.top_th2{
+
+.top_th2 {
 	width: 76px;
 }
-.top_th3{
+
+.top_th3 {
 	width: 106px;
 }
-.top_th4{
+
+.top_th4 {
 	width: 90px;
 }
-.top_th5{
+
+.top_th5 {
 	width: 98px;
 }
 
 /* 요금정산 테이블의 중간부분 /스크롤바 있음 */
-.calc_mid{
+.calc_mid {
 	position: absolute;
 	width: 600px;
-    height: 274px;
-    margin: 0 0 0 0 ;
-    top: 176px;
- 	overflow-y:auto; 
+	height: 274px;
+	margin: 0 0 0 0;
+	top: 176px;
+	overflow-y: auto;
 }
 
-.calc_mid tr{
+.calc_mid tr {
 	width: 600px;
-	height: 10px; 
+	height: 10px;
 }
 
-.calc_cell_1{
+.calc_cell_1 {
 	width: 103px;
 	background-color: white;
 	border: 1px solid black;
 }
-.calc_cell_2{
+
+.calc_cell_2 {
 	width: 140px;
 	background-color: white;
 	border: 1px solid black;
 }
 
-.calc_table td{
+.calc_table td {
 	border: 1px solid black;
 }
 
 /* 요금정산 테이블의 꼬리 부분 */
- .calc_bottom {
-	position:absolute;
+.calc_bottom {
+	position: absolute;
 	bottom: 10px;
-} 
- .calc_bottom tr{
-	/* margin: -1px 0 0 -1px;  */
-    width: 600px;
- 	height: 15px; 
-    display: table;
-   	table-layout: fixed;
-	background-color: #d4d4d4;
-} 
- .calc_bottom td{
-     text-align: center;
- }
-
- .2_wrap {
-	position:relative;
-	width:100%;
-	margin:20px auto;
 }
 
- .search_form_wrap{
- 	width: 300px;
-	margin: 140px  0 0 0;
+.calc_bottom tr {
+	/* margin: -1px 0 0 -1px;  */
+	width: 600px;
+	height: 15px;
+	display: table;
+	table-layout: fixed;
+	background-color: #d4d4d4;
+}
+
+.calc_bottom td {
+	text-align: center;
+}
+
+.2_wrap {
+	position: relative;
+	width: 100%;
+	margin: 20px auto;
+}
+
+.search_form_wrap {
+	width: 300px;
+	margin: 140px 0 0 0;
 	background-color: white;
 	opacity: 0.9;
-	filter: alpha(opacity:100);
+	filter: alpha(opacity : 100);
 	border-radius: 10px;
-} 
+}
 
 /* 차량검색 테이블 */
-
 .search_form_table, .search_form_table tr th, .search_form_table td {
 	margin: auto;
 	text-align: center;
 }
-.search_form_table tr th{
+
+.search_form_table tr th {
 	font: 25px oblique;
 }
+
+/* 텍스트박스 꾸미기 */
+.textbox, .datebox {
+	width: 150;
+	height: 21;
+	background-color: ivory;
+	font-size: 10pt;
+	color: #000040;
+}
+
+/*하이퍼링크꾸미기 */
+a:visited {
+	color: blue;
+} 

@@ -15,12 +15,12 @@
 		<!-- 버튼부  -->
 		<form action="calcPro.park" method="post" name="calcPro">
 		<br><br>
-			차량 번호 검사 &nbsp; <input type="text" name="carNum">
+			<b>차량 번호 검사</b> &nbsp; <input type="text" name="carNum" class="textbox" >&nbsp;<input type="submit" value="검색" >
 			<br>
 			<br><br>
-			<input type="date" name="date1"> 부터
-			<input type="date" name="date2"> 까지 
-			<input type="submit" value="전송">&nbsp;<input type="reset" value="초기화"><br>
+			<input type="date" name="date1" class="datebox"> -
+			<input type="date" name="date2" class="datebox">&nbsp; 
+			<input type="submit" value="검색" >&nbsp;<input type="reset" value="초기화" ><br>
 		</form>
 		<!-- 내용 표시부 디폴트 당일 정산 내역 -->
 		<div class="calc_table_wrap">

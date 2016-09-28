@@ -17,9 +17,18 @@ public class WriteProAction implements SubCon {
 		
 		vo.setSubject(request.getParameter("subject"));
 		vo.setContent(request.getParameter("content"));
-		vo.setPass(request.getParameter("password"));
-
-		dao.insert(vo);
+		
+		String passwd = request.getParameter("password");
+		System.out.println("passwd2 : "+passwd);
+		
+		if(passwd.length()>0){
+			dao.insert(vo);
+			request.setAttribute("passwd", passwd);
+		}else{
+			request.setAttribute("passwd", passwd);
+			System.out.println("passwd : "+passwd);
+		}
+		
 		
 		return "/memo/writePro.jsp";
 	}

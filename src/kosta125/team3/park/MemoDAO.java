@@ -317,11 +317,10 @@ public class MemoDAO {
 		return result;
 	}
 	//글 등록
-	public int insert(MemoVO vo)  {
+	public void insert(MemoVO vo)  {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		int result = -1;
 		
 		try {
 			conn=getConnection();
@@ -334,12 +333,7 @@ public class MemoDAO {
 			pstmt.setString(2, vo.getContent());
 			pstmt.setString(3, vo.getPass());
 			
-			System.out.println("pass: " + vo.getSubject());
-			System.out.println("pass: " + vo.getContent());
-			System.out.println("pass: " + vo.getMemoNum());
-			System.out.println("pass: " + vo.getPass());
-			
-			result=pstmt.executeUpdate();
+			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -348,8 +342,6 @@ public class MemoDAO {
 			close(rs);
 			close(conn);
 		}
-
-		return result;
 		
 	} // 글등록 end
 

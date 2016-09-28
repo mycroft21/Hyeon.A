@@ -189,7 +189,7 @@ public class MemoDAO {
 		try {
 			conn = getConnection();
 
-			sql = "select * from memoDB where memonum between ? and ?";
+			sql = "select memonum, subject, content, memotime,pass,rownum r from (select memonum, subject, content, memotime,pass,rownum r from memoDB order by memotime desc ) where r between ? and ?";
 
 			pstmt = conn.prepareStatement(sql);
 			

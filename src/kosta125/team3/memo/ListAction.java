@@ -31,6 +31,8 @@ public class ListAction implements SubCon {
 	      
 	      count = dao.getListAllcount();  
 	      
+	      System.out.println("Ä«¿îÆ®"+count);
+	      
 	      if( count > 0 ){
 	         list = dao.getSelectAll(startRow, endRow ); 
 	      } else {

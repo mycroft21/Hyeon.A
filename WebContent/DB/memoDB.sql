@@ -24,3 +24,5 @@ delete from memoDB where memoNum=2;
 select * from memoDB where memonum between 1 and 5;
 
 insert into memoDB (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,1,2,sysdate,3)
+
+select memonum, subject, content, memotime,pass,rownum r from (select memonum, subject, content, memotime,pass,rownum r from memoDB order by memonum desc ) where r between 1 and 6

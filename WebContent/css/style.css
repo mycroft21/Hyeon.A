@@ -232,4 +232,16 @@ div {
 /*하이퍼링크꾸미기 */
 a:visited {
 	color: blue;
-} 
+}
+
+/* login 테이블 */
+
+#login_tb {
+	border: 2px solid;
+	border-color: #b4b4b4;
+	padding: 3px;
+}
+
+#login_tb tr {
+	height: 30px;
+}

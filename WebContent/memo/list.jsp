@@ -94,13 +94,12 @@
 						<form action="modifyForm.memo" method="post" name="sendmody">
 							글번호 :
 							<c:out value="${list.memoNum }" />
-							&nbsp; <input type="image" class="img2"
+								<input type="image" class="img2"
 								src="/hyeonA/images/remove.png"
 								value=" 글번호 : ${list.memoNum }"> <input type="hidden"
 								value="${list.memoNum }" name="memoNum"/>
 
 						</form>
-						&nbsp;
 
 						<form action="deleteForm.memo" method="post" name="sendmody">
 							<input type="image"

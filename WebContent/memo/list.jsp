@@ -79,7 +79,7 @@
          		</c:if>
       		</c:if>
    		</div>
-		<form action="searchPro.memo" method="post" class="list_search_form">
+		<form action="list.memo" method="post" class="list_search_form">
 			<table class="list_search_table">
 				<tr>
 					<td>

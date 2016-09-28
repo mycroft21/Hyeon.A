@@ -7,6 +7,19 @@
 <head>
 <link rel="stylesheet" type="text/css" href="/hyeonA/css/memoStyle.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
+<script type="text/javascript">
+	function nullCheck() {
+		var pw = document.forms['modify'].elements['pass'].value;
+
+		if (pw.length < 1) {
+			alert("암호가 입력되지 않았습니다.");
+		} else {
+			document.forms['modify'].submit();
+		}
+	};
+</script>
+
 <title>메모 수정</title>
 </head>
 <body>
@@ -37,8 +50,10 @@
 				</tr>
 				<tr>
 					<td align="center"><b>비밀번호</b></td>
-					<td><input type="password" size="10" maxlength="10"
-						name="pass"> <input type="submit" value="수정"></td>
+					<td id="ps">
+					<input type="password" size="10" name="pass">
+					<input type="button" value="수정" onclick="nullCheck();">
+					</td>
 				</tr>
 			</table>
 		</div>

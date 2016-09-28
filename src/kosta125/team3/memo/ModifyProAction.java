@@ -26,9 +26,7 @@ public class ModifyProAction implements SubCon {
 		System.out.println(vo.getContent());
 		System.out.println(vo.getPass());
 		int check = dao.modify(vo);
-		
-		System.out.println("check: " + check);
-		
+
 		request.setAttribute("check", check);
 
 		return "/memo/modifyPro.jsp";

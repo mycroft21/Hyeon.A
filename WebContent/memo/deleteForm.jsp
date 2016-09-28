@@ -10,7 +10,7 @@
 <title>Delete Form</title>
 </head>
 <body>
-	<div class="scroll">
+	<div class="modify_wrap">
 	<table class="check">
 		<tr>
 			<th colspan="2"><h3>지우실 메모를 확인해주세요.</h3></th>

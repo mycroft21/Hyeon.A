@@ -25,8 +25,8 @@
 <body>
 	<form name="modify" action="modifyPro.memo" method="post">
 		<input type="hidden" name="memoNum" value="${ memoNum }">
-		<div class="scroll">
-			<table>
+		<div class="modify_wrap">
+			<table class="modify_table">
 				<tr>
 					<td align="center" colspan="2">
 						<h4>

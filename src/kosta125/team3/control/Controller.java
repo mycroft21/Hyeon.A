@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
+
+import kosta125.team3.park.LoginVO;
 import kosta125.team3.park.ParkDAO;
 
 import javax.servlet.RequestDispatcher;
@@ -14,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kosta125.team3.subcon.SubCon;
 
@@ -136,10 +139,23 @@ public class Controller extends HttpServlet{
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
+	      HttpSession session = request.getSession();
+	      LoginVO lvo = (LoginVO) session.getAttribute("admin");
 	      request.setAttribute("CONTENT", view);
-	      RequestDispatcher rd = request.getRequestDispatcher("/template/template.jsp");
-	      rd.forward(request, response);
-	      /*해당 내용을 템플릿으로 보냅니다.*/
+	      System.out.println(lvo);
+	      if(lvo==null){
+	    	  if(view.contains("loginPro")){
+	    	  } else{
+	    		  request.setAttribute("CONTENT", "/park/login.jsp");
+	    	  }
+	    	  RequestDispatcher rd = request.getRequestDispatcher("/template/logintemp.jsp");
+	    	  rd.forward(request, response);
+	    	  
+	      } else{
+	    	  RequestDispatcher rd = request.getRequestDispatcher("/template/template.jsp");
+	    	  rd.forward(request, response);
+	    	  /*해당 내용을 템플릿으로 보냅니다.*/
+	      }
 	   }
 	
 }

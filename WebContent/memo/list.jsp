@@ -8,10 +8,10 @@
 <style type="text/css">
 #first {
 	background-color: white;
-	margin: 10px auto;
+	margin: 5px auto;
 	margin-left: 30px;
 	width: 200px;
-	height: 220px;
+	height: 180px;
 	float: left;
 }
 
@@ -24,7 +24,7 @@
 #third {
 	background-color: white;
 	padding: 3px;
-	height: 170px;
+	height: 130px;
 	overflow-y:auto;
 }
 

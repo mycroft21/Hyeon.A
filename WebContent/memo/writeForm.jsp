@@ -22,14 +22,14 @@
 	   		 <tr> 
 			    <td align='center' >내용</td> 
 			    <td> 
-			    <textarea wrap='hard' rows='10' name='content' cols='50'></textarea> 
+			 	   <textarea wrap='hard' rows='10' name='content' cols='50'></textarea> 
 			    </td> 
 	    	</tr> 
 	   		<tr> 
 			   	<td align='right' colspan='2' style="padding-right:25"> 
-				 <input type='submit' value='글 저장'> 
-			     <input type ="reset" value="다시 쓰기">
-			     <input type="button" value="목록보기" onclick="location.href='list.memo'">
+					 <input type='submit' value='글 저장'> 
+				     <input type ="reset" value="다시 쓰기">
+				     <input type="button" value="목록보기" onclick="location.href='list.memo'">
 			    </td>
 			</tr> 
 	    </table> 

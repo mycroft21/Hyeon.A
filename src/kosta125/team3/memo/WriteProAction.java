@@ -12,23 +12,15 @@ public class WriteProAction implements SubCon {
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		request.setCharacterEncoding("utf-8");
-		
+		MemoDAO dao = MemoDAO.getInstance();
 		MemoVO vo = new MemoVO();
 		
 		vo.setSubject(request.getParameter("subject"));
 		vo.setContent(request.getParameter("content"));
 		vo.setPass(request.getParameter("password"));
+
+		dao.insert(vo);
 		
-		MemoDAO dao = MemoDAO.getInstance();
-		
-		String password = request.getParameter("passwd");
-		String pass = vo.getPass();
-		if(pass.equals(password)){
-			dao.insert(vo);
-			request.setAttribute("result", "1");
-		} else{
-			request.setAttribute("result", "0");
-		}
 		return "/memo/writePro.jsp";
 	}
 

@@ -22,3 +22,5 @@ drop sequence mNumbers;
 delete from memoDB where memoNum=2;
 
 select * from memoDB where memonum between 1 and 5;
+
+insert into memoDB (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,1,2,sysdate,3)

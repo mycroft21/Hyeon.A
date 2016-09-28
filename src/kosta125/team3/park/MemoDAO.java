@@ -321,19 +321,23 @@ public class MemoDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "";
 		int result = -1;
 		
 		try {
+			conn=getConnection();
 			
-			sql = "insert into (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,?,?,sysdate,?)";
+			String sql = "insert into memoDB (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,?,?,sysdate,?)";
 			
 			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
 			
 			pstmt.setString(1, vo.getSubject());
 			pstmt.setString(2, vo.getContent());
 			pstmt.setString(3, vo.getPass());
+			
+			System.out.println("pass: " + vo.getSubject());
+			System.out.println("pass: " + vo.getContent());
+			System.out.println("pass: " + vo.getMemoNum());
+			System.out.println("pass: " + vo.getPass());
 			
 			result=pstmt.executeUpdate();
 			

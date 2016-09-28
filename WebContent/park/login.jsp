@@ -32,8 +32,7 @@
 		</table>
 		<br>
 		<div align="center">
-		<input type="submit" value="로그인">
-		<button>취소</button>
+		<input type="submit" value="로 그 인" style="width: 253px; height: 40px;">
 		</div>
 	</form>
 </body>

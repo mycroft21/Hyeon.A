@@ -316,6 +316,38 @@ public class MemoDAO {
 
 		return result;
 	}
+	//글 등록
+	public int insert(MemoVO vo)  {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "";
+		int result = -1;
+		
+		try {
+			
+			sql = "insert into (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,?,?,sysdate,?)";
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			pstmt.setString(1, vo.getSubject());
+			pstmt.setString(2, vo.getContent());
+			pstmt.setString(3, vo.getPass());
+			
+			result=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+			close(rs);
+			close(conn);
+		}
+
+		return result;
+		
+	} // 글등록 end
 
 	
 }

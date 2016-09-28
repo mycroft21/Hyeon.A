@@ -8,7 +8,10 @@ import kosta125.team3.subcon.SubCon;
 public class WriteFormAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return null;
+		
+		request.setCharacterEncoding("utf-8");
+		
+		return "/memo/writeForm.jsp";
 	}
 
 }

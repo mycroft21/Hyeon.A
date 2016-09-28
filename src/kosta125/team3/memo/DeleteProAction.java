@@ -22,7 +22,6 @@ public class DeleteProAction implements SubCon {
 			request.setAttribute("result", "1");
 		} else{
 			request.setAttribute("result", "0");
-			
 		}
 		
 		return "/memo/deletePro.jsp";

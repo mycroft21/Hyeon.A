@@ -150,11 +150,15 @@ public class Controller extends HttpServlet{
 	    	  }
 	    	  RequestDispatcher rd = request.getRequestDispatcher("/template/logintemp.jsp");
 	    	  rd.forward(request, response);
-	    	  
 	      } else{
-	    	  RequestDispatcher rd = request.getRequestDispatcher("/template/template.jsp");
-	    	  rd.forward(request, response);
-	    	  /*해당 내용을 템플릿으로 보냅니다.*/
+	    	  if(view.contains("loginPro")){
+	    		  RequestDispatcher rd = request.getRequestDispatcher("/template/logintemp.jsp");
+	    		  rd.forward(request, response);
+	    	  } else{
+	    		  RequestDispatcher rd = request.getRequestDispatcher("/template/template.jsp");
+	    		  rd.forward(request, response);
+	    		  /*해당 내용을 템플릿으로 보냅니다.*/
+	    	  }
 	      }
 	   }
 	

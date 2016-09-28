@@ -1,5 +1,5 @@
 create table memoDB(memoNum number primary key,
-					subject varchar2(50), 
+					subject varchar2(100), 
 			 		content varchar2(2000),
 					memoTime date,
 					pass varchar2(20));
@@ -8,12 +8,14 @@ create SEQUENCE mNumbers
        START WITH 1   
        INCREMENT BY 1
        nocache;
-
-alter table memoDB modify (subject varchar2(100));
        
 insert into memoDB (memoNum, subject, content, memotime, pass) values (mNumbers.nextval, '메모', '테스트합니다.', sysdate, 'oracle');
 
 select * from memoDB;
+
+select * from 
+		(select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc)
+	where r>=7 and r<=12;
 
 drop table memoDB;
 

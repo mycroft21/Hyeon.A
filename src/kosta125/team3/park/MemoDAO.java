@@ -231,48 +231,50 @@ public class MemoDAO {
 		
 	}
 	
-	public ArrayList search(String keyField, String keyWord) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		ArrayList<MemoVO> list = new ArrayList<MemoVO>();
-		
-		try {
-			String sql = "select * from memoDB ";
-			
-			if(keyWord != null && !keyWord.equals("")) { //키워드가 공백이 아니라면
-			sql += "where " + keyField.trim() + "like '%"+keyWord.trim()+"%' order by memoTime";
-			
-			} else { //모든 레코드 검색
-				sql += "order by memoTime";
-			}
-			
-			System.out.println("sql = " + sql);
-			
-			conn = getConnection();
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				MemoVO vo = new MemoVO();
-				vo.setMemoNum(rs.getInt("memoNum"));
-				vo.setSubject(rs.getString("subject"));
-				vo.setContent(rs.getString("content"));
-				vo.setMemoTime(rs.getTimestamp("memoTime"));
-				vo.setPass(rs.getString("pass"));
-				
-				list.add(vo);
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-			close(rs);
-			close(conn);
-		}
-		return list;
+	public ArrayList search(String keyField, String keyWord, int startRow, int endRow) {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      String sql = null;
+	      
+	      ArrayList<MemoVO> list = new ArrayList<MemoVO>();
+	      
+	      try {      
+	         if(keyWord != null && !keyWord.equals("")) { //키워드가 공백이 아니라면
+	            sql = "select * from (select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where " + keyField.trim() + "like '%"+keyWord.trim()+"%') where r>=? and r<=?";
+	         
+	         } else { //모든 레코드 검색
+	            sql = "select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc)";
+	         }
+	         
+	         System.out.println("sql = " + sql);
+	         
+	         conn = getConnection();
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setInt(1, startRow);
+	         pstmt.setInt(2, endRow);
+	         rs = pstmt.executeQuery();
+	         
+	         while(rs.next()) {
+	            MemoVO vo = new MemoVO();
+	            vo.setMemoNum(rs.getInt("memoNum"));
+	            vo.setSubject(rs.getString("subject"));
+	            vo.setContent(rs.getString("content"));
+	            vo.setMemoTime(rs.getTimestamp("memoTime"));
+	            vo.setPass(rs.getString("pass"));
+	            
+	            list.add(vo);
+	      }
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close(pstmt);
+	         close(rs);
+	         close(conn);
+	      }
+	      return list;
 	}//글 검색
 	
 	public int modify(MemoVO vo) {
@@ -315,8 +317,8 @@ public class MemoDAO {
 		}
 
 		return result;
-	}
-	//글 등록
+	}//글 등록
+	
 	public void insert(MemoVO vo)  {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

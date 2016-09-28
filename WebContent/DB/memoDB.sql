@@ -8,6 +8,8 @@ create SEQUENCE mNumbers
        START WITH 1   
        INCREMENT BY 1
        nocache;
+
+       select * from (select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where subject like '%냠%') where r>=1 and r<=5
        
 insert into memoDB (memoNum, subject, content, memotime, pass) values (mNumbers.nextval, '메모', '테스트합니다.', sysdate, 'oracle');
 

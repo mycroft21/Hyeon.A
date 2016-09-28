@@ -151,6 +151,7 @@ public class MemoDAO {
 			close(conn);
 		}
 	}
+	
 	public int getListAllcount() {
 
 		Connection conn = null;
@@ -177,7 +178,7 @@ public class MemoDAO {
 
 		return count;
 
-	}// 총 수 세기
+	}// 총 메모 수 세기
 	
 	public List<MemoVO> getSelectAll(int startRow, int endRow) {
 		Connection conn = null;
@@ -231,6 +232,32 @@ public class MemoDAO {
 		
 	}
 	
+	public int searchCount(String keyField, String keyWord) {
+		Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    int count = 0;
+	    
+	    String sql = "select count(*) from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where " + keyField.trim() + " like '%"+keyWord.trim()+"%'";
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count=rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+			close(conn);
+		}
+		return count;
+	}// 검색 시 총 메모 수 세기
+	
 	public ArrayList search(String keyField, String keyWord, int startRow, int endRow) {
 	      Connection conn = null;
 	      PreparedStatement pstmt = null;
@@ -241,7 +268,7 @@ public class MemoDAO {
 	      
 	      try {      
 	         if(keyWord != null && !keyWord.equals("")) { //키워드가 공백이 아니라면
-	            sql = "select * from (select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where " + keyField.trim() + "like '%"+keyWord.trim()+"%') where r>=? and r<=?";
+	            sql = "select * from (select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where " + keyField.trim() + " like '%"+keyWord.trim()+"%') where r>=? and r<=?";
 	         
 	         } else { //모든 레코드 검색
 	            sql = "select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc)";

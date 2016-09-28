@@ -67,65 +67,54 @@
 <title>리스트</title>
 </head>
 <c:if test="${count == 0}">
-	<a href="writeForm.memo"><img class="img"
-		src="/hyeonA/images/edit.png" />
-		새글쓰기 ^^</a>
+	<a href="writeForm.memo"><img class="img" src="/hyeonA/images/edit.png" />
+		새 메모 쓰기
+	</a>
 	<table width="700" border="1" cellpadding="0" cellspacing="0">
 		<tr>
-			<td align="center">게시판에 저장된 글이 없습니다.</td>
+			<td align="center">게시판에 저장된 메모가 없습니다.</td>
 		</tr>
 	</table>
 </c:if>
 
-
 <div class="list_wrap">
 
 	<c:if test="${count > 0}">
+		<a href="writeForm.memo"><img class="img" src="/hyeonA/images/edit.png" />
+			새 메모 쓰기
+		</a><br>
 
-		<a href="writeForm.memo"><img class="img"
-			src="/hyeonA/images/edit.png" />
-			새글쓰기 ^^</a>
-		<br>
-
-		<c:forEach items="${list }" var="list">
+		<c:forEach items="${list}" var="list">
 			<div id="first">
 				<div id="second">
 					<div class="right">
 						<form action="modifyForm.memo" method="post" name="sendmody">
 							글번호 :
-							<c:out value="${list.memoNum }" />
-								<input type="image" class="img2"
-								src="/hyeonA/images/remove.png"
-								value=" 글번호 : ${list.memoNum }"> <input type="hidden"
-								value="${list.memoNum }" name="memoNum"/>
-
+							<c:out value="${list.memoNum}" />
+								<input type="image" class="img2" src="/hyeonA/images/remove.png" value=" 글번호 : ${list.memoNum}">
+								<input type="hidden" value="${list.memoNum}" name="memoNum" />
 						</form>
 
 						<form action="deleteForm.memo" method="post" name="sendmody">
-							<input type="image"
-								src="/hyeonA/images/can.png"
-								class="img2"> <input type="hidden"
-								value="${list.memoNum }" name="memoNum" />
+							<input type="image" src="/hyeonA/images/can.png" class="img2"> 
+							<input type="hidden" value="${list.memoNum}" name="memoNum" />
 						</form>
 					</div>
+					
 					<div class="left">${list.subject }</div>
 				</div>
-				<div id="third">${list.content }</div>
+				<div id="third">${list.content}</div>
 			</div>
 		</c:forEach>
-
-	</c:if>
-
-	<br>
+	</c:if><br>
+	
 	<div class="control">
 		<c:if test="${count > 0}">
-			<c:set var="pageCount"
-				value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1 )}" />
+			<c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1 )}" />
 			<c:set var="startPage" value="${1}" />
 			<c:set var="pageBlock" value="${5}" />
 
-			<fmt:parseNumber var="result" value="${currentPage / pageBlock}"
-				integerOnly="true" />
+			<fmt:parseNumber var="result" value="${currentPage / pageBlock}" integerOnly="true" />
 
 			<c:if test="${(currentPage % pageBlock) != 0}">
 				<c:set var="startPage" value="${result * pageBlock + 1}" />
@@ -138,36 +127,64 @@
 			<c:set var="endPage" value="${startPage + pageBlock - 1}" />
 
 			<c:if test="${startPage > 5}">
-				<a href="list.memo?pageNum=${startPage - 5}">[이전]</a>
+				<a href="list.memo?pageNum=${startPage - 5}"&keyField="${keyField}"&keyWord="${keyWord}">[이전]</a>
 			</c:if>
 
 			<c:forEach var="i" begin="${startPage}" end="${endPage}">
-				<a href="list.memo?pageNum=${i}">[${i}]</a>
+				<a href="list.memo?pageNum=${i}"&keyField="${keyField}"&keyWord="${keyWord}">[${i}]</a>
 			</c:forEach>
 
 			<c:if test="${endPage < pageCount}">
-				<a href="list.memo?pageNum=${startPage+5}">[다음]</a>
+				<a href="list.memo?pageNum=${startPage+5}"&keyField="${keyField}"&keyWord="${keyWord}">[다음]</a>
 			</c:if>
 		</c:if>
 	</div>
 </div>
 
-<form action="searchPro.memo" method="post">
-	<table>
-		<tr>
-			<td>
-				<select name="keyField">
-					<option value="0"> --- 선택 --- </option>
-					<option value="memoNum"> 글번호 </option>
-					<option value="subject"> 글제목 </option>
-					<option value="content"> 글내용 </option>
-				</select> 
-				
-				<input type="text" name="keyWord" />
-				<input type="image" src="/hyeonA/images/search.png" value="검색" />
-			</td>
-		</tr>
-	</table>
+<form action="list.memo" method="post">
+   <table>
+      <tr>
+         <td>
+            <select name="keyField">
+               <c:if test="${keyField == 'subject'}">
+                  <option value="subject" selected="selected"> 글제목 </option>
+               </c:if>
+               
+               <c:if test="${keyField != 'subject'}">
+                  <option value="subject"> 글제목 </option>
+               </c:if>
+               
+               <c:if test="${keyField == 'memoNum'}">
+                  <option value="memoNum" selected="selected"> 글번호 </option>
+               </c:if>
+               
+               <c:if test="${keyField != 'memoNum'}">
+                  <option value="memoNum"> 글번호 </option>
+               </c:if>
+               
+               <c:if test="${keyField == 'content'}">
+                  <option value="content" selected="selected"> 글내용 </option>
+               </c:if>
+               
+               <c:if test="${keyField != 'content'}">
+                  <option value="content"> 글내용 </option>
+               </c:if>
+            </select> 
+            
+            <input type="hidden" value="${currentPage}" name="currentPage" />
+            
+            <c:if test="${keyWord == null}">
+               <input type="text" name="keyWord">
+            </c:if>
+            
+            <c:if test="${keyWord != null}">
+               <input type="text" name="keyWord" value="${keyWord}">
+            </c:if>
+            
+            <input type="submit" value="검색" />
+         </td>
+      </tr>
+   </table>
 </form>
 
 </body>

@@ -24,6 +24,8 @@
 #third {
 	background-color: white;
 	padding: 3px;
+	height: 170px;
+	overflow-y:auto;
 }
 
 .control {

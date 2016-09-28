@@ -6,7 +6,8 @@ create table memoDB(memoNum number primary key,
 
 create SEQUENCE mNumbers  
        START WITH 1   
-       INCREMENT BY 1;
+       INCREMENT BY 1
+       nocache;
 
 alter table memoDB modify (subject varchar2(100));
        

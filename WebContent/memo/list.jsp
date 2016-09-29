@@ -52,10 +52,8 @@
 			<c:if test="${count > 0}">
 				<c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1 )}" />
 				<c:set var="startPage" value="${1}" />
-				<c:set var="pageBlock" value="${pageCount}" />
-				<c:if test="${pageBlock > 5 }">
-								<c:set var="pageBlock" value="${5}" />
-				</c:if>
+				<c:set var="pageBlock" value="${5}" />
+				
 	
 				<fmt:parseNumber var="result" value="${currentPage / pageBlock}" integerOnly="true" />
 	
@@ -66,13 +64,15 @@
 				<c:if test="${(currentPage % pageBlock) == 0}">
 					<c:set var="startPage" value="${(result - 1) * pageBlock + 1}" />
 				</c:if>
-				
 				<c:set var="endPage" value="${startPage + pageBlock -1}" />
-	
-		<c:if test="${endPage > 5 }">
-								<c:set var="endPage" value="${startPage + (PageCount%5)}" />
+				<c:if test="${pageCount<5 }">	
+							<c:set var="endPage" value="${pageCount}" />
 				</c:if>
+								<c:set var="endPage" value="${startPage + pageBlock-1}" />
 	
+	<c:if test="${endPage>pageCount }">
+	<c:set var="endPage" value="${pageCount}" />
+				</c:if>
 	
 				 <c:if test="${startPage > 5}">
           			<a href="list.memo?pageNum=${startPage - 5}"&keyField="${keyField}"&keyWord="${keyWord}">[이전]</a>
@@ -82,7 +82,7 @@
          			<a href="list.memo?pageNum=${i}"&keyField="${keyField}"&keyWord="${keyWord}">[${i}]</a>
          		</c:forEach>
 
-         		<c:if test="${endPage < (pageCount-1)}">
+         		<c:if test="${endPage < pageCount}">
             		<a href="list.memo?pageNum=${startPage+5}"&keyField="${keyField}"&keyWord="${keyWord}">[다음]</a>
          		</c:if>
       		</c:if>

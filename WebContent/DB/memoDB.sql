@@ -3,7 +3,9 @@ create table memoDB(memoNum number primary key,
 			 		content varchar2(2000),
 					memoTime date,
 					pass varchar2(20));
-
+select * from (select rowNum r, memonum, subject, content, memotime, pass from (select * from MEMODB order by memonum)) where r>=1 and r<=6 order by r desc
+					select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB) order by memoNum desc where r>=1 and r<=6
+					
 create SEQUENCE mNumbers  
        START WITH 1   
        INCREMENT BY 1

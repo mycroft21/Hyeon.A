@@ -236,9 +236,13 @@ public class MemoDAO {
 		Connection conn = null;
 	    PreparedStatement pstmt = null;
 	    ResultSet rs = null;
+	    String sql="";
 	    int count = 0;
-	    
-	    String sql = "select count(*) from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where " + keyField.trim() + " like '%"+keyWord.trim()+"%'";
+	    if(keyField.length()<1){
+	    	sql = "select count(*) from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc)";
+	    }else{
+	    	sql = "select count(*) from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where " + keyField.trim() + " like '%"+keyWord.trim()+"%'";
+	    }
 
 		try {
 			conn = getConnection();
@@ -271,7 +275,8 @@ public class MemoDAO {
 	            sql = "select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB where "+keyField.trim()+" like '%"+keyWord.trim()+"%') where r>=? and r<=? order by r desc";
 	         
 	         } else { //모든 레코드 검색
-		            sql = "select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB where "+keyField.trim()+" like '%"+keyWord.trim()+"%') where r>=? and r<=? order by r desc";
+	        	 System.out.println(startRow+" "+endRow);
+		            sql = "select * from (select rowNum r, memonum, subject, content, memotime, pass from (select * from MEMODB order by memonum)) where r>=? and r<=? order by r desc";
 	         }
 	         
 	         System.out.println("sql = " + sql);

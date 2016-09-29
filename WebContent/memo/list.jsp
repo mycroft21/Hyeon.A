@@ -53,7 +53,10 @@
 					</div>
 					
 					<!-- 메모 내용 -->
-					<div class="memo_bottom">${list.content}</div>	
+					<div
+						onmouseover="this.style.overflow='auto'"
+				onmouseout="this.style.overflow='hidden'"
+					 class="memo_bottom">${list.content}</div>	
 				</div> 
 			</c:forEach>
 		</c:if>

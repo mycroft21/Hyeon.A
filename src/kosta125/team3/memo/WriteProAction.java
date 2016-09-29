@@ -23,12 +23,10 @@ public class WriteProAction implements SubCon {
 		if(passwd.length()>0){
 			dao.insert(vo);
 			request.setAttribute("passwd", passwd);
-			
 		}else{
 			request.setAttribute("passwd", passwd);
 		}
-		
-		
+			
 		return "/memo/writePro.jsp";
 	}
 

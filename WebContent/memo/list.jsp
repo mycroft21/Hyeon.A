@@ -52,7 +52,11 @@
 			<c:if test="${count > 0}">
 				<c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1 )}" />
 				<c:set var="startPage" value="${1}" />
-				<c:set var="pageBlock" value="${5}" />
+				<c:set var="pageBlock" value="${pageCount}" />
+				<c:if test="${pageBlock > 5 }">
+								<c:set var="pageBlock" value="${5}" />
+				
+				</c:if>
 	
 				<fmt:parseNumber var="result" value="${currentPage / pageBlock}" integerOnly="true" />
 	
@@ -79,6 +83,8 @@
          		</c:if>
       		</c:if>
    		</div>
+   		
+   		
 		<form action="list.memo" method="post" class="list_search_form">
 			<table class="list_search_table">
 				<tr>

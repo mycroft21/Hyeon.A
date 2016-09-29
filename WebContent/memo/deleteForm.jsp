@@ -10,37 +10,28 @@
 <title>Delete Form</title>
 </head>
 <body>
-	<div class="modify_wrap">
-	<table class="check">
-		<tr>
-			<th colspan="2"><h3>지우실 메모를 확인해주세요.</h3></th>
-		</tr>
-		<tr>
-			<td class="name1">메모제목</td><td class="name2">${vo.subject}</td>
-		</tr>
-		<tr>
-			<td class="name1">작성일자</td><td class="name2">${vo.memoTime}</td>
-		</tr>
-		<tr>
-			<td colspan="2">메모내용</td>
-		</tr>
-		<tr>
-			<td colspan="2" class="content">${vo.content}</td>
-		</tr>
-	</table>
-	<form name="delete" action="deletePro.memo" method="post">
-		<table class="confirm">
-			<tr>
-				<td colspan="2">해당 메모를 정말 지우시려면 암호를 입력해주세요.</td>
-			</tr>
-			<tr>
-				<td class="name1">암호</td><td class="name2"><input type="password" name="passwd" size="7"><input type="hidden" name="memoNum" value="${vo.memoNum}"></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center"><input type="submit" value="삭제">&nbsp;&nbsp;<button name="cancel" onclick="history.go(-1)">취소</button></td>
-			</tr>
-		</table>
-	</form>
+	<div class="whole_memo">
+		<div class="space"></div>
+		<div class="memo_subject">${vo.subject}</div>
+		<div class="memo_content">${vo.content}</div>
+		<div class="memo_time">${vo.memoTime}</div>
 	</div>
+	<h4 align="center">메모를 지우시려면 암호를 입력해주세요.</h4>
+	<form action="deletePro.memo" method="post">
+		<table id="login_tb">
+		<tr>
+			<td align="center" id="login_td">
+			<img src="/hyeonA/images/locked.png"> &nbsp; | &nbsp;
+			<input type="password" name="passwd" size="20">
+			<input type="hidden" name="memoNum" value="${vo.memoNum}">
+			</td>
+		</tr>
+		</table>
+		<br>
+		<div align="center">
+		<input type="submit" value="삭제">&nbsp;
+		<button onclick="history.go(-1)">취소</button>
+		</div>
+	</form>
 </body>
 </html>

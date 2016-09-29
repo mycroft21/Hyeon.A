@@ -1,3 +1,49 @@
+/* 글 삭제 */
+.whole_memo{
+	width: 300px;
+	height: 300px;
+	margin: auto;
+	background-image: url("/hyeonA/images/post.jpg");
+	background-repeat: no-repeat;
+	background-size: 298px 298px;
+}
+
+.space{
+	width: 298px;		
+	height: 45px;
+}
+
+.memo_subject{
+	width: 298px;
+	height: 30px;
+	overflow: hidden;
+}
+
+.memo_content{
+	width: 240px;
+	height: 163px;
+	overflow: auto;
+	text-align: left;
+	margin: auto;
+}
+
+.memo_time{
+	width: 298px;
+	height: 20px;
+	overflow: hidden;
+}
+
+
+#login_tb {
+	border: 2px solid;
+	border-color: #b4b4b4;
+	padding: 3px;
+	background-color: white;
+}
+
+#login_tb tr {
+	height: 30px;
+}
 
 /* 글 수정 테이블 */
 .modify_wrap{

@@ -28,9 +28,9 @@
 	<div class="memo_list_wrap">
 		<c:if test="${count > 0}">
 			<c:forEach items="${list}" var="list">
-			<!-- 메모전체 틀 -->
+				<!-- 메모 전체 틀 -->
 				<div class="memo_wrap">
-				<!-- 메모 맨위 부분 -->
+					<!-- 메모 윗 부분 -->
 					<div class="memo_top">
 						<!-- 메모 번호 div -->
 						<div class="memo_top_1">
@@ -48,6 +48,7 @@
 								<input type="hidden" value="${list.memoNum}" name="memoNum" />
 							</form>	
 						</div>
+						
 						<!-- 메모 제목 -->
 						<div class="memo_top_2">${list.subject}</div>
 					</div>
@@ -94,21 +95,19 @@
 				</c:if>
 
 				<c:if test="${startPage > 5}">
-					<a href="list.memo?pageNum=${startPage-5}">[이전]</a>
-					<%-- <a href="list.memo?pageNum=${startPage-5}&keyField=${keyField}&keyWord=${keyWord}">[이전]</a> --%>
+					<a href="list.memo?pageNum=${startPage-5}&keyField=${keyField}&keyWord=${keyWord}">[이전]</a>
 				</c:if>
 
 				<c:forEach var="i" begin="${startPage}" end="${endPage}">
-					<a href="list.memo?pageNum=${i}">[${i}]</a>
-					<%-- <a href="list.memo?pageNum=${i}&keyField=${keyField}&keyWord=${keyWord}">[${i}]</a> --%>
+					<a href="list.memo?pageNum=${i}&keyField=${keyField}&keyWord=${keyWord}">[${i}]</a>
 				</c:forEach>
 
 				<c:if test="${endPage < pageCount}">
-					<a href="list.memo?pageNum=${startPage+5}">[다음]</a>
-					<%-- <a href="list.memo?pageNum=${startPage+5}&keyField=${keyField}&keyWord=${keyWord}">[다음]</a> --%>
+					<a href="list.memo?pageNum=${startPage+5}&keyField=${keyField}&keyWord=${keyWord}">[다음]</a>
 				</c:if>
 			</c:if>
-		<!-- 메모 검색 -->
+			
+			<!-- 메모 검색 -->
 			<form action="list.memo" method="post" class="list_search_form">
 				<table class="list_search_table">
 					<tr>

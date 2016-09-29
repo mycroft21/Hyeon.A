@@ -92,6 +92,9 @@
 	font-size: 13px;
 	top: 27px;
 	text-align: left;
+	width: 175px;
+	height: 20px;
+ 	overflow: hidden; 
 }
 
 /* memo_top부분 폼에 있는 이미지의 위치 */
@@ -105,8 +108,9 @@
 	margin-top: 13px;
 	font-size: 13px;
 	text-align: left;
+	width: 192px;
 	height: 130px;
-	overflow-y: auto;
+	overflow-y: hidden;
 }
 
 .pageNum_wrap{

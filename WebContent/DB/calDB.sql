@@ -2,7 +2,9 @@ create table calDB(parkNum varchar2(20) not null,
 	carNum varchar2(20), inTime date, outTime date, pay number);
 
 select * from parkDB;
-SELECT * FROM PARKDB where carnum like '%3456'
+
+select * from PARKDB where carnum like '%3456'
+
 drop table calDB;
 
 select to_date('2013-09-21 23:59:59','YYYY-MM-DD HH24:MI:SS') from dual;

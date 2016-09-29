@@ -1,5 +1,6 @@
 create table parkDB(parkNum varchar2(20) not null primary key,
-carNum varchar2(20), inTime date);
+					carNum varchar2(20),
+					inTime date);
 
 select * from parkDB;
 
@@ -25,7 +26,6 @@ insert into parkDB (parkNum) VALUES ('1F-D-2');
 insert into parkDB (parkNum) VALUES ('1F-D-3');
 insert into parkDB (parkNum) VALUES ('1F-D-4');
 insert into parkDB (parkNum) VALUES ('1F-D-5');
-
 
 select parkNum from parkDB where carNum = '1111';
 

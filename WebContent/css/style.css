@@ -146,9 +146,9 @@ div {
 .calc_mid {
 	position: absolute;
 	width: 600px;
-	height: 274px;
+	height: 284px;
 	margin: 0 0 0 0;
-	top: 176px;
+	top: 167px;
 	overflow-y: auto;
 }
 

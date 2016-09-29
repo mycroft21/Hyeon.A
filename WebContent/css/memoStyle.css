@@ -81,20 +81,23 @@
 /* memo의 글번호 부분 */
 .memo_top_1{
 	position: absolute;
-	font-size: 17px;
+	color: #808080;
+	font-size: 13px;
 	text-align: left;
  	width: 180px; 
 }
 
 /* memo의 제목부분 */
 .memo_top_2{
-	position: absolute;
-	font-size: 13px;
-	top: 27px;
+ 	position: absolute; 
+	font-size: 16px;
+ 	top: 22px; 
 	text-align: left;
-	width: 175px;
+	width: 175px; 
 	height: 20px;
- 	overflow: hidden; 
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* memo_top부분 폼에 있는 이미지의 위치 */

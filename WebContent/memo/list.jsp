@@ -50,13 +50,13 @@
 						</div>
 						
 						<!-- 메모 제목 -->
-						<div class="memo_top_2">${list.subject}</div>
+						<div class="memo_top_2" ><b>${list.subject}</b></div>
 					</div>
 					
 					<!-- 메모 내용 -->
 					<div
-						onmouseover="this.style.overflow='auto'"
-				onmouseout="this.style.overflow='hidden'"
+					onmouseover="this.style.overflow='auto'"
+					onmouseout="this.style.overflow='hidden'"
 					 class="memo_bottom">${list.content}</div>	
 				</div> 
 			</c:forEach>

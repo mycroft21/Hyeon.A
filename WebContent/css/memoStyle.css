@@ -108,12 +108,10 @@
 	height: 130px;
 	overflow-y: auto;
 }
-.bottom_wrap{
-	position: relative;
-  	margin-top: 10px;   
-}
+
 .pageNum_wrap{
 	position: absolute;
+	margin-top: 10px;
 	margin-left: 180px;;
 }
 

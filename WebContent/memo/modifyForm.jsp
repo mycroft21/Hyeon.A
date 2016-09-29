@@ -52,6 +52,7 @@
 				<tr>
 					<td colspan="2">
 						<input type="button" value="수정" onclick="nullCheck();">
+						<button onclick="history.go(-1)">취소</button>
 					</td>
 				</tr>
 			</table>

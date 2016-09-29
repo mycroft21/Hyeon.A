@@ -9,7 +9,7 @@ create SEQUENCE mNumbers
        INCREMENT BY 1
        nocache;
 
-select * from (select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where subject like '%냠%') where r>=1 and r<=5;
+select * from (select rowNum r, memonum, subject, content, memotime, pass from (select * from MEMODB order by memonum desc)) where r>=1 and r<=6
        
 insert into memoDB (memoNum, subject, content, memotime, pass) values (mNumbers.nextval, '메모', '테스트합니다.', sysdate, 'oracle');
 

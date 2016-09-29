@@ -275,7 +275,7 @@ public class MemoDAO {
 		
 		try {      
 			if(keyWord != null && !keyWord.equals("")) { //키워드가 공백이 아니라면
-				sql = "select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB where "+keyField.trim()+" like '%"+keyWord.trim()+"%') where r>=? and r<=? order by r desc";
+				sql = "select * from (select rownum r, memonum, subject, content, memotime, pass from (select * from MEMODB where "+keyField.trim()+" like '%"+keyWord.trim()+"%' order by memonum desc)) where r>=? and r<=?";
 		   
 			} else { //모든 레코드 검색
 				sql = "select * from (select rowNum r, memonum, subject, content, memotime, pass from (select * from MEMODB order by memonum desc)) where r>=? and r<=?";

@@ -12,7 +12,7 @@
 <body>
 	<div class="whole_memo">
 		<div class="space"></div>
-		<div class="memo_subject">${vo.subject}</div>
+		<div class="memo_subject"><b>${vo.subject}</b></div>
 		<div class="memo_content">${vo.content}</div>
 		<div class="memo_time">${vo.memoTime}</div>
 	</div>

@@ -53,8 +53,13 @@
 		</c:if>
 	</div>
 	<br>
+<<<<<<< HEAD
 	<div class="bottom_wrap">
 		<div class="pageCount_wrap">
+=======
+	<div class = "bottom_wrap">
+		<div class="pageNum_wrap">
+>>>>>>> 4dd7b3a9ae5c8f85318464723ebebd8f762a0a71
 			<c:if test="${count > 0}">
 				<c:set var="pageCount"
 					value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1 )}" />
@@ -97,10 +102,29 @@
 					<a href="list.memo?pageNum=${startPage+5}" &keyField="${keyField}"
 						&keyWord="${keyWord}">[다음]</a>
 				</c:if>
+<<<<<<< HEAD
 			</c:if>
 		</div>
 
 
+=======
+	
+				 <c:if test="${startPage > 5}">
+          			<a href="list.memo?pageNum=${startPage - 5}"&keyField="${keyField}"&keyWord="${keyWord}">[이전]</a>
+        		 </c:if>
+
+        		 <c:forEach var="i" begin="${startPage}" end="${endPage}">
+         			<a href="list.memo?pageNum=${i}"&keyField="${keyField}"&keyWord="${keyWord}">[${i}]</a>
+         		</c:forEach>
+
+         		<c:if test="${endPage < pageCount}">
+            		<a href="list.memo?pageNum=${startPage+5}"&keyField="${keyField}"&keyWord="${keyWord}">[다음]</a>
+         		</c:if>
+      		</c:if>
+   		
+   		
+   		
+>>>>>>> 4dd7b3a9ae5c8f85318464723ebebd8f762a0a71
 		<form action="list.memo" method="post" class="list_search_form">
 			<table class="list_search_table">
 				<tr>
@@ -143,6 +167,7 @@
 				</tr>
 			</table>
 		</form>
+		</div>
 	</div>
 </div>
 

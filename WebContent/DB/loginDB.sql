@@ -1,5 +1,5 @@
 create table adminslog (id varchar2(20) primary key,
-                  pwd varchar2(20) not null);
+                  		pwd varchar2(20) not null);
                   
 insert into adminslog (id, pwd) values ('admin', 'oracle');
 

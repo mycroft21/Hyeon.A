@@ -9,15 +9,15 @@ create SEQUENCE mNumbers
        INCREMENT BY 1
        nocache;
 
-       select * from (select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where subject like '%³È%') where r>=1 and r<=5
+select * from (select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where subject like '%³È%') where r>=1 and r<=5;
        
 insert into memoDB (memoNum, subject, content, memotime, pass) values (mNumbers.nextval, '¸Ş¸ğ', 'Å×½ºÆ®ÇÕ´Ï´Ù.', sysdate, 'oracle');
 
 select * from memoDB;
 
 select * from 
-		(select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc)
-	where r>=7 and r<=12;
+	(select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc)
+		where r>=7 and r<=12;
 
 drop table memoDB;
 
@@ -27,6 +27,6 @@ delete from memoDB where memoNum=2;
 
 select * from memoDB where memonum between 1 and 5;
 
-insert into memoDB (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,1,2,sysdate,3)
+insert into memoDB (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,1,2,sysdate,3);
 
-select memonum, subject, content, memotime,pass,rownum r from (select memonum, subject, content, memotime,pass,rownum r from memoDB order by memonum desc ) where r between 1 and 6
+select memonum, subject, content, memotime,pass,rownum r from (select memonum, subject, content, memotime,pass,rownum r from memoDB order by memonum desc ) where r between 1 and 6;

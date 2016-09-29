@@ -268,28 +268,34 @@ public class MemoDAO {
 	      
 	      try {      
 	         if(keyWord != null && !keyWord.equals("")) { //키워드가 공백이 아니라면
-	            sql = "select * from (select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where " + keyField.trim() + " like '%"+keyWord.trim()+"%') where r>=? and r<=?";
+	            sql = "select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB where "+keyField.trim()+" like '%"+keyWord.trim()+"%') where r>=? and r<=? order by r desc";
 	         
 	         } else { //모든 레코드 검색
-	            sql = "select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc)";
+		            sql = "select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB where "+keyField.trim()+" like '%"+keyWord.trim()+"%') where r>=? and r<=? order by r desc";
 	         }
 	         
 	         System.out.println("sql = " + sql);
 	         
 	         conn = getConnection();
 	         pstmt = conn.prepareStatement(sql);
-	         
+	         System.out.println(startRow+" "+endRow);
 	         pstmt.setInt(1, startRow);
 	         pstmt.setInt(2, endRow);
 	         rs = pstmt.executeQuery();
 	         
 	         while(rs.next()) {
+	        	System.out.println("여긴 타냐?");
 	            MemoVO vo = new MemoVO();
-	            vo.setMemoNum(rs.getInt("memoNum"));
-	            vo.setSubject(rs.getString("subject"));
-	            vo.setContent(rs.getString("content"));
-	            vo.setMemoTime(rs.getTimestamp("memoTime"));
-	            vo.setPass(rs.getString("pass"));
+	            vo.setMemoNum(rs.getInt("MEMONUM"));
+	            System.out.println(vo.getMemoNum());
+	            vo.setSubject(rs.getString("SUBJECT"));
+	            System.out.println(vo.getSubject());
+	            vo.setContent(rs.getString("CONTENT"));
+	            System.out.println(vo.getContent());
+	            vo.setMemoTime(rs.getTimestamp("MEMOTIME"));
+	            System.out.println(vo.getMemoTime());
+	            vo.setPass(rs.getString("PASS"));
+	            System.out.println(vo.getPass());
 	            
 	            list.add(vo);
 	      }

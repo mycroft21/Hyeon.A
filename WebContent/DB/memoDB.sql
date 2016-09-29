@@ -3,9 +3,7 @@ create table memoDB(memoNum number primary key,
 			 		content varchar2(2000),
 					memoTime date,
 					pass varchar2(20));
-select * from (select rowNum r, memonum, subject, content, memotime, pass from (select * from MEMODB order by memonum)) where r>=1 and r<=6 order by r desc
-					select * from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB) order by memoNum desc where r>=1 and r<=6
-					
+							
 create SEQUENCE mNumbers  
        START WITH 1   
        INCREMENT BY 1
@@ -29,10 +27,4 @@ delete from memoDB where memoNum=2;
 
 select * from memoDB where memonum between 1 and 5;
 
-insert into memoDB (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,1,2,sysdate,3);
-
-<<<<<<< HEAD
-select memonum, subject, content, memotime,pass,rownum r from (select memonum, subject, content, memotime,pass,rownum r from (select * from MEMODB order by memotime desc) ) where r between 7 and 13;
-=======
-select memonum, subject, content, memotime,pass,rownum r from (select memonum, subject, content, memotime,pass,rownum r from memoDB order by memonum desc ) where r between 1 and 6;
->>>>>>> c950ad188289618db49a323c5b7437ce45daba91
+insert into memoDB (memoNum, subject, content, memotime, pass) values(mNumbers.nextval, 1, 2, sysdate, 3);

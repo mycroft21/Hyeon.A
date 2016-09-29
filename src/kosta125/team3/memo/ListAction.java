@@ -19,12 +19,15 @@ public class ListAction implements SubCon {
 		request.setCharacterEncoding("UTF-8");
 		int pageSize = 6;   
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	    
 	    String pageNum = request.getParameter("pageNum");
 	    String keyField = request.getParameter("keyField");
 	    String keyWord = request.getParameter("keyWord");
-	     
-	    if( pageNum == null ) pageNum = "1";
-	     
+	          
+	    if(pageNum == null) {
+	    	pageNum = "1";
+	    }
+	    
 	    int currentPage = Integer.parseInt(pageNum);
 	    int startRow = (currentPage * pageSize ) - (pageSize-1) ;
 	    int endRow = currentPage * pageSize ; 
@@ -58,9 +61,11 @@ public class ListAction implements SubCon {
 			}
 	    }
 	    
-	    System.out.println("카운트" + count);    
+	    System.out.println("카운트" + count);   
+	    
 	    number = count - ( currentPage - 1 ) * pageSize ;
 	    int pageCount = Math.round(count / pageSize + ( count % pageSize == 0 ? 0 : 1 ));
+	    
 	    request.setAttribute("currentPage", new Integer(currentPage));
 	    request.setAttribute("pageSize", new Integer(pageSize));
 	    request.setAttribute("number", new Integer(number));
@@ -69,6 +74,7 @@ public class ListAction implements SubCon {
 	    request.setAttribute("list", list);
 	    request.setAttribute("count", count);
 	    request.setAttribute("pageCount", pageCount);
+	    
 	    return "/memo/list.jsp";
 	}
 

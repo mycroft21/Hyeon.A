@@ -23,40 +23,38 @@
 <title>메모 수정</title>
 </head>
 <body>
-	<form name="modify" action="modifyPro.memo" method="post">
+	<form name="modify" action="modifyPro.memo" method="post" class="modify_form">
 		<input type="hidden" name="memoNum" value="${ memoNum }">
-		<div class="modify_wrap">
 			<table class="modify_table">
 				<tr>
-					<td align="center" colspan="2">
-						<h4>
-							<b>메모 수정</b>
-						</h4>
+					<th class="write_th" colspan="2">메모 수정</th>
+				</tr>
+				<tr>
+					<td class="write_td"><b>제&nbsp;&nbsp;&nbsp; 목</b></td>
+					<td class="write_input"> <input type="text" name="subject" size='42'  class="textbox_w" value="${ subject }">
 					</td>
 				</tr>
 				<tr>
-					<td align="center"><b>제목</b></td>
-					<td><input type="text" name="subject" value="${ subject }">
+					<td class="write_td"><b>내&nbsp;&nbsp;&nbsp; 용</b></td>
+					<td class="write_input"> <textarea rows="10" cols="45"  class="textbox_w" name="content">${ content }</textarea>
 					</td>
 				</tr>
 				<tr>
-					<td align="center"><b>내용</b></td>
-					<td><textarea rows="10" cols="50" name="content">${ content }</textarea>
+					<td class="write_td"><b>등 록 시 간</b></td>
+					<td class="write_input"> ${ memoTime }</td>
+				</tr>
+				<tr>
+					<td class="write_td" ><b>비 밀 번 호</b></td>
+					<td class="write_input">
+					<input type="password" size="10" name="pass"  class="textbox_w">
 					</td>
 				</tr>
 				<tr>
-					<td align="center"><b>등록시간</b></td>
-					<td>${ memoTime }</td>
-				</tr>
-				<tr>
-					<td align="center"><b>비밀번호</b></td>
-					<td id="ps">
-					<input type="password" size="10" name="pass">
-					<input type="button" value="수정" onclick="nullCheck();">
+					<td colspan="2">
+						<input type="button" value="수정" onclick="nullCheck();">
 					</td>
 				</tr>
 			</table>
-		</div>
 	</form>
 </body>
 </html>

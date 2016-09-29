@@ -28,12 +28,13 @@
 	<div class="memo_list_wrap">
 		<c:if test="${count > 0}">
 			<c:forEach items="${list}" var="list">
+			<!-- 메모전체 틀 -->
 				<div class="memo_wrap">
+				<!-- 메모 맨위 부분 -->
 					<div class="memo_top">
-					
 						<!-- 메모 번호 div -->
 						<div class="memo_top_1">
-							메모 번호 : <c:out value="${list.memoNum}" />
+							<b>메모 번호 : <c:out value="${list.memoNum}" /></b>
 							
 							<!-- 메모 삭제 -->
 							<form action="deleteForm.memo" method="post" name="sendmody" class="form_num">
@@ -47,22 +48,19 @@
 								<input type="hidden" value="${list.memoNum}" name="memoNum" />
 							</form>	
 						</div>
-						
 						<!-- 메모 제목 -->
-						<div class="memo_top_2"><b>${list.subject}</b></div>
+						<div class="memo_top_2">${list.subject}</div>
 					</div>
 					
 					<!-- 메모 내용 -->
-					<div class="memo_bottom">${list.content}</div>
-					
+					<div class="memo_bottom">${list.content}</div>	
 				</div> 
 			</c:forEach>
 		</c:if>
 	</div><br>
 	
-	<!-- 페이지 번호 -->
-	<div class="bottom_wrap">
-		<div class="pageCount_wrap">
+	<!-- 페이지 번호/검색 틀 -->
+		<div class="pageNum_wrap">
 			<c:if test="${count > 0}">
 				<c:set var="pageCount" value="${pageCount}" />
 				<c:set var="startPage" value="${1}" />
@@ -107,60 +105,57 @@
 					<%-- <a href="list.memo?pageNum=${startPage+5}&keyField=${keyField}&keyWord=${keyWord}">[다음]</a> --%>
 				</c:if>
 			</c:if>
-		</div>
-
 		<!-- 메모 검색 -->
-		<form action="list.memo" method="post" class="list_search_form">
-			<table class="list_search_table">
-				<tr>
-					<td>
-						<select name="keyField">
-							<c:if test="${keyField == 'subject'}">
-								<option value="subject" selected="selected">글제목</option>
-							</c:if>
-
-							<c:if test="${keyField != 'subject'}">
-								<option value="subject">글제목</option>
-							</c:if>
-
-							<c:if test="${keyField == 'memoNum'}">
-								<option value="memoNum" selected="selected">글번호</option>
-							</c:if>
-
-							<c:if test="${keyField != 'memoNum'}">
-								<option value="memoNum">글번호</option>
-							</c:if>
-
-							<c:if test="${keyField == 'content'}">
-								<option value="content" selected="selected">글내용</option>
-							</c:if>
-
-							<c:if test="${keyField != 'content'}">
-								<option value="content">글내용</option>
-							</c:if>
-						</select>
+			<form action="list.memo" method="post" class="list_search_form">
+				<table class="list_search_table">
+					<tr>
+						<td>
+							<select name="keyField">
+								<c:if test="${keyField == 'subject'}">
+									<option value="subject" selected="selected">글제목</option>
+								</c:if>
+	
+								<c:if test="${keyField != 'subject'}">
+									<option value="subject">글제목</option>
+								</c:if>
+	
+								<c:if test="${keyField == 'memoNum'}">
+									<option value="memoNum" selected="selected">글번호</option>
+								</c:if>
+	
+								<c:if test="${keyField != 'memoNum'}">
+									<option value="memoNum">글번호</option>
+								</c:if>
+	
+								<c:if test="${keyField == 'content'}">
+									<option value="content" selected="selected">글내용</option>
+								</c:if>
+	
+								<c:if test="${keyField != 'content'}">
+									<option value="content">글내용</option>
+								</c:if>
+							</select>
+							
+							<input type="hidden" value="${currentPage}" name="currentPage" />
+						</td>
 						
-						<input type="hidden" value="${currentPage}" name="currentPage" />
-					</td>
-					
-					<td>&nbsp;
-						<c:if test="${keyWord == null}">
-							<input type="text" name="keyWord" class="search_textbox" />
-						</c:if>
-
-						<c:if test="${keyWord != null}">
-							<input type="text" name="keyWord" value="${keyWord}" class="search_textbox">
-						</c:if>
-					</td>
-					
-					<td>&nbsp;
-						<input type="image" src="/hyeonA/images/search.png" class="img" value="검색" />
-					</td>
-				</tr>
-			</table>
-		</form>
+						<td>&nbsp;
+							<c:if test="${keyWord == null}">
+								<input type="text" name="keyWord" class="search_textbox" />
+							</c:if>
+	
+							<c:if test="${keyWord != null}">
+								<input type="text" name="keyWord" value="${keyWord}" class="search_textbox">
+							</c:if>
+						</td>
+						
+						<td>&nbsp;
+							<input type="image" src="/hyeonA/images/search.png" class="img" value="검색" />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
 	</div>
-</div>
-
 </body>
 </html>

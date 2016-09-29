@@ -5,28 +5,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet"  type="text/css" href="/hyeonA/css/memoStyle.css"/>
 <title>글쓰기 pro</title>
 </head>
 <body>
-<div>
-  <form method='POST' action='writePro.memo'> 
-	    <table border='1' width='500' cellspacing="0"> 
-		    <tr height="20"  > 
-			    <td width='170' align='center' >제목</td> 
-			    <td><input type='text' name='subject' size='48' ></td> 
+  <form method='POST' action='writePro.memo' class="write_form"> 
+	    <table class="write_table"> 
+		    <tr>
+				<th class="write_th" colspan="2">메모 작성</th>
+			</tr>
+		    <tr> 
+			    <td  class="write_td"><b>제&nbsp;&nbsp;&nbsp; 목</b></td> 
+			    <td class="write_input"><input type='text' name='subject' size='42' placeholder=" 30자 이내 입력"  class="textbox_w"></td> 
 		    </tr>
-		    <tr height="20"  > 
-			    <td align='center' >비밀번호</td> 
-			    <td><input type="password" name='password' size='48'></td> 
-	   		 </tr>
 	   		 <tr> 
-			    <td align='center' >내용</td> 
-			    <td> 
-			 	   <textarea wrap='hard' rows='10' name='content' cols='50'></textarea> 
+			    <td  class="write_td"><b>내&nbsp;&nbsp;&nbsp; 용</b></td> 
+			    <td class="write_input"> 
+			 	   <textarea wrap='hard' name='content'  rows='10' cols='45' placeholder=" CONTENTS"  class="textbox_w"></textarea> 
 			    </td> 
 	    	</tr> 
+	    	<tr> 
+			    <td  class="write_td"><b>비밀번호</b></td> 
+			    <td class="write_input"><input type="password" name='password' size='15'  placeholder=" 비밀번호 입력"  class="textbox_w"></td> 
+	   		 </tr>
 	   		<tr> 
-			   	<td align='right' colspan='2' style="padding-right:25"> 
+			   	<td colspan='2' > 
 					 <input type='submit' value='글 저장'> 
 				     <input type ="reset" value="다시 쓰기">
 				     <input type="button" value="목록보기" onclick="location.href='list.memo'">
@@ -34,6 +37,6 @@
 			</tr> 
 	    </table> 
     </form> 
-</div>
+
 </body>
 </html>

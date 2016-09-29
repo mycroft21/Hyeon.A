@@ -11,10 +11,9 @@
 <title>리스트</title>
 </head>
 <div class="list_wrap">
-	<a href="writeForm.memo"> <br>
-	<img class="img2" src="/hyeonA/images/edit.png" />새글쓰기 ^^
-	</a><br>
-	<br>
+	<a href="writeForm.memo"> <br> <img class="img2"
+		src="/hyeonA/images/edit.png" />새글쓰기 ^^
+	</a><br> <br>
 
 	<c:if test="${count == 0}">
 		<table>
@@ -56,8 +55,7 @@
 	<div class="bottom_wrap">
 		<div class="pageCount_wrap">
 			<c:if test="${count > 0}">
-				<c:set var="pageCount"
-					value="${pageCount}" />
+				<c:set var="pageCount" value="${pageCount}" />
 				<c:set var="startPage" value="${1}" />
 				<c:set var="pageBlock" value="${5}" />
 
@@ -73,13 +71,13 @@
 					<c:set var="startPage" value="${(result - 1) * pageBlock + 1}" />
 				</c:if>
 				<c:set var="endPage" value="${startPage + pageBlock -1}" />
-				
+
 				<c:if test="${pageCount<=5 }">
 					<c:set var="endPage" value="${pageCount}" />
 				</c:if>
-				
+
 				<c:if test="${pageCount>5 && pageCount > endPage }">
-				<c:set var="endPage" value="${startPage + pageBlock-1}" />
+					<c:set var="endPage" value="${startPage + pageBlock-1}" />
 				</c:if>
 
 				<c:if test="${endPage>pageCount }">
@@ -90,6 +88,7 @@
 					<a href="list.memo?pageNum=${startPage - 5}"
 						&keyField="${keyField}" &keyWord="${keyWord}">[이전]</a>
 				</c:if>
+
 
 				<c:forEach var="i" begin="${startPage}" end="${endPage}">
 					<a href="list.memo?pageNum=${i}" &keyField="${keyField}"

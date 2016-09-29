@@ -48,7 +48,7 @@
 		</div>
 	<br>
 	<div class = "bottom_wrap">
-		<div class="pageCount_wrap">
+		<div class="pageNum_wrap">
 			<c:if test="${count > 0}">
 				<c:set var="pageCount" value="${count / pageSize + ( count % pageSize == 0 ? 0 : 1 )}" />
 				<c:set var="startPage" value="${1}" />
@@ -86,7 +86,7 @@
             		<a href="list.memo?pageNum=${startPage+5}"&keyField="${keyField}"&keyWord="${keyWord}">[다음]</a>
          		</c:if>
       		</c:if>
-   		</div>
+   		
    		
    		
 		<form action="list.memo" method="post" class="list_search_form">
@@ -134,6 +134,7 @@
 				</tr>
 			</table>
 		</form>
+		</div>
 	</div>
 </div>
 

@@ -60,7 +60,7 @@ public class ListAction implements SubCon {
 	    
 	    System.out.println("Ä«¿îÆ®" + count);    
 	    number = count - ( currentPage - 1 ) * pageSize ;
-	    
+	    int pageCount = Math.round(count / pageSize + ( count % pageSize == 0 ? 0 : 1 ));
 	    request.setAttribute("currentPage", new Integer(currentPage));
 	    request.setAttribute("pageSize", new Integer(pageSize));
 	    request.setAttribute("number", new Integer(number));
@@ -68,7 +68,7 @@ public class ListAction implements SubCon {
 	    request.setAttribute("keyWord", keyWord);
 	    request.setAttribute("list", list);
 	    request.setAttribute("count", count);
-	    
+	    request.setAttribute("pageCount", pageCount);
 	    return "/memo/list.jsp";
 	}
 

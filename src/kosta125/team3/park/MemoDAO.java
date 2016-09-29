@@ -190,7 +190,7 @@ public class MemoDAO {
 		try {
 			conn = getConnection();
 
-			sql = "select memonum, subject, content, memotime,pass,rownum r from (select memonum, subject, content, memotime,pass,rownum r from (select * from MEMODB order by memotime desc) ) where r between ? and ?";
+			sql = "select * from (select rowNum r, memonum, subject, content, memotime, pass from (select * from MEMODB order by memonum desc)) where r>=? and r<=?";
 
 			pstmt = conn.prepareStatement(sql);
 			
@@ -205,11 +205,11 @@ public class MemoDAO {
 				do {
 					MemoVO vo = new MemoVO();
 
-					vo.setMemoNum(rs.getInt(1));
-					vo.setContent(rs.getString(3));
-					vo.setMemoTime(rs.getTimestamp(4));
-					vo.setPass(rs.getString(5));
-					vo.setSubject(rs.getString(2));
+					vo.setMemoNum(rs.getInt(2));
+					vo.setContent(rs.getString(4));
+					vo.setMemoTime(rs.getTimestamp(5));
+					vo.setPass(rs.getString(6));
+					vo.setSubject(rs.getString(3));
 
 					list.add(vo);
 

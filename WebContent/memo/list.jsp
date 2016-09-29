@@ -34,7 +34,7 @@
 					<div class="memo_top">
 						<!-- 메모 번호 div -->
 						<div class="memo_top_1">
-							메모 번호 : <c:out value="${list.memoNum}" />
+							<b>메모 번호 : <c:out value="${list.memoNum}" /></b>
 							
 							<!-- 메모 삭제 -->
 							<form action="deleteForm.memo" method="post" name="sendmody" class="form_num">
@@ -49,7 +49,7 @@
 							</form>	
 						</div>
 						<!-- 메모 제목 -->
-						<div class="memo_top_2"><b>${list.subject}</b></div>
+						<div class="memo_top_2">${list.subject}</div>
 					</div>
 					
 					<!-- 메모 내용 -->

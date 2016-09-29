@@ -11,7 +11,7 @@
 		<table class="top_table">
 			<tr>
 				<td>
-					<font size="6" face="맑은고딕" color="#FFFFFF"><b>주차관리시스템</b>&nbsp;
+					<font size="6" face="맑은고딕" color="#FFFFFF"><b>주차관리시스템</b>
 					<img src="/hyeonA/images/car.png"><br></font> 
 					<font size="5" face="맑은고딕" color="#ffff00" style="font-style: italic;">
 					Parking Management System<br>

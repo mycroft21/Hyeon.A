@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import kosta125.team3.subcon.LogoutAction;
 import kosta125.team3.subcon.SubCon;
 
 public class Controller extends HttpServlet{
@@ -68,7 +69,7 @@ public class Controller extends HttpServlet{
 		
 		Iterator proIter = pr.keySet().iterator();
 		/*이터레이터를 이용해 Properties의 내용을 빼낼 준비를 합니다.*/
-		
+		LogoutAction loa = new LogoutAction();
 		while(proIter.hasNext()){
 			String command = (String) proIter.next();
 			/*1회차에 담기는 값 : command = list.park*/
@@ -139,10 +140,10 @@ public class Controller extends HttpServlet{
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
-/*	      HttpSession session = request.getSession();
-	      LoginVO lvo = (LoginVO) session.getAttribute("admin");*/
+	      HttpSession session = request.getSession();
+	      LoginVO lvo = (LoginVO) session.getAttribute("admin");
 	      request.setAttribute("CONTENT", view);
-/*	      System.out.println(lvo);
+	      System.out.println(lvo);
 	      if(lvo==null){
 	    	  if(view.contains("loginPro")){
 	    	  } else{
@@ -154,12 +155,12 @@ public class Controller extends HttpServlet{
 	    	  if(view.contains("loginPro")){
 	    		  RequestDispatcher rd = request.getRequestDispatcher("/template/logintemp.jsp");
 	    		  rd.forward(request, response);
-	    	  } else{*/
+	    	  } else{
 	    		  RequestDispatcher rd = request.getRequestDispatcher("/template/template.jsp");
 	    		  rd.forward(request, response);
 	    		  /*해당 내용을 템플릿으로 보냅니다.*/
-/*	    	  }
-	      }*/
+	    	  }
+	      }
 	   }
 	
 }

@@ -320,31 +320,23 @@ public class MemoDAO {
 		PreparedStatement pstmt = null;
 		String sql = null;
 		ResultSet rs = null;
-		
-		
+
 		int result = -1;
 
 		try {
 			conn = getConnection();
 
-					sql = "update memoDB set subject = ?, content = ?, memoTime = sysdate where memoNum = ? and pass = ?";
+			sql = "update memoDB set subject = ?, content = ?, memoTime = sysdate where memoNum = ? and pass = ?";
 
-					pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql);
 
-					pstmt.setString(1, vo.getSubject());
-					pstmt.setString(2, vo.getContent());
-					pstmt.setInt(3, vo.getMemoNum());
-					pstmt.setString(4, vo.getPass());
+			pstmt.setString(1, vo.getSubject());
+			pstmt.setString(2, vo.getContent());
+			pstmt.setInt(3, vo.getMemoNum());
+			pstmt.setString(4, vo.getPass());
 
-					System.out.println("pass: " + vo.getSubject());
-					System.out.println("pass: " + vo.getContent());
-					System.out.println("pass: " + vo.getMemoNum());
-					System.out.println("pass: " + vo.getPass());
+			result = pstmt.executeUpdate();
 
-					result = pstmt.executeUpdate();
-
-				
-				
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -354,7 +346,7 @@ public class MemoDAO {
 		}
 
 		return result;
-	}//글 등록
+	}// 글 수정 end
 	
 	public void insert(MemoVO vo)  {
 		Connection conn = null;

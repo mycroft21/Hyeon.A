@@ -20,6 +20,7 @@ public class PayProAction implements SubCon {
 		String carNum = request.getParameter("carNum");
 		String inTime = request.getParameter("inTime");
 		String pay = request.getParameter("pay");
+		String fnum = request.getParameter("fnum");
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date parsedDate = sdf.parse(inTime);
@@ -36,6 +37,7 @@ public class PayProAction implements SubCon {
 		dao.clear(vo);
 		
 		request.setAttribute("carNum", carNum);
+		request.setAttribute("fnum", fnum);
 		
 	  	return "/park/payPro.jsp";
 

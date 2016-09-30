@@ -101,6 +101,7 @@
 						<input type="hidden" name="carNum" value="${avo1.carNum}" />
 						<input type="hidden" name="parkNum" value="${avo1.parkNum}" />
 						<input type="hidden" name="inTime" value="${avo1.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -128,6 +129,7 @@
 						<input type="hidden" name="carNum" value="${avo2.carNum}" />
 						<input type="hidden" name="parkNum" value="${avo2.parkNum}" />
 						<input type="hidden" name="inTime" value="${avo2.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -153,6 +155,7 @@
 						<input type="hidden" name="carNum" value="${avo3.carNum}" />
 						<input type="hidden" name="parkNum" value="${avo3.parkNum}" />
 						<input type="hidden" name="inTime" value="${avo3.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -180,6 +183,7 @@
 						<input type="hidden" name="carNum" value="${avo4.carNum}" />
 						<input type="hidden" name="parkNum" value="${avo4.parkNum}" />
 						<input type="hidden" name="inTime" value="${avo4.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -208,6 +212,7 @@
 						<input type="hidden" name="carNum" value="${bvo1.carNum}" />
 						<input type="hidden" name="parkNum" value="${bvo1.parkNum}" />
 						<input type="hidden" name="inTime" value="${bvo1.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -235,6 +240,7 @@
 						<input type="hidden" name="carNum" value="${bvo2.carNum}" />
 						<input type="hidden" name="parkNum" value="${bvo2.parkNum}" />
 						<input type="hidden" name="inTime" value="${bvo2.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -260,6 +266,7 @@
 						<input type="hidden" name="carNum" value="${bvo3.carNum}" />
 						<input type="hidden" name="parkNum" value="${bvo3.parkNum}" />
 						<input type="hidden" name="inTime" value="${bvo3.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -287,6 +294,7 @@
 						<input type="hidden" name="carNum" value="${bvo4.carNum}" />
 						<input type="hidden" name="parkNum" value="${bvo4.parkNum}" />
 						<input type="hidden" name="inTime" value="${bvo4.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -315,6 +323,7 @@
 						<input type="hidden" name="carNum" value="${cvo1.carNum}" />
 						<input type="hidden" name="parkNum" value="${cvo1.parkNum}" />
 						<input type="hidden" name="inTime" value="${cvo1.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -342,6 +351,7 @@
 						<input type="hidden" name="carNum" value="${cvo2.carNum}" />
 						<input type="hidden" name="parkNum" value="${cvo2.parkNum}" />
 						<input type="hidden" name="inTime" value="${cvo2.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -367,6 +377,7 @@
 						<input type="hidden" name="carNum" value="${cvo3.carNum}" />
 						<input type="hidden" name="parkNum" value="${cvo3.parkNum}" />
 						<input type="hidden" name="inTime" value="${cvo3.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -394,6 +405,7 @@
 						<input type="hidden" name="carNum" value="${cvo4.carNum}" />
 						<input type="hidden" name="parkNum" value="${cvo4.parkNum}" />
 						<input type="hidden" name="inTime" value="${cvo4.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -422,6 +434,7 @@
 						<input type="hidden" name="carNum" value="${dvo1.carNum}" />
 						<input type="hidden" name="parkNum" value="${dvo1.parkNum}" />
 						<input type="hidden" name="inTime" value="${dvo1.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -449,6 +462,7 @@
 						<input type="hidden" name="carNum" value="${dvo2.carNum}" />
 						<input type="hidden" name="parkNum" value="${dvo2.parkNum}" />
 						<input type="hidden" name="inTime" value="${dvo2.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -474,6 +488,7 @@
 						<input type="hidden" name="carNum" value="${dvo3.carNum}" />
 						<input type="hidden" name="parkNum" value="${dvo3.parkNum}" />
 						<input type="hidden" name="inTime" value="${dvo3.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -501,6 +516,7 @@
 						<input type="hidden" name="carNum" value="${dvo4.carNum}" />
 						<input type="hidden" name="parkNum" value="${dvo4.parkNum}" />
 						<input type="hidden" name="inTime" value="${dvo4.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -529,6 +545,7 @@
 						<input type="hidden" name="carNum" value="${evo1.carNum}" />
 						<input type="hidden" name="parkNum" value="${evo1.parkNum}" />
 						<input type="hidden" name="inTime" value="${evo1.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -556,6 +573,7 @@
 						<input type="hidden" name="carNum" value="${evo2.carNum}" />
 						<input type="hidden" name="parkNum" value="${evo2.parkNum}" />
 						<input type="hidden" name="inTime" value="${evo2.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -581,6 +599,7 @@
 						<input type="hidden" name="carNum" value="${evo3.carNum}" />
 						<input type="hidden" name="parkNum" value="${evo3.parkNum}" />
 						<input type="hidden" name="inTime" value="${evo3.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>
@@ -608,6 +627,7 @@
 						<input type="hidden" name="carNum" value="${evo4.carNum}" />
 						<input type="hidden" name="parkNum" value="${evo4.parkNum}" />
 						<input type="hidden" name="inTime" value="${evo4.inTime}" />
+						<input type="hidden" name="fnum" value="${fnum}"/>
 						<input type="hidden" name="pay" value="" />
 					</form>
 				</td>

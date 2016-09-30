@@ -6,7 +6,7 @@
 <script type="text/javascript">
 
 	alert(" [ ${carNum} ] 님 안녕히 가십시오\n W 주차 타워를 이용해주셔서 감사합니다.");
-	location.href="payForm.park?fnum=1f";
+	location.href="payForm.park?fnum=${fnum}";
 	
 </script>
 

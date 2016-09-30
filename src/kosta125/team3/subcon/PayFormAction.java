@@ -35,7 +35,9 @@ public class PayFormAction implements SubCon {
 			ParkVO temp = (ParkVO) list1.get(i-1);
 			
 			String ts = "avo"+String.valueOf(i);
-			request.setAttribute(ts, temp);	
+			request.setAttribute(ts, temp);
+			request.setAttribute("fnum", fnum);
+			System.out.println("fnum: " + fnum);
 		}
 		
 		for(int i=1;i<=list2.size();i++){
@@ -43,27 +45,31 @@ public class PayFormAction implements SubCon {
 			
 			String ts = "bvo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
+			request.setAttribute("fnum", fnum);
 		}
 		
 		for(int i=1;i<=list3.size();i++){
 			ParkVO temp = (ParkVO) list3.get(i-1);
 			
 			String ts = "cvo"+String.valueOf(i);
-			request.setAttribute(ts, temp);			
+			request.setAttribute(ts, temp);
+			request.setAttribute("fnum", fnum);
 		}
 		
 		for(int i=1;i<=list4.size();i++){
 			ParkVO temp = (ParkVO) list4.get(i-1);
 			
 			String ts = "dvo"+String.valueOf(i);
-			request.setAttribute(ts, temp);			
+			request.setAttribute(ts, temp);
+			request.setAttribute("fnum", fnum);
 		}
 
 		for(int i=1;i<=list5.size();i++){
 			ParkVO temp = (ParkVO) list5.get(i-1);
 			
 			String ts = "evo"+String.valueOf(i);
-			request.setAttribute(ts, temp);			
+			request.setAttribute(ts, temp);
+			request.setAttribute("fnum", fnum);
 		}
 		
 		return "/park/payForm.jsp";

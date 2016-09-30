@@ -27,6 +27,27 @@ insert into parkDB (parkNum) VALUES ('1F-D-3');
 insert into parkDB (parkNum) VALUES ('1F-D-4');
 insert into parkDB (parkNum) VALUES ('1F-D-5');
 
+insert into parkDB (parkNum) VALUES ('2F-A-1');
+insert into parkDB (parkNum) VALUES ('2F-A-2');
+insert into parkDB (parkNum) VALUES ('2F-A-3');
+insert into parkDB (parkNum) VALUES ('2F-A-4');
+insert into parkDB (parkNum) VALUES ('2F-A-5');
+insert into parkDB (parkNum) VALUES ('2F-B-1');
+insert into parkDB (parkNum) VALUES ('2F-B-2');
+insert into parkDB (parkNum) VALUES ('2F-B-3');
+insert into parkDB (parkNum) VALUES ('2F-B-4');
+insert into parkDB (parkNum) VALUES ('2F-B-5');
+insert into parkDB (parkNum) VALUES ('2F-C-1');
+insert into parkDB (parkNum) VALUES ('2F-C-2');
+insert into parkDB (parkNum) VALUES ('2F-C-3');
+insert into parkDB (parkNum) VALUES ('2F-C-4');
+insert into parkDB (parkNum) VALUES ('2F-C-5');
+insert into parkDB (parkNum) VALUES ('2F-D-1');
+insert into parkDB (parkNum) VALUES ('2F-D-2');
+insert into parkDB (parkNum) VALUES ('2F-D-3');
+insert into parkDB (parkNum) VALUES ('2F-D-4');
+insert into parkDB (parkNum) VALUES ('2F-D-5');
+
 select parkNum from parkDB where carNum = '1111';
 
 update parkDB set carNum = null, inTime = null where parkNum = '1F-A-1';

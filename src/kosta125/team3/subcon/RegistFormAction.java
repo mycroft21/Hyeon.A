@@ -55,6 +55,7 @@ public class RegistFormAction implements SubCon {
 			String ts = "evo"+String.valueOf(i);
 			request.setAttribute(ts, temp);			
 		}
+		request.setAttribute("fnum", fnum);
 		
 		return "/park/registForm.jsp";
 	}

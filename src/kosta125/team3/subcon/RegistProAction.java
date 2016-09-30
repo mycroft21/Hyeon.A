@@ -12,16 +12,17 @@ public class RegistProAction implements SubCon {
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
 		ParkVO vo = new ParkVO();
-		
+
+		String fnum = request.getParameter("fnum");
 		vo.setCarNum(request.getParameter("carNum"));
 		vo.setParkNum(request.getParameter("parkNum"));
 		
 		ParkDAO dao = ParkDAO.getInstance();
 		dao.regist(vo);
 		
-		
 		request.setAttribute("carNum", vo.getCarNum());
 		request.setAttribute("parkNum", vo.getParkNum());
+		request.setAttribute("fnum", fnum);
 		
 		return "/park/registPro.jsp";
 	}

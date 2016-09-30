@@ -11,7 +11,7 @@ public class WriteProAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
 		MemoDAO dao = MemoDAO.getInstance();
 		MemoVO vo = new MemoVO();
 		
@@ -20,10 +20,10 @@ public class WriteProAction implements SubCon {
 		String passwd = request.getParameter("password");
 		vo.setPass(passwd);
 		
-		if(passwd.length()>0){
+		if(passwd.length() > 0) {
 			dao.insert(vo);
 			request.setAttribute("passwd", passwd);
-		}else{
+		} else {
 			request.setAttribute("passwd", passwd);
 		}
 			

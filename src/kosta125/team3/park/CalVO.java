@@ -3,8 +3,6 @@ package kosta125.team3.park;
 import java.sql.Timestamp;
 
 public class CalVO {
-	
-	
 
 	private String parkNum , carNum ;
 	private Timestamp inTime, outTime;

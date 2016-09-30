@@ -13,7 +13,7 @@ import kosta125.team3.park.ParkDAO;
 public class CalcFormAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yy-mm");
 		String ts = sdf.format(System.currentTimeMillis());

@@ -90,10 +90,13 @@ public class ParkDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List list = null;
-		String sql = "select * from (select * from parkdb where parknum like ?) where parknum like ?";
+		
+		String sql = "SELECT * FROM (SELECT * FROM PARKDB WHERE PARKNUM LIKE ?) WHERE PARKNUM LIKE ?";
+		
 		floor = floor.toUpperCase() + "%";
 		String row = "%-" + String.valueOf(ro);
 		System.out.println(floor + "  " + row);
+		
 		try {
 			conn = getConnection();
 
@@ -125,20 +128,19 @@ public class ParkDAO {
 			close(rs);
 			close(conn);
 		}
-
 		return list;
 
 	}// list ∏Æ≈œ
 
 	public void regist(ParkVO vo) {
-
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Timestamp in = new Timestamp(System.currentTimeMillis());
 
 		try {
-			String sql = "update parkdb set carNum=?, inTime=sysdate where parkNum=?";
+			String sql = "UPDATE PARKDB SET CARNUM=?, INTIME=SYSDATE WHERE PARKNUM=?";
+			
 			conn = getConnection();
 			System.out.println(vo.getCarNum());
 			System.out.println(vo.getParkNum());

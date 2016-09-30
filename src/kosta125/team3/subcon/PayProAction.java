@@ -14,13 +14,12 @@ public class PayProAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
-
+		
 		ParkDAO dao = ParkDAO.getInstance();
 		String parkNum = request.getParameter("parkNum");
 		String carNum = request.getParameter("carNum");
 		String inTime = request.getParameter("inTime");
 		String pay = request.getParameter("pay");
-
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date parsedDate = sdf.parse(inTime);
@@ -29,12 +28,10 @@ public class PayProAction implements SubCon {
 		
 		ParkVO vo = new ParkVO();
 		
-		
 		vo.setParkNum(request.getParameter("parkNum"));
 		vo.setCarNum(request.getParameter("carNum"));
 		vo.setInTime(writeDate);
 		
-
 		dao.insertCalDB(vo, outtime, pay);
 		dao.clear(vo);
 		

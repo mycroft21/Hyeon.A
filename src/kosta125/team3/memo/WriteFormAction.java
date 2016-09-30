@@ -9,7 +9,7 @@ public class WriteFormAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		return "/memo/writeForm.jsp";
 	}

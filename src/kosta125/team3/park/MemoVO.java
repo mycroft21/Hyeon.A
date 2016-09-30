@@ -7,6 +7,7 @@ public class MemoVO {
 	private int memoNum;
 	private String subject, content, pass;
 	private Timestamp memoTime;
+	
 	public int getMemoNum() {
 		return memoNum;
 	}

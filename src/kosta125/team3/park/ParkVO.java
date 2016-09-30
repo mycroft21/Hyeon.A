@@ -7,8 +7,6 @@ public class ParkVO {
 	private String parkNum , carNum ;
 	private Timestamp inTime;
 	
-	
-	
 	public String getParkNum() {
 		return parkNum;
 	}
@@ -27,6 +25,5 @@ public class ParkVO {
 	public void setInTime(Timestamp inTime) {
 		this.inTime = inTime;
 	}
-	
 	
 }

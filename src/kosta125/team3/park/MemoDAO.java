@@ -88,10 +88,11 @@ public class MemoDAO {
 		
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select * from memoDB where memoNum=?");
+			pstmt = conn.prepareStatement("SELECT * FROM MEMODB WHERE MEMONUM=?");
 			pstmt.setInt(1, memoNum);
 			rs = pstmt.executeQuery();
-			if(rs.next()){
+			
+			if(rs.next()) {
 				vo.setMemoNum(rs.getInt(1));
 				vo.setSubject(rs.getString(2));
 				vo.setContent(rs.getString(3));
@@ -107,7 +108,7 @@ public class MemoDAO {
 		return vo;
 	}
 	
-	public MemoVO selectedVOAll(int memoNum){
+	public MemoVO selectedVOAll(int memoNum) {
 		MemoVO vo = new MemoVO();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -115,16 +116,18 @@ public class MemoDAO {
 		
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select * from memoDB where memoNum=?");
+			pstmt = conn.prepareStatement("SELECT * FROM MEMODB WHERE MEMONUM=?");
 			pstmt.setInt(1, memoNum);
 			rs = pstmt.executeQuery();
-			if(rs.next()){
+			
+			if(rs.next()) {
 				vo.setMemoNum(rs.getInt(1));
 				vo.setSubject(rs.getString(2));
 				vo.setContent(rs.getString(3));
 				vo.setMemoTime(rs.getTimestamp(4));
 				vo.setPass(rs.getString(5));
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{
@@ -135,15 +138,16 @@ public class MemoDAO {
 		return vo;
 	}
 	
-	public void deleteMemo(int memoNum){
+	public void deleteMemo(int memoNum) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("delete from memoDB where memoNum=?");
+			pstmt = conn.prepareStatement("DELETE FROM MEMODB WHERE MEMONUM=?");
 			pstmt.setInt(1, memoNum);
 			pstmt.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{
@@ -153,16 +157,14 @@ public class MemoDAO {
 	}
 	
 	public int getListAllcount() {
-
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int count = 0;
 
 		try {
-
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM memoDB");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM MEMODB");
 			rs = pstmt.executeQuery();
 
 			if (rs.next())
@@ -190,10 +192,9 @@ public class MemoDAO {
 		try {
 			conn = getConnection();
 
-			sql = "select * from (select rowNum r, memonum, subject, content, memotime, pass from (select * from MEMODB order by memonum desc)) where r>=? and r<=?";
+			sql = "SELECT * FROM (SELECT ROWNUM R, MEMONUM, SUBJECT, CONTENT, MEMOTIME, PASS FROM (SELECT * FROM MEMODB ORDER BY MEMONUM DESC)) WHERE R>=? AND R<=?";
 
 			pstmt = conn.prepareStatement(sql);
-			
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
 			
@@ -214,9 +215,7 @@ public class MemoDAO {
 					list.add(vo);
 
 				} while (rs.next());
-
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -240,9 +239,9 @@ public class MemoDAO {
 	    int count = 0;
 	    
 	    if(keyField.length()<1) {
-	    	sql = "select count(*) from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc)";
+	    	sql = "SELECT COUNT(*) FROM (SELECT ROWNUM R, MEMONUM, SUBJECT, CONTENT, MEMOTIME, PASS FROM MEMODB ORDER BY R DESC)";
 	    } else {
-	    	sql = "select count(*) from (select rowNum r, memoNum, subject, content, memotime, pass from memoDB order by r desc) where " + keyField.trim() + " like '%"+keyWord.trim()+"%'";
+	    	sql = "SELECT COUNT(*) FROM (SELECT ROWNUM R, MEMONUM, SUBJECT, CONTENT, MEMOTIME, PASS FROM MEMODB ORDER BY R DESC) WHERE " + keyField.trim() + " LIKE '%"+keyWord.trim()+"%'";
 	    }
 
 		try {
@@ -275,10 +274,10 @@ public class MemoDAO {
 		
 		try {      
 			if(keyWord != null && !keyWord.equals("")) { //키워드가 공백이 아니라면
-				sql = "select * from (select rownum r, memonum, subject, content, memotime, pass from (select * from MEMODB where "+keyField.trim()+" like '%"+keyWord.trim()+"%' order by memonum desc)) where r>=? and r<=?";
+				sql = "SELECT * FROM (SELECT ROWNUM R, MEMONUM, SUBJECT, CONTENT, MEMOTIME, PASS FROM (SELECT * FROM MEMODB WHERE "+keyField.trim()+" LIKE '%"+keyWord.trim()+"%' ORDER BY MEMONUM DESC)) WHERE R>=? AND R<=?";
 		   
 			} else { //모든 레코드 검색
-				sql = "select * from (select rowNum r, memonum, subject, content, memotime, pass from (select * from MEMODB order by memonum desc)) where r>=? and r<=?";
+				sql = "SELECT * FROM (SELECT ROWNUM R, MEMONUM, SUBJECT, CONTENT, MEMOTIME, PASS FROM (SELECT * FROM MEMODB ORDER BY MEMONUM DESC)) WHERE R>=? AND R<=?";
 		    }
 		   
 			System.out.println("sql = " + sql);
@@ -301,7 +300,7 @@ public class MemoDAO {
 		        vo.setPass(rs.getString("PASS"));
 		        
 		        list.add(vo);
-		}
+		    }
 		   
 		} catch (Exception e) {
 		   e.printStackTrace();
@@ -315,7 +314,6 @@ public class MemoDAO {
 	}//글 검색
 	
 	public int modify(MemoVO vo) {
-
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = null;
@@ -326,7 +324,7 @@ public class MemoDAO {
 		try {
 			conn = getConnection();
 
-			sql = "update memoDB set subject = ?, content = ?, memoTime = sysdate where memoNum = ? and pass = ?";
+			sql = "UPDATE MEMODB SET SUBJECT = ?, CONTENT = ?, MEMOTIME = SYSDATE WHERE MEMONUM = ? AND PASS = ?";
 
 			pstmt = conn.prepareStatement(sql);
 
@@ -344,7 +342,6 @@ public class MemoDAO {
 			close(rs);
 			close(conn);
 		}
-
 		return result;
 	}// 글 수정 end
 	
@@ -356,7 +353,7 @@ public class MemoDAO {
 		try {
 			conn=getConnection();
 			
-			String sql = "insert into memoDB (memoNum, subject, content, memotime, pass) values(mNumbers.nextval,?,?,sysdate,?)";
+			String sql = "INSERT INTO MEMODB (MEMONUM, SUBJECT, CONTENT, MEMOTIME, PASS) VALUES(MNUMBERS.NEXTVAL,?,?,SYSDATE,?)";
 			
 			pstmt = conn.prepareStatement(sql);
 			

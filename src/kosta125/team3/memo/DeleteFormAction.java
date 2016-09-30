@@ -13,7 +13,9 @@ public class DeleteFormAction implements SubCon {
 		int memoNum = Integer.parseInt(request.getParameter("memoNum"));
 		MemoDAO dao = MemoDAO.getInstance();
 		MemoVO vo = dao.selectedVO(memoNum);
+		
 		request.setAttribute("vo", vo);
+		
 		return "/memo/deleteForm.jsp";
 	}
 

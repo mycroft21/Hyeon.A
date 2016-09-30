@@ -16,7 +16,7 @@ import kosta125.team3.park.ParkVO;
 public class CalcProAction implements SubCon {
 
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		ParkDAO pd = new ParkDAO();

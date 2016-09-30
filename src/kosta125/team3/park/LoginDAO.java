@@ -70,18 +70,20 @@ public class LoginDAO {
 		}
 	}
 	
-	public int loginCheck(LoginVO vo){
+	public int loginCheck(LoginVO vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select * from adminslog where id=? and pwd=?");
+			pstmt = conn.prepareStatement("SELECT * FROM ADMINSLOG WHERE ID=? AND PWD=?");
 			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getPassword());
-			System.out.println("로긴내용 : "+vo.getId()+" "+vo.getPassword());
+			
+			System.out.println("로그인 내용 : "+vo.getId()+" "+vo.getPassword());
 			result = pstmt.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally{

@@ -33,7 +33,7 @@
  			 <span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span><br>메모</a>
 	
 		 <a href="/hyeonA/logout.park" class="list-group-item list-group-item-Primary">
- 			 <span class="glyphicon glyphicon glyphicon-lock" aria-hidden="true"></span><br>화면보호</a>
+ 			 <span class="glyphicon glyphicon glyphicon-lock" aria-hidden="true"></span><br>화면잠금</a>
 	</div>
 </body>
 </html>

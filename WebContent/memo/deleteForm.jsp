@@ -21,16 +21,16 @@
 		<table id="login_tb">
 		<tr>
 			<td align="center" id="login_td">
-			<img src="/hyeonA/images/locked.png"> &nbsp; | &nbsp;
-			<input type="password" name="passwd" size="20">
-			<input type="hidden" name="memoNum" value="${vo.memoNum}">
+				<img src="/hyeonA/images/locked.png"> &nbsp; | &nbsp;
+				<input type="password" name="passwd" size="20">
+				<input type="hidden" name="memoNum" value="${vo.memoNum}">
 			</td>
 		</tr>
-		</table>
-		<br>
+		</table><br>
+		
 		<div align="center">
-		<input type="submit" value="삭제">&nbsp;
-		<button onclick="history.go(-1)">취소</button>
+			<input type="submit" value="삭제">&nbsp;
+			<button onclick="history.go(-1)">취소</button>
 		</div>
 	</form>
 </body>

@@ -114,27 +114,27 @@
 						<td>
 							<select name="keyField">
 								<c:if test="${keyField == 'subject'}">
-									<option value="subject" selected="selected">글제목</option>
+									<option value="subject" selected="selected">메모제목</option>
 								</c:if>
 	
 								<c:if test="${keyField != 'subject'}">
-									<option value="subject">글제목</option>
+									<option value="subject">메모제목</option>
 								</c:if>
 	
 								<c:if test="${keyField == 'memoNum'}">
-									<option value="memoNum" selected="selected">글번호</option>
+									<option value="memoNum" selected="selected">메모번호</option>
 								</c:if>
 	
 								<c:if test="${keyField != 'memoNum'}">
-									<option value="memoNum">글번호</option>
+									<option value="memoNum">메모번호</option>
 								</c:if>
 	
 								<c:if test="${keyField == 'content'}">
-									<option value="content" selected="selected">글내용</option>
+									<option value="content" selected="selected">메모내용</option>
 								</c:if>
 	
 								<c:if test="${keyField != 'content'}">
-									<option value="content">글내용</option>
+									<option value="content">메모내용</option>
 								</c:if>
 							</select>
 							

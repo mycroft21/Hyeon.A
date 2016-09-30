@@ -30,7 +30,7 @@
 	   		 </tr>
 	   		<tr> 
 			   	<td colspan='2' > 
-					 <input type='submit' value='글 저장'> 
+					 <input type='submit' value='메모 저장'> 
 				     <input type ="reset" value="다시 쓰기">
 				     <input type="button" value="목록보기" onclick="location.href='list.memo'">
 			    </td>

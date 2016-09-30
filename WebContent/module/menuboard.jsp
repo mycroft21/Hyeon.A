@@ -28,6 +28,9 @@
  		 
  		 <a href="/hyeonA/calcForm.park" class="list-group-item list-group-item-success">
  			 <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span><br>매출정산</a>
+ 			 
+ 		 <a href="/hyeonA/list.memo" class="list-group-item list-group-item-info">
+ 			 <span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span><br>메모</a>
 	</div>
 </body>
 </html>

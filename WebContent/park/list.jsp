@@ -7,10 +7,18 @@
 <head>
 <link rel="stylesheet"  type="text/css" href="/hyeonA/css/park_board.css"/>
 
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>주차장 형태</title>
 </head>
 <body>
+	<div class = 'bnt'>
+		<a class='button' href="/hyeonA/list.park?fnum=1f">1F</a>
+		<a class='button' href="/hyeonA/list.park?fnum=2f">2F</a> 
+		<a class='button' href="/hyeonA/list.park?fnum=3f">3F</a>
+		<a class='button' href="/hyeonA/list.park?fnum=4f">4F</a>
+	</div>
+
 	<table cellspacing="1">
 		<tr>
 			<c:if test="${avo1.carNum==null}">

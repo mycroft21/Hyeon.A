@@ -193,7 +193,7 @@ public class ParkDAO {
 		ResultSet rs = null;
 
 		try {
-			String sql = "update parkdb set carNum=?, inTime=? where parkNum=?";
+			String sql = "UPDATE PARKDB SET CARNUM=?, INTIME=? WHERE PARKNUM=?";
 
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -222,7 +222,7 @@ public class ParkDAO {
 		Timestamp inTime = vo.getInTime();
 
 		try {
-			String sql = "insert into calDB(parkNum, carNum, inTime, outTime, pay) " + "values(?,?,?,?,?)";
+			String sql = "INSERT INTO CALDB(PARKNUM, CARNUM, INTIME, OUTTIME, PAY) " + "VALUES(?,?,?,?,?)";
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
 
@@ -295,7 +295,7 @@ public class ParkDAO {
 		ResultSet rs = null;
 		List list = null;
 
-		String sql = "select * from calDB where outtime between to_char((sysdate),'yyyy-mm-dd') and to_char((sysdate+1),'yyyy-mm-dd')";
+		String sql = "SELECT * FROM CALDB WHERE OUTTIME BETWEEN TO_CHAR((SYSDATE),'YYYY-MM-DD') AND TO_CHAR((SYSDATE+1),'YYYY-MM-DD')";
 
 		try {
 			conn = getConnection();
@@ -339,7 +339,7 @@ public class ParkDAO {
 		ResultSet rs = null;
 		List list = null;
 
-		String sql = "select * from calDB where outtime between to_char((sysdate),'yyyy-mm-dd') and to_char((sysdate+1),'yyyy-mm-dd') and carnum like ?";
+		String sql = "SELECT * FROM CALDB WHERE OUTTIME BETWEEN TO_CHAR((SYSDATE),'YYYY-MM-DD') AND TO_CHAR((SYSDATE+1),'YYYY-MM-DD') AND CARNUM LIKE ?";
 
 		try {
 			conn = getConnection();
@@ -389,7 +389,7 @@ public class ParkDAO {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String date1 = null, date2 = null;
-		String sql = "select * from caldb where outtime between to_date(?,'YYYY-MM-DD HH24:MI:SS') and to_date(?,'YYYY-MM-DD HH24:MI:SS')";
+		String sql = "SELECT * FROM CALDB WHERE OUTTIME BETWEEN TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') AND TO_DATE(?,'YYYY-MM-DD HH24:MI:SS')";
 
 		try {
 			conn = getConnection();
@@ -442,7 +442,7 @@ public class ParkDAO {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String dateA = null, dateB = null;
-		String sql = "select * from caldb where outtime between to_date(?,'YYYY-MM-DD HH24:MI:SS') and to_date(?,'YYYY-MM-DD HH24:MI:SS') and carNum like ?";
+		String sql = "SELECT * FROM CALDB WHERE OUTTIME BETWEEN TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') AND TO_DATE(?,'YYYY-MM-DD HH24:MI:SS') AND CARNUM LIKE ?";
 
 		try {
 			conn = getConnection();
@@ -501,7 +501,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select count(*) from parkdb");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -525,7 +525,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select count(*) from parkdb where carnum is null");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -550,7 +550,7 @@ public class ParkDAO {
 		try {
 			conn = getConnection();
 
-			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-" + name + "%'");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%A%'");
 
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -564,7 +564,7 @@ public class ParkDAO {
 			close(conn);
 		}
 		return partAll;
-	}// 1층의 구역별 전체 주차 가능 대수
+	}// 구역별 전체 주차 가능 대수(20)
 
 	public int setCuA() {
 		Connection conn = null;
@@ -574,7 +574,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-A%' and carNum is null");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%A%' AND CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -598,7 +598,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-B%' and carNum is null");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%B%' AND CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -622,7 +622,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-C%' and carNum is null");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%C%' AND CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -646,7 +646,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("select count(*) from parkDB where parkNum like '1F-D%' and carNum is null");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%D%' AND CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {

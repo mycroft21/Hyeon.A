@@ -10,8 +10,8 @@
 </head>
 <body>
 <c:if test="${result==1}">
-로그인에 성공하였습니다.<br><button onclick="document.location.href='list.park?fnum=1f'">관리페이지로 이동</button>
+<b>화면잠금을 해제하였습니다.</b><br><br><button style="width: 253px; height: 40px;" onclick="document.location.href='list.park?fnum=1f'">관리페이지로 이동</button>
 </c:if>
-<c:if test="${result==0}">아이디나 패스워드가 바르지 않습니다.<br><button onclick="history.go(-1)">뒤로가기</button></c:if>
+<c:if test="${result==0}"><b>아이디나 패스워드가 바르지 않습니다.</b><br><br><button style="width: 253px; height: 40px;" onclick="history.go(-1)">뒤로가기</button></c:if>
 </body>
 </html>

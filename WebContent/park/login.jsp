@@ -10,7 +10,7 @@
 </head>
 <body>
 <center>
-<h4>로그인이 필요합니다.</h4>
+<h4>화면 잠금을 해제해주세요.</h4>
 </center><br>
 	<form action="loginPro.park" method="post">
 		<table id="login_tb">
@@ -32,7 +32,7 @@
 		</table>
 		<br>
 		<div align="center">
-		<input type="submit" value="로 그 인" style="width: 253px; height: 40px;">
+		<input type="submit" value="화면잠금해제" style="width: 253px; height: 40px;">
 		</div>
 	</form>
 </body>

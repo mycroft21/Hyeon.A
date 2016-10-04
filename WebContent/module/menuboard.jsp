@@ -26,13 +26,13 @@
  		 <a href="/hyeonA/searchForm.park" class="list-group-item list-group-item-warning">
  			 <span class="glyphicon glyphicon-search" aria-hidden="true"></span><br>차량검색</a>
  		 
- 		 <a href="/hyeonA/calcForm.park" class="list-group-item list-group-item-success">
+ 		 <a href="/hyeonA/calcForm.park" class="list-group-item list-group-item-Primary">
  			 <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span><br>매출정산</a>
  			 
- 		 <a href="/hyeonA/list.memo" class="list-group-item list-group-item-info">
+ 		 <a href="/hyeonA/list.memo" class="list-group-item list-group-item-success">
  			 <span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span><br>메모</a>
 	
-		 <a href="/hyeonA/logout.park" class="list-group-item list-group-item-Primary">
+		 <a href="/hyeonA/logout.park" class="list-group-item list-group-item-info">
  			 <span class="glyphicon glyphicon glyphicon-lock" aria-hidden="true"></span><br>화면잠금</a>
 	</div>
 </body>

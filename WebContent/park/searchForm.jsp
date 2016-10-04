@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="search_form_wrap">
-	<form action="searchPro.park" method="post" >
+	<form action="searchPro.park" method="get" >
 		<table class="search_form_table" >
 			<tr height="20px">
 				<th>차량검색</th>
@@ -21,7 +21,8 @@
 			<tr>
 				<td>검색할 차량번호를 입력해주세요<br><br>
 				<input type="text" name="search" >&nbsp;&nbsp;
-				<input type="submit" value="검색"></td>
+				<input type="submit" value="검색">
+				</td>
 			</tr>
 		</table><br>
 	</form>

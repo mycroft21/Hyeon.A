@@ -16,21 +16,24 @@ public class SearchProAction implements SubCon {
 		request.setCharacterEncoding("UTF-8");
 		String A = request.getParameter("search");
 		String check = "800";
-
+		String fnum=request.getParameter("fnum");
+		ParkVO vo = new ParkVO();
+		
 		ArrayList<ParkVO> list = new ArrayList<ParkVO>();
-			
 		ParkDAO da = new ParkDAO();
 		list = da.search(A);
 
 		ArrayList<String> carNum = new ArrayList<String>();
 		ArrayList<ParkVO> carinfo = new ArrayList<ParkVO>();
+		ArrayList<String> parkNum = new ArrayList<String>();
 
 		if (list.size() != 0) {
 			
 			for (int i = 0; i < list.size(); i++) {
-				ParkVO vo = new ParkVO();
-				vo=list.get(i);		
+
+				vo=list.get(i);
 				
+				parkNum.add(vo.getParkNum());
 				carNum.add(vo.getCarNum());
 				carinfo.add(vo);
 			}
@@ -39,24 +42,49 @@ public class SearchProAction implements SubCon {
 		request.setAttribute("carNum", carNum);
 		request.setAttribute("carinfo", carinfo);
 		
-		String fnum = "1F";
+		System.out.println("carinfo : "+carinfo);
+		System.out.println("carNum : "+carNum);
+		
 
 		ParkDAO dao = ParkDAO.getInstance();
-
+		
+		System.out.println("parkNum"+parkNum);
+		
+		if(parkNum.size()<=0){
+			request.setAttribute("check", 0);
+		}else{
+		String cutNum = parkNum.get(0).substring(0, 2);
+		
+		System.out.println("cutNum"+cutNum);
+		if(fnum==null){
+			fnum="1F";
+			switch (cutNum) {
+			case "1F": fnum="1F"; break;
+			case "2F": fnum="2F"; break;
+			case "3F": fnum="3F"; break;
+			case "4F": fnum="4F"; break;	
+			}
+		}
+		
 		List list1 = dao.list(fnum, 1);
 		List list2 = dao.list(fnum, 2);
 		List list3 = dao.list(fnum, 3);
 		List list4 = dao.list(fnum, 4);
 		List list5 = dao.list(fnum, 5);
-
+		
+		 
 		if (carNum.size() > 0) {
 			int x = carNum.size();
-			request.setAttribute("cheak", x);
+			request.setAttribute("check", x);
+			request.setAttribute("fnum", fnum);
+			request.setAttribute("search", A);
+			request.setAttribute("vo", vo);
 		} else {
-			request.setAttribute("cheak", 0);
+			request.setAttribute("check", 0);
 		}
 
-		System.out.println(carNum.size());
+		System.out.println("carNum.size() : "+carNum.size());
+		
 
 		for (int i = 1; i <= list1.size(); i++) {
 			ParkVO temp = (ParkVO) list1.get(i - 1);
@@ -149,6 +177,7 @@ public class SearchProAction implements SubCon {
 				request.setAttribute(ta, check);
 			}
 			request.setAttribute(ts, temp);
+		}
 		}
 		return "/park/searchPro.jsp";
 	}

@@ -12,27 +12,41 @@
 </head>
 <body>
 	<div class="search">
-		<c:if test="${cheak == 0 }">
+
+		<c:if test="${check == 0 }">
 			<script type="text/javascript">
 				alert(" 조회하신 차량이 없습니다. ");
 				history.go(-1);
 			</script>
 		</c:if>
 
-		<c:if test="${cheak != 0 }">
-			<script type="text/javascript">
-				var str = "";
-			</script>
-
-			<c:forEach var="carinfo" items="${carinfo}" >
+		<c:if test="${check != 0 }">
+			<c:if test="${search=='' }">
 				<script type="text/javascript">
-					str = str + " ${carinfo.carNum}번 차량은 ${carinfo.parkNum}에 있습니다.\n";
+					alert("정확한 차량번호를 입력해주세요.");
+					history.go(-1);
 				</script>
-			</c:forEach>
-			<script type="text/javascript">
-				alert(str);
-			</script>
-
+			</c:if>
+			<c:if test="${search !='' }">
+				<script type="text/javascript">
+					var str = "";
+				</script>
+				<c:forEach var="carinfo" items="${carinfo}" >
+					<script type="text/javascript">
+						str = str + " ${carinfo.carNum}번 차량은 ${carinfo.parkNum}에 있습니다.\n";
+					</script>
+				</c:forEach>
+				<script type="text/javascript">
+					alert(str);
+				</script>
+			</c:if>
+		</c:if>
+		<div class = 'bnt'>
+			<a class='button' href="/hyeonA/searchPro.park?fnum=1F&search=${search }">1F</a>
+			<a class='button' href="/hyeonA/searchPro.park?fnum=2F&search=${search }">2F</a> 
+			<a class='button' href="/hyeonA/searchPro.park?fnum=3F&search=${search }">3F</a>
+			<a class='button' href="/hyeonA/searchPro.park?fnum=4F&search=${search }">4F</a>
+		</div>
 			<table cellspacing="1">
 				<tr>
 					<c:if test="${acar0!=800}">
@@ -228,7 +242,7 @@
 					</c:if>
 				</tr>
 			</table>
-		</c:if>
+
 	</div>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <table align="center" width="950px" >
 	<tr>
 		<td colspan="4" align="center">
-			<b><font color="white" size="5" face="맑은고딕">1층 주차가능대수</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<b><font color="white" size="5" face="맑은고딕">전체 주차 가능 대수</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<font color="red" size="5" face="맑은고딕">${cu} </font>
 			<font color="orange" size="5" face="맑은고딕"> / ${all}</font>
 			</b>

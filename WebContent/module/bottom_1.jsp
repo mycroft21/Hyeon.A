@@ -19,22 +19,22 @@
 	</tr>		
 	<tr>
 		<td>
-			<b><font color="white" size="4" face="맑은고딕">A 구역</font></b>&nbsp;&nbsp;&nbsp;&nbsp;
+			<b><font color="white" size="4" face="맑은고딕">1층 구역</font></b>&nbsp;&nbsp;&nbsp;&nbsp;
 			<font color="red" size="5" face="맑은고딕">${cuA} </font>
 			<font color="orange" size="5" face="맑은고딕"> / ${partA}</font>
 		</td>
 		<td>
-			<b><font color="white" size="4" face="맑은고딕">B 구역</font></b>&nbsp;&nbsp;&nbsp;&nbsp;
+			<b><font color="white" size="4" face="맑은고딕">2층 구역</font></b>&nbsp;&nbsp;&nbsp;&nbsp;
 			<font color="red" size="5" face="맑은고딕">${cuB} </font>
 			<font color="orange" size="5" face="맑은고딕"> / ${partB}</font>
 		</td>
 		<td>
-			<b><font color="white" size="4" face="맑은고딕">C 구역</font></b>&nbsp;&nbsp;&nbsp;&nbsp;
+			<b><font color="white" size="4" face="맑은고딕">3층 구역</font></b>&nbsp;&nbsp;&nbsp;&nbsp;
 			<font color="red" size="5" face="맑은고딕">${cuC} </font>
 			<font color="orange" size="5" face="맑은고딕"> / ${partC}</font>
 		</td>
 		<td>
-			<b><font color="white" size="4" face="맑은고딕">D 구역</font></b>&nbsp;&nbsp;&nbsp;&nbsp;
+			<b><font color="white" size="4" face="맑은고딕">4층 구역</font></b>&nbsp;&nbsp;&nbsp;&nbsp;
 			<font color="red" size="5" face="맑은고딕">${cuD} </font>
 			<font color="orange" size="5" face="맑은고딕"> / ${partD}</font>
 		</td>

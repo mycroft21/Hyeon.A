@@ -574,7 +574,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%A%' AND CARNUM IS NULL");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '1F%' AND CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -598,7 +598,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%B%' AND CARNUM IS NULL");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '2F%' AND CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -622,7 +622,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%C%' AND CARNUM IS NULL");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '3F%' AND CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -646,7 +646,7 @@ public class ParkDAO {
 
 		try {
 			conn = getConnection();
-			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '%D%' AND CARNUM IS NULL");
+			pstmt = conn.prepareStatement("SELECT COUNT(*) FROM PARKDB WHERE PARKNUM LIKE '4F%' AND CARNUM IS NULL");
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {

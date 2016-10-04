@@ -34,6 +34,12 @@
 <title>주차등록</title>
 </head>
 <body>
+<div class = 'bnt'>
+		<a class='button' href="/hyeonA/registForm.park?fnum=1f">1F</a>
+		<a class='button' href="/hyeonA/registForm.park?fnum=2f">2F</a> 
+		<a class='button' href="/hyeonA/registForm.park?fnum=3f">3F</a>
+		<a class='button' href="/hyeonA/registForm.park?fnum=4f">4F</a>
+	</div>
 <div>
 	<table cellspacing="1">	
 		<!-- a행 -->

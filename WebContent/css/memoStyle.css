@@ -76,6 +76,7 @@
 	width: 180px;
 	height: 50px;
 	border-bottom: 3px solid #c0c0c0; 
+	z-index: 3;
 }
 
 /* memo의 글번호 부분 */
@@ -96,9 +97,36 @@
 	width: 175px; 
 	height: 20px;
 	white-space: nowrap;
-	overflow: hidden;
-    text-overflow: ellipsis;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    z-index: 2;
 }
+
+.memo_top_2_long{
+ 	position: absolute; 
+	font-size: 16px;
+ 	top: 22px; 
+	text-align: left;
+	width: 175px; 
+	height: 20px;
+	white-space: nowrap;
+	overflow:hidden;
+    text-overflow:ellipsis;
+    z-index: 2;
+}
+
+.memo_top_2_long:hover {
+	width: 200px;
+	height:auto;
+    background-color: #f8fd8a;
+    overflow:inherit;
+    text-overflow:inherit;
+	font-size: 16px;
+	padding:10px;
+	word-break:break-all;
+	white-space: normal;
+}
+
 
 /* memo_top부분 폼에 있는 이미지의 위치 */
 .form_num{
@@ -114,6 +142,9 @@
 	width: 192px;
 	height: 130px;
 	overflow-y: hidden;
+}
+.memo_bottom:hover {
+overflow:auto;
 }
 
 .pageNum_wrap{

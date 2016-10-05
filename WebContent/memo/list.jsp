@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -50,14 +51,20 @@
 						</div>
 						
 						<!-- 메모 제목 -->
-						<div class="memo_top_2" ><b>${list.subject}</b></div>
+						<c:if test="${fn:length(list.subject) >= 15 }">
+						<div class="memo_top_2_long">
+							<b>${list.subject}</b>
+						</div></c:if>
+						
+						<c:if test="${fn:length(list.subject) < 15 }">
+						<div class="memo_top_2">
+							<b>${list.subject}</b>
+						</div></c:if>
+			
 					</div>
 					
 					<!-- 메모 내용 -->
-					<div
-					onmouseover="this.style.overflow='auto'"
-					onmouseout="this.style.overflow='hidden'"
-					 class="memo_bottom">${list.content}</div>	
+					<div class="memo_bottom">${list.content}</div>	
 				</div> 
 			</c:forEach>
 		</c:if>

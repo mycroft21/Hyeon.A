@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
+	<div class="calc_form_wrap">
 		<!-- 버튼부 -->
 		<form action="calcPro.park" method="post" name="calcform" >
 		<br>

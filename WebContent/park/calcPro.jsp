@@ -13,8 +13,9 @@
 <body>
 	<div class="calc">
 		<!-- 버튼부  -->
+	<div class="calc_pro_wrap">
 		<form action="calcPro.park" method="post" name="calcPro">
-		<br><br>
+		<br>
 			<b>차량 번호 검사</b> &nbsp; <input type="text" name="carNum" class="textbox" >&nbsp;<input type="submit" value="검색" >
 			<br>
 			<br>
@@ -22,6 +23,7 @@
 			<input type="date" name="date2" class="datebox">&nbsp; 
 			<input type="submit" value="검색" >&nbsp;<input type="reset" value="초기화" ><br><br>
 		</form>
+	</div>
 		<!-- 내용 표시부 디폴트 당일 정산 내역 -->
 		<div class="calc_table_wrap">
 			<table class="calc_top">

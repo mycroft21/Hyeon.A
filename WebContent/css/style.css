@@ -145,12 +145,36 @@ div {
 }
 
 /* 요금정산 테이블의 중간부분 /스크롤바 있음 */
+.calc_form_wrap {
+	width: 600px;
+	margin: 15px 0 0 0;
+	background-color: white;
+	opacity: 0.9;
+	filter: alpha(opacity : 100);
+	border-radius: 10px;
+	align:center;
+	padding : 10px;
+	height: 200px;
+}
+
+.calc_pro_wrap {
+	width: 590px;
+	margin: auto;
+	background-color: white;
+	opacity: 0.9;
+	filter: alpha(opacity : 100);
+	border-radius: 10px;
+	text-align:center;
+	padding : auto;
+	height: 120px;
+}
+
 .calc_mid {
 	position: absolute;
 	width: 600px;
-	height: 281px;
+	height: 299px;
 	margin: 0 0 0 0;
-	top: 166px;
+	top: 151px;
 	overflow-y: auto;
 }
 

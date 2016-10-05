@@ -78,7 +78,6 @@ public class SearchProAction implements SubCon {
 			request.setAttribute("check", x);
 			request.setAttribute("fnum", fnum);
 			request.setAttribute("search", A);
-			request.setAttribute("vo", vo);
 		} else {
 			request.setAttribute("check", 0);
 		}

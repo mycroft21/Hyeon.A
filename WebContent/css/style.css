@@ -16,6 +16,14 @@ div {
 	padding: 0;
 }
 
+.logins {
+	background-color: rgba(255, 255, 265, 0.6);
+	width: 950px;
+	height: 530px;
+	border-radius: 10px;
+	margin-top: 18px;
+}
+
 /* ž_div */
 .top_table {
 	width: 950px;

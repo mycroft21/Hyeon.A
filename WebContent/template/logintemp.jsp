@@ -35,6 +35,10 @@
 				</table>
 			</div>
 		</div>
+		<!-- 상황판,주차공간end-->
+		<div class="menu">
+			<jsp:include page="../module/menuboard2.jsp" />
+		</div>
 	</div>
 	<!-- 전체틀end -->
 </body>

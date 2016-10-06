@@ -515,7 +515,7 @@ public class ParkDAO {
 			close(conn);
 		}
 		return all;
-	}// 전체 주차 공간
+	}// 전체 주차 공간(80)
 
 	public int setCu() {
 		Connection conn = null;
@@ -564,7 +564,7 @@ public class ParkDAO {
 			close(conn);
 		}
 		return partAll;
-	}// 구역별 전체 주차 가능 대수(20)
+	}// 층별 전체 주차 가능 대수(20)
 
 	public int setCuA() {
 		Connection conn = null;
@@ -588,7 +588,7 @@ public class ParkDAO {
 			close(conn);
 		}
 		return cuA;
-	}// A구역 _ 남아있는 주차 가능 대수
+	}// 1층 _ 남아있는 주차 가능 대수
 
 	public int setCuB() {
 		Connection conn = null;
@@ -612,7 +612,7 @@ public class ParkDAO {
 			close(conn);
 		}
 		return cuB;
-	}// B구역 _ 남아있는 주차 가능 대수
+	}// 2층 _ 남아있는 주차 가능 대수
 
 	public int setCuC() {
 		Connection conn = null;
@@ -636,7 +636,7 @@ public class ParkDAO {
 			close(conn);
 		}
 		return cuC;
-	}// C구역 _ 남아있는 주차 가능 대수
+	}// 3층 _ 남아있는 주차 가능 대수
 
 	public int setCuD() {
 		Connection conn = null;
@@ -660,6 +660,6 @@ public class ParkDAO {
 			close(conn);
 		}
 		return cuD;
-	}// D구역 _ 남아있는 주차 가능 대수
+	}// 4층 _ 남아있는 주차 가능 대수
 
 }

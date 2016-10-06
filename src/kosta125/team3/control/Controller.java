@@ -65,11 +65,11 @@ public class Controller extends HttpServlet{
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}
+		}
 		
 		Iterator proIter = pr.keySet().iterator();
 		/*이터레이터를 이용해 Properties의 내용을 빼낼 준비를 합니다.*/
-		LogoutAction loa = new LogoutAction();
+		
 		while(proIter.hasNext()){
 			String command = (String) proIter.next();
 			/*1회차에 담기는 값 : command = list.park*/
@@ -121,46 +121,53 @@ public class Controller extends HttpServlet{
 	      
 	      try {
 	         String fullCommand = request.getRequestURI();
+	         System.out.println("fullCommand : " + fullCommand); //확인용
 	         /*fullCommand = hyeonA/List.park*/
-	         System.out.println("fullCommand : "+fullCommand);//확인용
+	         
 	         String projectName = request.getContextPath();
+	         System.out.println("projectName : " + projectName);
 	         /*projectName = hyeonA*/
 	         String classKey = null;
 	         /*이 변수에는 fullCommand - projectName이 들어갈 예정*/
 	         
 	         if(fullCommand.indexOf(projectName)==0){
 	            classKey = fullCommand.substring(projectName.length()+1);
-	            System.out.println(classKey);
+	            System.out.println("classKey : " + classKey);
 	         }
 	         
 	         subcon = (SubCon) classMap.get(classKey);
-	         System.out.println("subcon : "+subcon);
+	         System.out.println("subcon : " + subcon);
+	         
 	         view = subcon.process(request, response);
-	         System.out.println("view : "+view);
+	         System.out.println("view : " + view);
+	         
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }
+	      
 	      HttpSession session = request.getSession();
 	      LoginVO lvo = (LoginVO) session.getAttribute("admin");
 	      request.setAttribute("CONTENT", view);
 	      System.out.println(lvo);
-	      if(lvo==null){
-	    	  if(view.contains("loginPro")){
-	    	  } else{
+	      
+	      if(lvo == null) {
+	    	  if(view.contains("loginPro")) {
+	    	  } else {
 	    		  request.setAttribute("CONTENT", "/park/login.jsp");
 	    	  }
+	    	  
 	    	  RequestDispatcher rd = request.getRequestDispatcher("/template/logintemp.jsp");
 	    	  rd.forward(request, response);
-	      } else{
-	    	  if(view.contains("loginPro")){
+	    	  
+	      } else {
+	    	  if(view.contains("loginPro")) {
 	    		  RequestDispatcher rd = request.getRequestDispatcher("/template/logintemp.jsp");
 	    		  rd.forward(request, response);
-	    	  } else{
+	    	  } else {
 	    		  RequestDispatcher rd = request.getRequestDispatcher("/template/template.jsp");
 	    		  rd.forward(request, response);
 	    		  /*해당 내용을 템플릿으로 보냅니다.*/
 	    	  }
 	      }
 	   }
-	
 }
